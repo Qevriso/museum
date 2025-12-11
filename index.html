@@ -4,19 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сергиево-Посадский музей-заповедник</title>
-    <meta name="description" content="Сергиево-Посадский государственный историко-художественный музей-заповедник: выставки, экскурсии, мероприятия.">
-    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <meta name="description" content="Сергиево-Посадский музей-заповедник">
+
+    <!-- Шрифты -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
+
+    <!-- Tailwind 4 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Alpine -->
+    <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
-<body class="antialiased text-[#24272A] bg-white w-full max-w-[1600px] mx-auto">
-    <div x-data="{ mobileMenu: false }" class="min-h-screen flex flex-col">
-        <include src="/tpl/header.php"/>
-        <include src="/tpl/menu.php"/>
-        <main class="flex-1">
-            <include src="/tpl/hero.php"/>
-        </main>
-        <include src="/tpl/footer.php"/>
-    </div>
-    <script src="/assets/js/alpine.min.js" defer></script>
+
+<body class="w-full max-w-[1600px] mx-auto bg-white text-[#24272A]">
+
+    <!-- JS-INCLUDE СЕКЦИИ -->
+    <div data-include="tpl/header.html"></div>
+    <div data-include="tpl/menu.html"></div>
+    <div data-include="tpl/hero.html"></div>
+    <div data-include="tpl/corps.html"></div>
+    <div data-include="tpl/afisha.html"></div>
+    <div data-include="tpl/tickets-banner.html"></div>
+    <div data-include="tpl/excursions.html"></div>
+    <div data-include="tpl/subscribe.html"></div>
+    <div data-include="tpl/pushkin-card.html"></div>
+    <div data-include="tpl/faq.html"></div>
+    <div data-include="tpl/news.html"></div>
+    <div data-include="tpl/feedback-banner.html"></div>
+    <div data-include="tpl/footer.html"></div>
+
+    <!-- JS include loader -->
+    <script src="include.js"></script>
+
 </body>
 </html>

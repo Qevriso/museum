@@ -1,0 +1,75 @@
+<section class="w-full px-4 lg:px-16 py-12 lg:py-16 bg-[#F7F7F7]">
+
+  <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-8 lg:mb-10 gap-6">
+    <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#24272A]">
+      Афиша
+    </h2>
+
+    <!-- Календарь -->
+    <div class="flex flex-wrap items-center gap-3">
+      <button class="px-4 py-2 border border-[#24272A] rounded text-sm hover:bg-[#24272A] hover:text-white transition">
+        Сегодня
+      </button>
+      <input
+        type="date"
+        class="px-4 py-2 border border-[#24272A] rounded bg-white text-sm"
+      >
+    </div>
+  </div>
+
+  <!-- Карточки мероприятий -->
+  <div class="grid md:grid-cols-3 gap-6 lg:gap-10">
+
+    <!-- Событие -->
+    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow duration-300">
+      <div class="w-full h-[190px] sm:h-[210px] bg-gray-200">
+        <img src="../assets/img/event-1.jpg" class="w-full h-full object-cover" alt="">
+      </div>
+      <div class="p-5">
+        <div class="text-xs uppercase tracking-wide text-[#D3423F] font-semibold mb-1.5">Сегодня</div>
+        <h3 class="text-lg font-semibold mb-2">Обзорная экскурсия по музею</h3>
+        <p class="text-sm text-[#5B5D60] mb-4">
+          Подходит для всей семьи, продолжительность — 1,5 часа.
+        </p>
+        <button class="px-4 py-2 bg-[#24272A] text-white rounded text-sm">
+          Подробнее
+        </button>
+      </div>
+    </a>
+
+    <!-- Событие -->
+    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow duration-300">
+      <div class="w-full h-[190px] sm:h-[210px] bg-gray-200">
+        <img src="../assets/img/event-2.jpg" class="w-full h-full object-cover" alt="">
+      </div>
+      <div class="p-5">
+        <div class="text-xs uppercase tracking-wide text-[#D3423F] font-semibold mb-1.5">18 мая</div>
+        <h3 class="text-lg font-semibold mb-2">Ночь музеев</h3>
+        <p class="text-sm text-[#5B5D60] mb-4">
+          Специальная программа с лекциями и перформансами.
+        </p>
+        <button class="px-4 py-2 bg-[#24272A] text-white rounded text-sm">
+          Подробнее
+        </button>
+      </div>
+    </a>
+
+    <!-- Событие -->
+    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow duration-300">
+      <div class="w-full h-[190px] sm:h-[210px] bg-gray-200">
+        <img src="../assets/img/event-3.jpg" class="w-full h-full object-cover" alt="">
+      </div>
+      <div class="p-5">
+        <div class="text-xs uppercase tracking-wide text-[#D3423F] font-semibold mb-1.5">22 мая</div>
+        <h3 class="text-lg font-semibold mb-2">Лекция по истории Сергиева Посада</h3>
+        <p class="text-sm text-[#5B5D60] mb-4">
+          Авторская программа для интересующихся историей.
+        </p>
+        <button class="px-4 py-2 bg-[#24272A] text-white rounded text-sm">
+          Подробнее
+        </button>
+      </div>
+    </a>
+
+  </div>
+</section>

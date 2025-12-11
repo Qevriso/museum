@@ -1,0 +1,69 @@
+<section class="w-full border-b border-[#DCDEE0]">
+  <div class="flex items-center gap-4 px-4 lg:px-6 py-4 lg:py-5 text-[#24272A]">
+
+    <!-- Логотип -->
+    <a href="/" class="w-[120px] h-[42px] lg:w-[132px] lg:h-[46px] flex-shrink-0">
+      <img src="../assets/svg/logo.svg" class="w-full h-full object-contain" alt="Логотип музея">
+    </a>
+
+    <!-- Поиск -->
+    <div class="relative hidden md:flex flex-1">
+      <input
+        type="text"
+        placeholder="Поиск"
+        class="w-full bg-[#F7F7F7] pl-3 pr-10 py-2.5 rounded focus:bg-[#F0F1F2] focus:outline-none text-sm"
+      />
+      <div class="absolute right-3 top-1/2 -translate-y-1/2">
+        <img src="../assets/svg/search.svg" class="w-4 h-4" alt="Поиск">
+      </div>
+    </div>
+
+    <!-- Мобильная иконка поиска -->
+    <button class="md:hidden flex items-center justify-center w-9 h-9 rounded bg-[#F7F7F7]">
+      <img src="../assets/svg/search.svg" class="w-4 h-4" alt="Поиск">
+    </button>
+
+    <!-- Купить билет -->
+    <div class="hidden xl:flex cursor-pointer items-center gap-2.5 border px-4 py-2.5 border-[#24272A] whitespace-nowrap text-sm">
+      <span class="font-semibold">Купить билет</span>
+      <img src="../assets/svg/ticket.svg" alt="">
+    </div>
+
+    <!-- Экскурсия -->
+    <div class="hidden xl:flex cursor-pointer items-center gap-2.5 bg-[#24272A] text-white px-4 py-2.5 whitespace-nowrap text-sm">
+      <span class="font-semibold">Заказать экскурсию</span>
+      <img src="../assets/svg/users.svg" alt="">
+    </div>
+
+    <!-- Иконка глаза -->
+    <div class="hidden lg:flex cursor-pointer w-10 h-10 justify-center items-center rounded hover:bg-[#F7F7F7] transition">
+      <img src="../assets/svg/eye.svg" alt="Версия для слабовидящих">
+    </div>
+
+    <!-- Языки -->
+    <div
+      class="hidden lg:flex relative cursor-pointer select-none w-11 h-11 justify-center items-center rounded-xl border border-[#DCDEE0]"
+      x-data="{open:false, value:'RU'}"
+      @click.outside="open=false"
+    >
+      <div @click="open=!open" x-text="value" class="font-semibold text-sm"></div>
+      <div
+        x-show="open"
+        x-transition
+        class="absolute top-full mt-2 p-3 bg-white shadow-xl border rounded-lg w-20 flex flex-col gap-2 z-20 text-sm"
+      >
+        <div class="text-center cursor-pointer hover:bg-[#F7F7F7] rounded" @click="value='RU'; open=false">RU</div>
+        <div class="text-center cursor-pointer hover:bg-[#F7F7F7] rounded" @click="value='EN'; open=false">EN</div>
+      </div>
+    </div>
+
+    <!-- Пушкинская карта -->
+    <img src="../assets/svg/pushcard.svg" alt="Пушкинская карта" class="hidden lg:block h-10">
+
+    <!-- Бургер -->
+    <button class="lg:hidden flex items-center justify-center w-9 h-9 rounded bg-[#F7F7F7]">
+      <img src="../assets/svg/burger.svg" class="w-4 h-4" alt="Меню">
+    </button>
+
+  </div>
+</section>

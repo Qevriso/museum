@@ -1,0 +1,91 @@
+<section class="w-full px-4 lg:px-16 py-12 lg:py-16 bg-[#F7F7F7]">
+
+  <div class="grid lg:grid-cols-2 gap-10 lg:gap-16">
+
+    <!-- Левый столбец -->
+    <div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-[#24272A]">
+        Частые вопросы
+      </h2>
+
+      <p class="text-sm sm:text-base text-[#5B5D60] max-w-[480px]">
+        Мы собрали ответы на самые популярные вопросы —
+        о посещении музея, экскурсиях и сервисах.
+      </p>
+    </div>
+
+    <!-- Аккордеон -->
+    <div class="space-y-3" x-data="{open: 0}">
+
+      <!-- Вопрос 1 -->
+      <div class="border border-[#DCDEE0] rounded-lg bg-white">
+        <button
+          class="w-full flex justify-between items-center px-4 py-3 text-left text-sm sm:text-base"
+          @click="open === 1 ? open = 0 : open = 1"
+        >
+          <span>Во сколько открывается музей?</span>
+          <span class="ml-4 transition-transform" :class="open === 1 ? 'rotate-90' : ''">›</span>
+        </button>
+
+        <div x-show="open === 1" x-collapse>
+          <div class="px-4 pb-4 text-sm text-[#5B5D60]">
+            Основные корпуса работают ежедневно, расписание может меняться — уточняйте в разделе «Посетителям».
+          </div>
+        </div>
+      </div>
+
+      <!-- Вопрос 2 -->
+      <div class="border border-[#DCDEE0] rounded-lg bg-white">
+        <button
+          class="w-full flex justify-between items-center px-4 py-3 text-left text-sm sm:text-base"
+          @click="open === 2 ? open = 0 : open = 2"
+        >
+          <span>Нужна ли предварительная запись на экскурсию?</span>
+          <span class="ml-4 transition-transform" :class="open === 2 ? 'rotate-90' : ''">›</span>
+        </button>
+
+        <div x-show="open === 2" x-collapse>
+          <div class="px-4 pb-4 text-sm text-[#5B5D60]">
+            Для большинства экскурсий требуется предварительное бронирование времени.
+          </div>
+        </div>
+      </div>
+
+      <!-- Вопрос 3 -->
+      <div class="border border-[#DCDEE0] rounded-lg bg-white">
+        <button
+          class="w-full flex justify-between items-center px-4 py-3 text-left text-sm sm:text-base"
+          @click="open === 3 ? open = 0 : open = 3"
+        >
+          <span>Можно ли прийти с детьми?</span>
+          <span class="ml-4 transition-transform" :class="open === 3 ? 'rotate-90' : ''">›</span>
+        </button>
+
+        <div x-show="open === 3" x-collapse>
+          <div class="px-4 pb-4 text-sm text-[#5B5D60]">
+            Да, доступны программы для детей разных возрастов и семейные экскурсии.
+          </div>
+        </div>
+      </div>
+
+      <!-- Вопрос 4 -->
+      <div class="border border-[#DCDEE0] rounded-lg bg-white">
+        <button
+          class="w-full flex justify-between items-center px-4 py-3 text-left text-sm sm:text-base"
+          @click="open === 4 ? open = 0 : open = 4"
+        >
+          <span>Есть ли льготные билеты?</span>
+          <span class="ml-4 transition-transform" :class="open === 4 ? 'rotate-90' : ''">›</span>
+        </button>
+
+        <div x-show="open === 4" x-collapse>
+          <div class="px-4 pb-4 text-sm text-[#5B5D60]">
+            Да, предусмотрены льготы для школьников, студентов, пенсионеров и других категорий.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

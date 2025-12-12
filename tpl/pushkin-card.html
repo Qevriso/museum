@@ -1,36 +1,45 @@
-<section class="w-full px-4 lg:px-16 py-12 lg:py-16 bg-[#FDF6E6]">
+<section class="w-full bg-white">
+  <div
+    class="max-w-[1600px] mx-auto px-[60px] py-[80px]
+           grid grid-cols-2 gap-[80px]
+           lg:grid-cols-2 grid-cols-1 items-center">
 
-  <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-
-    <!-- Левый столбец -->
-    <div>
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-[#24272A]">
-        Пушкинская карта
+    <!-- левая колонка -->
+    <div class="flex flex-col gap-8 max-w-[520px]">
+      <h2
+        class="font-[Racama] text-[72px] leading-[95%] tracking-[-0.02em] text-[#24272A]">
+        Пушкинская<br>карта
       </h2>
 
-      <p class="text-sm sm:text-base text-[#5B5D60] mb-4">
-        Посещайте музей по программе «Пушкинская карта» — выбирайте мероприятия,
-        доступные для оплаты, и бронируйте билеты онлайн.
+      <p class="text-[#24272A] text-[16px] leading-[160%]">
+        С 1 сентября 2021 года в России стартовал масштабный проект —
+        Пушкинская карта. Благодаря ему молодые люди в возрасте от 14 до 22 лет
+        могут за счёт государства посещать культурные мероприятия по всей стране.
       </p>
 
-      <ul class="text-sm text-[#5B5D60] space-y-2 mb-6">
-        <li>— Специальные программы для молодёжи</li>
-        <li>— Участие в федеральном проекте</li>
-        <li>— Удобная онлайн-оплата</li>
-      </ul>
+      <p class="text-[#24272A] text-[16px] leading-[160%] font-semibold">
+        С 1 января 2025 года государство перечислило на Пушкинскую карту
+        5000 рублей.
+      </p>
 
-      <button class="px-6 py-3 rounded-lg bg-[#24272A] text-white text-sm font-semibold hover:bg-black transition">
-        Подробнее о программе
-      </button>
+      <a
+        href="#"
+        class="inline-flex items-center justify-center gap-3
+               border border-[#24272A]
+               px-8 py-5
+               text-[#24272A] text-[16px] font-semibold
+               hover:bg-[#24272A] hover:text-white
+               transition w-fit">
+        Подробнее →
+      </a>
     </div>
 
-    <!-- Изображение -->
-    <div class="flex justify-center lg:justify-end">
+    <!-- правая колонка -->
+    <div class="w-full">
       <img
-        src="../assets/svg/pushkin-card-big.svg"
-        class="max-w-[360px] w-full h-auto"
+        src="/assets/img/pushkin-card.png"
         alt="Пушкинская карта"
-      >
+        class="w-full h-auto object-cover">
     </div>
 
   </div>

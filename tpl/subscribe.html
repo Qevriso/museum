@@ -1,29 +1,38 @@
-<section class="w-full px-4 lg:px-16 py-12 lg:py-16 bg-[#3B2A79] text-white">
-  <div class="flex flex-col lg:flex-row justify-between gap-8 lg:gap-16 items-center">
+<section class="w-full bg-[#7474C2] relative overflow-hidden">
+  <!-- декоративный фон -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute left-1/3 top-0 w-[600px] h-[600px] bg-white/10 rounded-[80px]"></div>
+    <div class="absolute left-1/2 bottom-0 w-[600px] h-[600px] bg-white/10 rounded-[80px]"></div>
+  </div>
 
-    <div class="max-w-[520px]">
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-        Рассылка музея
-      </h2>
-      <p class="text-sm sm:text-base opacity-90">
-        Подпишитесь на новости о выставках и мероприятиях.
-      </p>
-    </div>
+  <div
+    class="relative max-w-[1600px] mx-auto px-[60px] py-[80px]
+           flex items-center justify-between gap-[80px]
+           lg:flex-row flex-col lg:items-center items-start">
 
-    <!-- Форма -->
-    <form class="w-full max-w-[420px] flex flex-col sm:flex-row gap-3">
+    <!-- левая колонка -->
+    <h2
+      class="text-white font-[Racama] text-[72px] leading-[95%] tracking-[-0.02em]
+             lg:max-w-[420px]">
+      Рассылка<br>от музея
+    </h2>
+
+    <!-- правая колонка -->
+    <div class="flex flex-col gap-5 w-full max-w-[360px]">
       <input
         type="email"
-        placeholder="Ваш e-mail"
-        class="flex-1 px-4 py-3 rounded-lg text-sm text-black"
-      >
+        placeholder="Ваш email"
+        class="w-full px-6 py-5 text-white placeholder-white/70
+               bg-white/20 border border-white/20
+               focus:outline-none focus:bg-white/30 transition" />
+
       <button
-        type="submit"
-        class="px-6 py-3 rounded-lg bg-[#F6C653] text-[#24272A] text-sm font-semibold hover:bg-[#ffda79] transition"
-      >
-        Подписаться
+        class="w-full px-6 py-5 bg-white text-[#7474C2]
+               font-semibold text-[16px]
+               hover:bg-white/90 transition">
+        Подписаться на рассылку
       </button>
-    </form>
+    </div>
 
   </div>
 </section>

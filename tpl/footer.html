@@ -1,47 +1,153 @@
-<footer class="w-full px-4 lg:px-16 py-10 lg:py-12 bg-[#24272A] text-white">
+<footer class="w-full bg-white border-t border-[#DCDEE0]">
 
-  <div class="grid md:grid-cols-4 gap-8 lg:gap-12 mb-8">
+    <!-- ОСНОВНАЯ СЕТКА -->
+    <div class="max-w-[1600px] mx-auto px-[60px] pt-[72px] pb-[56px]">
+        <div class="grid grid-cols-4 gap-x-[72px] gap-y-[48px] text-[#24272A] text-sm leading-[160%]">
 
-    <div class="space-y-3 text-sm">
-      <div class="font-semibold text-base">
-        Сергиево-Посадский музей-заповедник
-      </div>
-      <p class="text-[#DCDEE0]">
-        Адрес музея, телефон и информация о режиме работы.
-      </p>
+            <!-- Колонка 1 -->
+            <div class="space-y-6">
+                <div>
+                    <div class="font-semibold mb-3">Корпуса</div>
+                    <ul class="space-y-2">
+                        <li>Главный корпус</li>
+                        <li>Ризница Троице-Сергиевской Лавры</li>
+                        <li>Музейный комплекс «Конный двор»</li>
+                        <li>Краеведческий корпус</li>
+                    </ul>
+                </div>
+
+                <div class="font-semibold">Интерактивная карта</div>
+
+                <div>
+                    <div class="font-semibold mb-3">Для групп</div>
+                    <ul class="space-y-2">
+                        <li>Турфирмам</li>
+                        <li>Группам учащихся</li>
+                        <li>Социальным группам и людям с инвалидностью</li>
+                        <li>Паломникам</li>
+                        <li>Билеты и услуги для групп</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Колонка 2 -->
+            <div class="space-y-6">
+                <div>
+                    <div class="font-semibold mb-3">Посетителям</div>
+                    <ul class="space-y-2">
+                        <li>Часто задаваемые вопросы</li>
+                        <li>Билеты</li>
+                        <li>Пушкинская карта</li>
+                        <li>Рекомендованные маршруты</li>
+                        <li>Музей детям</li>
+                        <li>Мастер-классы</li>
+                        <li>Концерты</li>
+                        <li>Посетителям с ОВЗ</li>
+                        <li>Правила посещения и возврата денег</li>
+                        <li>Спланировать визит</li>
+                        <li>Услуги</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="font-semibold mb-3">Мероприятия</div>
+                    <ul class="space-y-2">
+                        <li>Афиша</li>
+                        <li>Выходные в Сергиевом Посаде</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Колонка 3 -->
+            <div class="space-y-6">
+                <div class="font-semibold">Экскурсии</div>
+
+                <div>
+                    <div class="font-semibold mb-3">О музее</div>
+                    <ul class="space-y-2">
+                        <li>Научная деятельность</li>
+                        <li>Документы</li>
+                        <li>История музея</li>
+                        <li>Коллекции</li>
+                        <li>Заказ изображений</li>
+                        <li>Вакансии</li>
+                    </ul>
+                </div>
+
+                <div class="font-semibold">Контакты</div>
+            </div>
+
+            <!-- Колонка 4 -->
+            <div class="space-y-6">
+                <button
+                    class="w-full border border-[#24272A] py-3 text-sm font-semibold hover:bg-[#24272A] hover:text-white transition">
+                    Обратный звонок
+                </button>
+
+                <div class="font-semibold">sergiev-mus@mail.ru</div>
+
+                <div class="space-y-4">
+                    <div>
+                        <div class="text-xs text-[#6B7280] mb-1">Заказ экскурсий</div>
+                        <div>8 496 540-53-56</div>
+                        <div>8 985 040-45-17</div>
+                    </div>
+
+                    <div>
+                        <div class="text-xs text-[#6B7280] mb-1">Вопросы и сотрудничество</div>
+                        <div>8 496 540-63-58</div>
+                    </div>
+                </div>
+
+                <!-- Соцсети -->
+                <div class="flex gap-4 pt-2">
+                    <a class="w-10 h-10 flex items-center justify-center bg-[#F3F4F6]">
+                        <include src="/assets/svg/telegram.svg"></include>
+                    </a>
+                    <a class="w-10 h-10 flex items-center justify-center bg-[#F3F4F6]">
+                        <include src="/assets/svg/vk.svg"></include>
+                    </a>
+                    <a class="w-10 h-10 flex items-center justify-center bg-[#F3F4F6]">
+                        <include src="/assets/svg/youtube.svg"></include>
+                    </a>
+                    <a class="w-10 h-10 flex items-center justify-center bg-[#F3F4F6]">
+                        <include src="/assets/svg/ok.svg"></include>
+                    </a>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <div class="text-sm space-y-1.5">
-      <div class="font-semibold mb-1.5">Разделы</div>
-      <a href="#" class="block text-[#DCDEE0] hover:text-white transition">О музее</a>
-      <a href="#" class="block text-[#DCDEE0] hover:text:white transition">Выставки</a>
-      <a href="#" class="block text-[#DCDEE0] hover:text:white transition">Афиша</a>
-      <a href="#" class="block text-[#DCDEE0] hover:text:white transition">Экскурсии</a>
+    <!-- НИЖНЯЯ ПОЛОСА -->
+    <div class="border-t border-[#DCDEE0]">
+        <div
+            class="max-w-[1600px] mx-auto px-[60px] py-6
+                   flex flex-col gap-3 text-xs text-[#6B7280]">
+
+            <div>
+                141310, Россия, Московская область, г. Сергиев Посад,
+                Проспект Красной Армии, д. 144
+            </div>
+
+            <div class="flex flex-wrap gap-6 items-center">
+                <span>
+                    © 2025 ФГБУК «Сергиево-Посадский государственный
+                    историко-художественный музей-заповедник»
+                </span>
+                <span>
+                    Использование материалов сайта без разрешения правообладателя — запрещено
+                </span>
+                <span class="underline cursor-pointer">
+                    Политика конфиденциальности
+                </span>
+                <span class="ml-auto flex items-center gap-1 text-[#24272A]">
+                    Создано в
+                    <span class="font-semibold">?</span>
+                </span>
+            </div>
+
+        </div>
     </div>
-
-    <div class="text-sm space-y-1.5">
-      <div class="font-semibold mb-1.5">Посетителям</div>
-      <a href="#" class="block text-[#DCDEE0] hover:text:white transition">Билеты</a>
-      <a href="#" class="block text-[#DCDEE0] hover:text:white transition">Как добраться</a>
-      <a href="#" class="block text-[#DCDEE0] hover:text:white transition">Правила посещения</a>
-    </div>
-
-    <div class="text-sm space-y-3">
-      <div class="font-semibold">Контакты</div>
-      <p class="text-[#DCDEE0]">
-        Тел.: +7 (000) 000-00-00<br>
-        Email: info@museum.ru
-      </p>
-      <div class="text-xs uppercase tracking-wide text-[#DCDEE0]">
-        Мы в соцсетях
-      </div>
-    </div>
-
-  </div>
-
-  <div class="border-t border-[#3A3D40] pt-4 mt-4 text-xs text-[#DCDEE0] flex flex-col sm:flex-row justify-between">
-    <span>© 2025 Сергиево-Посадский музей-заповедник</span>
-    <span>Политика конфиденциальности</span>
-  </div>
 
 </footer>

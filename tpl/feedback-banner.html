@@ -1,19 +1,42 @@
-<section class="w-full px-4 lg:px-16 py-12 lg:py-16 bg-[#EFEFEF]">
-
-  <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-
-    <div>
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 text-[#24272A]">
-        Расскажите, как музей может стать лучше
-      </h2>
-      <p class="text-sm sm:text-base text-[#5B5D60] max-w-[520px]">
-        Поделитесь впечатлениями и предложениями — нам важно ваше мнение.
-      </p>
+<section class="relative w-full bg-[#A38641] overflow-hidden">
+    <!-- SVG фон -->
+    <div class="absolute inset-0 pointer-events-none opacity-20">
+        <include src="/assets/svg/pattern-feedback.svg"></include>
     </div>
 
-    <button class="px-6 py-3 rounded-lg bg-[#24272A] text-white text-sm sm:text-base font-semibold hover:bg:black transition">
-      Оставить отзыв
-    </button>
+    <!-- Контент -->
+    <div
+        class="relative max-w-[1600px] mx-auto
+               px-6 lg:px-[60px]
+               py-12 lg:py-[72px]
+               flex flex-col lg:flex-row
+               items-start lg:items-center
+               justify-between
+               gap-10">
 
-  </div>
+        <!-- Заголовок -->
+        <h2
+            class="text-white
+                   text-[40px] sm:text-[48px] lg:text-[56px]
+                   leading-[1.05]
+                   font-medium
+                   max-w-[640px]">
+            Расскажите,<br>
+            как музей может<br>
+            стать лучше?
+        </h2>
+
+        <!-- Кнопка -->
+        <a href="#"
+           class="shrink-0
+                  bg-white text-[#A38641]
+                  px-10 py-4
+                  text-base font-semibold
+                  border border-white
+                  hover:bg-transparent hover:text-white
+                  transition">
+            Оставить отзыв
+        </a>
+
+    </div>
 </section>

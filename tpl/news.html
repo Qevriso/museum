@@ -1,53 +1,90 @@
-<section class="w-full px-4 lg:px-16 py-12 lg:py-16">
+<section class="w-full bg-white">
+  <div class="max-w-[1600px] mx-auto px-[60px] py-[80px]">
 
-  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 lg:mb-10">
-    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#24272A]">
-      Новости
-    </h2>
+    <!-- header -->
+    <div class="flex items-center justify-between mb-[60px]">
+      <h2
+        class="font-[Racama] text-[72px] leading-[95%] tracking-[-0.02em]
+               text-[#24272A]">
+        Новости
+      </h2>
 
-    <a href="#" class="text-sm text-[#24272A] underline-offset-4 hover:underline">
-      Все новости
-    </a>
-  </div>
+      <a
+        href="#"
+        class="flex items-center gap-4 px-8 py-5 border border-[#24272A]
+               text-[#24272A] text-[20px] font-semibold
+               hover:bg-[#24272A] hover:text-white transition">
+        Все новости
+        <span class="text-[24px] leading-none">→</span>
+      </a>
+    </div>
 
-  <!-- Карточки новостей -->
-  <div class="grid md:grid-cols-3 gap-6 lg:gap-10">
+    <!-- grid -->
+    <div
+      class="grid grid-cols-3 gap-5
+             lg:grid-cols-3
+             md:grid-cols-2
+             sm:grid-cols-1">
 
-    <a href="#" class="block rounded-xl border border-[#DCDEE0] hover:shadow-md transition p-5">
-      <div class="text-xs uppercase tracking-wide text-[#D3423F] font-semibold mb-2">
-        10 мая
-      </div>
-      <h3 class="text-lg font-semibold mb-2">
-        Открытие новой экспозиции
-      </h3>
-      <p class="text-sm text-[#5B5D60]">
-        В Троицком корпусе открылась обновлённая экспозиция, посвящённая истории города.
-      </p>
-    </a>
+      <!-- card -->
+      <article class="flex flex-col gap-4">
+        <div class="w-full h-[240px] bg-[#F0F1F2] overflow-hidden">
+          <img
+            src="/assets/img/news-1.jpg"
+            alt=""
+            class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
 
-    <a href="#" class="block rounded-xl border border-[#DCDEE0] hover:shadow-md transition p-5">
-      <div class="text-xs uppercase tracking-wide text-[#D3423F] font-semibold mb-2">
-        3 мая
-      </div>
-      <h3 class="text-lg font-semibold mb-2">
-        Специальные экскурсии к празднику
-      </h3>
-      <p class="text-sm text-[#5B5D60]">
-        Подготовлена серия тематических программ для групп.
-      </p>
-    </a>
+        <div class="text-[#8D9399] text-[16px] leading-[160%]">
+          05.12.2025
+        </div>
 
-    <a href="#" class="block rounded-xl border border-[#DCDEE0] hover:shadow-md transition p-5">
-      <div class="text-xs uppercase tracking-wide text-[#D3423F] font-semibold mb-2">
-        25 апреля
-      </div>
-      <h3 class="text-lg font-semibold mb-2">
-        Новые образовательные программы
-      </h3>
-      <p class="text-sm text-[#5B5D60]">
-        Запущен цикл занятий для школьников и студентов.
-      </p>
-    </a>
+        <h3
+          class="text-[#24272A] text-[20px] font-semibold leading-[160%]">
+          2 и 3 декабря сотрудники музея представили обновлённую программу
+          инклюзивных мероприятий
+        </h3>
+      </article>
 
+      <!-- card -->
+      <article class="flex flex-col gap-4">
+        <div class="w-full h-[240px] bg-[#F0F1F2] overflow-hidden">
+          <img
+            src="/assets/img/news-2.jpg"
+            alt=""
+            class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+
+        <div class="text-[#8D9399] text-[16px] leading-[160%]">
+          02.12.2025
+        </div>
+
+        <h3
+          class="text-[#24272A] text-[20px] font-semibold leading-[160%]">
+          В Московской духовной академии пройдёт конференция по развитию
+          религиозных центров
+        </h3>
+      </article>
+
+      <!-- card -->
+      <article class="flex flex-col gap-4">
+        <div class="w-full h-[240px] bg-[#F0F1F2] overflow-hidden">
+          <img
+            src="/assets/img/news-3.jpg"
+            alt=""
+            class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+
+        <div class="text-[#8D9399] text-[16px] leading-[160%]">
+          11.11.2025
+        </div>
+
+        <h3
+          class="text-[#24272A] text-[20px] font-semibold leading-[160%]">
+          Объявлены лауреаты выставки-конкурса в трёх номинациях
+        </h3>
+      </article>
+
+    </div>
   </div>
 </section>

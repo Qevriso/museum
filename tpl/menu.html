@@ -1,56 +1,132 @@
-<nav class="w-full border-b border-[#E5E5E5] bg-white" x-data="{ open: null }">
-    <div class="max-w-[1600px] mx-auto px-6 flex items-center justify-center gap-10 h-[60px]">
+<nav class="w-full bg-white border-b border-[#DCDEE0]">
+    <div
+        class="max-w-[1600px] mx-auto px-[60px]"
+        x-data="{ open:null }"
+    >
+        <ul class="flex items-center gap-10 h-[64px] text-[#24272A] text-base font-medium">
 
-        <!-- ПУНКТЫ МЕНЮ -->
-        <template x-for="(item, i) in [
-            { name: 'Корпуса', submenu: ['Главный корпус', 'Ризница Троице-Сергиевской Лавры', 'Музейный комплекс «Конный двор»', 'Краеведческий корпус'] },
-            { name: 'Интерактивная карта' },
-            { name: 'Для групп' },
-            { name: 'Посетителям' },
-            { name: 'Мероприятия' },
-            { name: 'Выставки и экспозиции' },
-            { name: 'Экскурсии' },
-            { name: 'О музее' },
-            { name: 'Контакты' }
-        ]" :key="i">
-
-            <div class="relative">
-
-                <!-- КНОПКА -->
+            <!-- КОРПУСА -->
+            <li class="relative h-full flex items-center">
                 <button
-                    @mouseenter="open = item.submenu ? i : null"
-                    @mouseleave="if(!item.submenu) open = null"
-                    class="px-3 py-2 text-[15px] font-medium transition"
-                    :class="open === i ? 'text-[#C93635]' : 'text-[#2A2A2A]'"
+                    @mouseenter="open='corps'"
+                    @mouseleave="open=null"
+                    class="h-full flex items-center hover:text-[#C93635] transition"
                 >
-                    <span x-text="item.name"></span>
-
-                    <!-- красная линия -->
-                    <div 
-                        x-show="open === i" 
-                        class="absolute left-0 right-0 -bottom-[1px] h-[3px] bg-[#C93635]">
-                    </div>
+                    Корпуса
                 </button>
 
-                <!-- SUBMENU (DROP-DOWN) -->
-                <div 
-                    x-show="open === i && item.submenu"
-                    @mouseenter="open = i"
-                    @mouseleave="open = null"
+                <div
+                    x-show="open==='corps'"
                     x-transition
-                    class="absolute top-full left-0 w-[260px] bg-white shadow-xl border border-gray-100 rounded-md p-4 space-y-2 z-50"
+                    @mouseenter="open='corps'"
+                    @mouseleave="open=null"
+                    class="absolute top-full left-0 mt-px bg-white shadow-xl border border-[#E5E7EB] rounded-xl p-6 min-w-[320px] z-50"
                 >
-                    <template x-for="sub in item.submenu" :key="sub">
-                        <a 
-                            href="#"
-                            class="block text-[15px] text-[#1A1A1A] hover:text-[#C93635] transition"
-                            x-text="sub"
-                        ></a>
-                    </template>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-[#C93635] transition">Главный корпус</a></li>
+                        <li><a href="#" class="hover:text-[#C93635] transition">Ризница Троице-Сергиевской Лавры</a></li>
+                        <li><a href="#" class="hover:text-[#C93635] transition">Музейный комплекс «Конный двор»</a></li>
+                        <li><a href="#" class="hover:text-[#C93635] transition">Краеведческий корпус</a></li>
+                    </ul>
                 </div>
+            </li>
 
-            </div>
+            <!-- ИНТЕРАКТИВНАЯ КАРТА -->
+            <li class="h-full flex items-center">
+                <a href="#" class="hover:text-[#C93635] transition">
+                    Интерактивная карта
+                </a>
+            </li>
 
-        </template>
+            <!-- ДЛЯ ГРУПП -->
+            <li class="relative h-full flex items-center">
+                <button
+                    @mouseenter="open='groups'"
+                    @mouseleave="open=null"
+                    class="h-full flex items-center hover:text-[#C93635] transition"
+                >
+                    Для групп
+                </button>
+
+                <div
+                    x-show="open==='groups'"
+                    x-transition
+                    @mouseenter="open='groups'"
+                    @mouseleave="open=null"
+                    class="absolute top-full left-0 mt-px bg-white shadow-xl border border-[#E5E7EB] rounded-xl p-6 min-w-[300px] z-50"
+                >
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-[#C93635] transition">Турфирмам</a></li>
+                        <li><a href="#" class="hover:text-[#C93635] transition">Группам учащихся</a></li>
+                        <li><a href="#" class="hover:text-[#C93635] transition">Социальным группам</a></li>
+                        <li><a href="#" class="hover:text-[#C93635] transition">Людям с инвалидностью</a></li>
+                        <li><a href="#" class="hover:text-[#C93635] transition">Паломникам</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- ПОСЕТИТЕЛЯМ -->
+            <li class="relative h-full flex items-center">
+                <button
+                    @mouseenter="open='visitors'"
+                    @mouseleave="open=null"
+                    class="h-full flex items-center hover:text-[#C93635] transition"
+                >
+                    Посетителям
+                </button>
+
+                <div
+                    x-show="open==='visitors'"
+                    x-transition
+                    @mouseenter="open='visitors'"
+                    @mouseleave="open=null"
+                    class="absolute top-full left-0 mt-px bg-white shadow-xl border border-[#E5E7EB] rounded-xl p-6 min-w-[340px] z-50"
+                >
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-[#C93635] transition">Часто задаваемые вопросы</a></li>
+                        <li><a href="#" class="hover:text-[#C93635] transition">Билеты</a></li>
+                        <li><a href="#" class="hover:text-[#C93635] transition">Пушкинская карта</a></li>
+                        <li><a href="#" class="hover:text-[#C93635] transition">Рекомендованные маршруты</a></li>
+                        <li><a href="#" class="hover:text-[#C93635] transition">Правила посещения</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- МЕРОПРИЯТИЯ -->
+            <li class="h-full flex items-center">
+                <a href="#" class="hover:text-[#C93635] transition">
+                    Мероприятия
+                </a>
+            </li>
+
+            <!-- ВЫСТАВКИ -->
+            <li class="h-full flex items-center">
+                <a href="#" class="hover:text-[#C93635] transition">
+                    Выставки и экспозиции
+                </a>
+            </li>
+
+            <!-- ЭКСКУРСИИ -->
+            <li class="h-full flex items-center">
+                <a href="#" class="hover:text-[#C93635] transition">
+                    Экскурсии
+                </a>
+            </li>
+
+            <!-- О МУЗЕЕ -->
+            <li class="h-full flex items-center">
+                <a href="#" class="hover:text-[#C93635] transition">
+                    О музее
+                </a>
+            </li>
+
+            <!-- КОНТАКТЫ -->
+            <li class="h-full flex items-center">
+                <a href="#" class="hover:text-[#C93635] transition">
+                    Контакты
+                </a>
+            </li>
+
+        </ul>
     </div>
 </nav>

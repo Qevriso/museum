@@ -3,13 +3,18 @@
 
     <!-- HEADER -->
     <div class="flex items-start justify-between gap-6 mb-10 sm:mb-12">
-      <h2 class="font-[Racama] text-[40px] sm:text-[56px] lg:text-[72px] leading-[0.95] tracking-[-0.02em] text-[#24272A]">
+      <h2 class="font-[Racama] font-normal
+                 text-[40px] sm:text-[56px] lg:text-[72px]
+                 leading-[0.95] tracking-[-0.02em]
+                 text-[#24272A]">
         Экскурсии
       </h2>
 
       <a href="#"
-         class="hidden sm:inline-flex items-center gap-4 border border-[#24272A]
-                px-6 py-4 text-base font-semibold transition
+         class="hidden sm:inline-flex items-center gap-4
+                border border-[#24272A]
+                px-6 py-4 text-base font-semibold
+                transition
                 hover:bg-[#24272A] hover:text-white">
         Все экскурсии
         <img src="/assets/svg/arrow-right.svg" class="w-6 h-6" alt="">
@@ -19,34 +24,32 @@
     <!-- КОРПУСА -->
     <div class="mb-8 flex gap-4 overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible">
       <button class="min-w-[260px] flex items-center gap-4 px-5 py-4 bg-[#FBEAEA]">
-        <img src="/assets/img/corps-1.png" class="w-10 h-10 object-cover" alt="">
+        <img src="/assets/img/corps-1.png" class="w-10 h-10" alt="">
         <span class="font-semibold">Главный корпус</span>
       </button>
 
       <button class="min-w-[260px] flex items-center gap-4 px-5 py-4 bg-[#EEF0FF]">
-        <img src="/assets/img/corps-2.png" class="w-10 h-10 object-cover" alt="">
+        <img src="/assets/img/corps-2.png" class="w-10 h-10" alt="">
         <span class="font-semibold">Ризница Троице-Сергиевской Лавры</span>
       </button>
 
       <button class="min-w-[260px] flex items-center gap-4 px-5 py-4 bg-[#F7F2E9]">
-        <img src="/assets/img/corps-3.png" class="w-10 h-10 object-cover" alt="">
+        <img src="/assets/img/corps-3.png" class="w-10 h-10" alt="">
         <span class="font-semibold">Музейный комплекс «Конный двор»</span>
       </button>
 
       <button class="min-w-[260px] flex items-center gap-4 px-5 py-4 bg-[#E7EFEA]">
-        <img src="/assets/img/corps-4.png" class="w-10 h-10 object-cover" alt="">
+        <img src="/assets/img/corps-4.png" class="w-10 h-10" alt="">
         <span class="font-semibold">Краеведческий корпус</span>
       </button>
     </div>
 
-    <!-- ЧЕКБОКСЫ -->
+    <!-- ФИЛЬТРЫ -->
     <div class="mb-10 flex gap-4 overflow-x-auto sm:flex-wrap">
-
-      <!-- ПУШКИНСКАЯ КАРТА -->
       <label class="min-w-[240px] flex items-center gap-4 border border-[#DCDEE0] px-4 py-3 cursor-pointer">
         <input type="checkbox" class="w-5 h-5 accent-[#24272A]">
         <span class="flex items-center justify-center h-[36px] px-4 bg-[#24272A]">
-          <img src="/assets/img/pushkin-card1.png" alt="Пушкинская карта" class="h-5 w-auto">
+          <img src="/assets/img/pushkin-card1.png" class="h-5" alt="">
         </span>
       </label>
 
@@ -66,14 +69,20 @@
       </label>
     </div>
 
-    <!-- КАРТОЧКИ -->
-    <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-2
-                sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible">
+    <!-- КАРТОЧКИ (6 ШТУК) -->
+    <div
+      class="flex gap-6 overflow-x-auto pb-4
+             snap-x snap-mandatory
+             sm:grid sm:grid-cols-2 lg:grid-cols-3
+             sm:overflow-visible sm:snap-none">
 
       <!-- CARD 1 -->
-      <article class="min-w-[280px] sm:min-w-0 flex flex-col snap-start">
-        <img src="/assets/img/exc-1.jpg" class="w-full h-[220px] object-cover mb-4" alt="">
-        <div class="flex items-center justify-between mb-2">
+      <a href="#"
+         class="min-w-[280px] snap-start
+                sm:min-w-0
+                flex flex-col transition hover:-translate-y-1 hover:shadow-lg">
+        <img src="/assets/img/exc-1.jpg" class="h-[220px] object-cover mb-4" alt="">
+        <div class="flex justify-between mb-2">
           <span class="font-semibold">От 550 ₽ / чел</span>
           <span class="px-3 py-1 text-sm bg-[#FBEAEA] text-[#C92E32]">Главный корпус</span>
         </div>
@@ -83,73 +92,75 @@
         <p class="text-sm text-[#6B7280]">
           Тематическая экскурсия, знакомящая с земной жизнью великого Святого.
         </p>
-      </article>
+      </a>
 
       <!-- CARD 2 -->
-      <article class="min-w-[280px] sm:min-w-0 flex flex-col snap-start">
-        <img src="/assets/img/exc-2.jpg" class="w-full h-[220px] object-cover mb-4" alt="">
-        <div class="flex items-center justify-between mb-2">
-          <span class="font-semibold">От 550 ₽ / чел</span>
-          <span class="px-3 py-1 text-sm bg-[#F7F2E9] text-[#A38641]">Конный двор</span>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">
-          Экскурсия по выставке «Любовью и единением спасёмся»
-        </h3>
-        <p class="text-sm text-[#6B7280]">Тематическая экскурсия музея.</p>
-      </article>
-
-      <!-- CARD 3 -->
-      <article class="min-w-[280px] sm:min-w-0 flex flex-col snap-start">
-        <img src="/assets/img/exc-3.jpg" class="w-full h-[220px] object-cover mb-4" alt="">
-        <div class="flex items-center justify-between mb-2">
+      <a href="#"
+         class="min-w-[280px] snap-start sm:min-w-0 flex flex-col transition hover:-translate-y-1 hover:shadow-lg">
+        <img src="/assets/img/exc-2.jpg" class="h-[220px] object-cover mb-4" alt="">
+        <div class="flex justify-between mb-2">
           <span class="font-semibold">От 550 ₽ / чел</span>
           <span class="px-3 py-1 text-sm bg-[#EEF0FF] text-[#7474C2]">Ризница</span>
         </div>
-        <h3 class="font-semibold text-lg mb-2">
-          Экскурсия по выставке «Любовью и единением спасёмся»
-        </h3>
+        <h3 class="font-semibold text-lg mb-2">Экскурсия по ризнице</h3>
         <p class="text-sm text-[#6B7280]">Тематическая экскурсия музея.</p>
-      </article>
+      </a>
 
-      <!-- CARD 4 -->
-      <article class="min-w-[280px] sm:min-w-0 flex flex-col snap-start">
-        <img src="/assets/img/exc-4.jpg" class="w-full h-[220px] object-cover mb-4" alt="">
-        <div class="flex items-center justify-between mb-2">
-          <span class="font-semibold">От 550 ₽ / чел</span>
-          <span class="px-3 py-1 text-sm bg-[#FBEAEA] text-[#C92E32]">Главный корпус</span>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Экскурсия по выставке</h3>
-        <p class="text-sm text-[#6B7280]">Описание экскурсии.</p>
-      </article>
-
-      <!-- CARD 5 -->
-      <article class="min-w-[280px] sm:min-w-0 flex flex-col snap-start">
-        <img src="/assets/img/exc-5.jpg" class="w-full h-[220px] object-cover mb-4" alt="">
-        <div class="flex items-center justify-between mb-2">
-          <span class="font-semibold">От 550 ₽ / чел</span>
-          <span class="px-3 py-1 text-sm bg-[#FBEAEA] text-[#C92E32]">Главный корпус</span>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Экскурсия по выставке</h3>
-        <p class="text-sm text-[#6B7280]">Описание экскурсии.</p>
-      </article>
-
-      <!-- CARD 6 -->
-      <article class="min-w-[280px] sm:min-w-0 flex flex-col snap-start">
-        <img src="/assets/img/exc-6.jpg" class="w-full h-[220px] object-cover mb-4" alt="">
-        <div class="flex items-center justify-between mb-2">
+      <!-- CARD 3 -->
+      <a href="#"
+         class="min-w-[280px] snap-start sm:min-w-0 flex flex-col transition hover:-translate-y-1 hover:shadow-lg">
+        <img src="/assets/img/exc-3.jpg" class="h-[220px] object-cover mb-4" alt="">
+        <div class="flex justify-between mb-2">
           <span class="font-semibold">От 550 ₽ / чел</span>
           <span class="px-3 py-1 text-sm bg-[#F7F2E9] text-[#A38641]">Конный двор</span>
         </div>
-        <h3 class="font-semibold text-lg mb-2">Экскурсия по выставке</h3>
-        <p class="text-sm text-[#6B7280]">Описание экскурсии.</p>
-      </article>
+        <h3 class="font-semibold text-lg mb-2">Экскурсия по конному двору</h3>
+        <p class="text-sm text-[#6B7280]">Тематическая экскурсия музея.</p>
+      </a>
+
+      <!-- CARD 4 -->
+      <a href="#"
+         class="min-w-[280px] snap-start sm:min-w-0 flex flex-col transition hover:-translate-y-1 hover:shadow-lg">
+        <img src="/assets/img/exc-4.jpg" class="h-[220px] object-cover mb-4" alt="">
+        <div class="flex justify-between mb-2">
+          <span class="font-semibold">От 550 ₽ / чел</span>
+          <span class="px-3 py-1 text-sm bg-[#E7EFEA] text-[#3A6B4C]">Краеведческий</span>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Краеведческая экскурсия</h3>
+        <p class="text-sm text-[#6B7280]">История Сергиева Посада.</p>
+      </a>
+
+      <!-- CARD 5 -->
+      <a href="#"
+         class="min-w-[280px] snap-start sm:min-w-0 flex flex-col transition hover:-translate-y-1 hover:shadow-lg">
+        <img src="/assets/img/exc-5.jpg" class="h-[220px] object-cover mb-4" alt="">
+        <div class="flex justify-between mb-2">
+          <span class="font-semibold">От 550 ₽ / чел</span>
+          <span class="px-3 py-1 text-sm bg-[#FBEAEA] text-[#C92E32]">Главный корпус</span>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Обзорная экскурсия</h3>
+        <p class="text-sm text-[#6B7280]">Основные экспозиции музея.</p>
+      </a>
+
+      <!-- CARD 6 -->
+      <a href="#"
+         class="min-w-[280px] snap-start sm:min-w-0 flex flex-col transition hover:-translate-y-1 hover:shadow-lg">
+        <img src="/assets/img/exc-6.jpg" class="h-[220px] object-cover mb-4" alt="">
+        <div class="flex justify-between mb-2">
+          <span class="font-semibold">От 550 ₽ / чел</span>
+          <span class="px-3 py-1 text-sm bg-[#EEF0FF] text-[#7474C2]">Ризница</span>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Историческая экскурсия</h3>
+        <p class="text-sm text-[#6B7280]">Экспозиция древних реликвий.</p>
+      </a>
 
     </div>
 
     <!-- MOBILE BUTTON -->
     <div class="mt-10 sm:hidden">
       <a href="#"
-         class="flex items-center justify-center gap-4 border border-[#24272A]
+         class="flex items-center justify-center gap-4
+                border border-[#24272A]
                 px-6 py-4 text-base font-semibold">
         Все экскурсии
         <img src="/assets/svg/arrow-right.svg" class="w-6 h-6" alt="">

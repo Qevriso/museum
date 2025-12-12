@@ -1,42 +1,52 @@
-<section class="relative w-full bg-[#A38641] overflow-hidden">
-    <!-- SVG фон -->
-    <div class="absolute inset-0 pointer-events-none opacity-20">
-        <include src="/assets/svg/pattern-feedback.svg"></include>
-    </div>
+<section class="relative w-full bg-[#A38641] min-h-[200px] overflow-hidden">
 
-    <!-- Контент -->
-    <div
-        class="relative max-w-[1600px] mx-auto
-               px-6 lg:px-[60px]
-               py-12 lg:py-[72px]
-               flex flex-col lg:flex-row
-               items-start lg:items-center
-               justify-between
-               gap-10">
+  <!-- ПАТТЕРН / ВОДЯНОЙ ЗНАК -->
+  <div class="absolute inset-0 pointer-events-none opacity-20 z-0">
+    <img
+      src="/assets/img/send-vector1.png"
+      alt=""
+      class="w-full h-full object-cover"
+    >
+  </div>
 
-        <!-- Заголовок -->
-        <h2
-            class="text-white
-                   text-[40px] sm:text-[48px] lg:text-[56px]
-                   leading-[1.05]
-                   font-medium
-                   max-w-[640px]">
-            Расскажите,<br>
-            как музей может<br>
-            стать лучше?
-        </h2>
+  <!-- КОНТЕНТ -->
+  <div
+    class="relative z-10
+           max-w-[1600px] mx-auto
+           px-6 lg:px-[60px]
+           py-12 lg:py-[72px]
+           flex flex-col lg:flex-row
+           items-start lg:items-center
+           justify-between
+           gap-10"
+  >
 
-        <!-- Кнопка -->
-        <a href="#"
-           class="shrink-0
-                  bg-white text-[#A38641]
-                  px-10 py-4
-                  text-base font-semibold
-                  border border-white
-                  hover:bg-transparent hover:text-white
-                  transition">
-            Оставить отзыв
-        </a>
+    <!-- ТЕКСТ -->
+    <h2
+      class="text-white font-[Racama] font-normal
+             text-[40px] sm:text-[48px] lg:text-[56px]
+             leading-[1.05]
+             max-w-[640px]"
+    >
+      Расскажите,<br>
+      как музей может<br>
+      стать лучше?
+    </h2>
 
-    </div>
+    <!-- КНОПКА -->
+    <a
+      href="#"
+      class="shrink-0
+             bg-white text-[#A38641]
+             px-[32px] py-[16px]
+             min-w-[355px]
+             text-[16px] font-semibold
+             border border-white
+             hover:bg-transparent hover:text-white
+             transition"
+    >
+      Оставить отзыв
+    </a>
+
+  </div>
 </section>

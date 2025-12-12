@@ -1,45 +1,62 @@
 <section class="w-full">
   <div class="relative overflow-hidden bg-[#62A37D] text-white">
-    <!-- контейнер -->
-    <div class="px-4 sm:px-6 lg:px-[60px] py-10 sm:py-12 lg:py-[60px]">
-      <div class="relative flex items-center justify-between gap-6">
-        <!-- ЛЕВО: заголовок -->
-        <div class="relative z-10">
-          <h2 class="font-[Racama] text-[56px] sm:text-[72px] lg:text-[96px] leading-[0.9] tracking-[-0.02em]">
-            Купить<br />
-            билет
-          </h2>
-        </div>
 
-        <!-- ПРАВО: кнопка -->
-        <div class="relative z-10 flex items-center justify-end">
-          <a
-            href="#"
-            class="inline-flex items-center justify-center gap-4 bg-white text-[#62A37D]
-                   px-6 sm:px-10 lg:px-12 py-4 sm:py-5
-                   w-[260px] sm:w-[340px] lg:w-[520px]
-                   text-base sm:text-lg font-semibold leading-[160%]
-                   border border-white/0
-                   transition
-                   hover:bg-transparent hover:text-white hover:border-white"
-          >
-            Купить билет
-            <span class="w-6 h-6 flex items-center justify-center">
-              <include src="/assets/svg/ticket.svg"></include>
-            </span>
-          </a>
-        </div>
+    <!-- ПАТТЕРН -->
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 flex items-center justify-center"
+    >
+      <img
+        src="/assets/img/museum-mark.png"
+        alt=""
+        class="w-[220px] h-[220px]
+               sm:w-[250px] sm:h-[250px]
+               lg:w-[300px] lg:h-[300px]
+               opacity-[0.45]"
+      >
+    </div>
 
-        <!-- ВОДЯНОЙ ЗНАК (как в макете, по центру) -->
-        <div
-          aria-hidden="true"
-          class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-                 w-[520px] h-[520px] sm:w-[620px] sm:h-[620px] lg:w-[820px] lg:h-[820px]
-                 opacity-20"
+    <!-- КОНТЕНТ -->
+    <div class="relative z-10
+                px-4 sm:px-6 lg:px-[60px]
+                py-8 sm:py-12 lg:py-[60px]">
+
+      <!-- MOBILE: колонка / DESKTOP: строка -->
+      <div class="flex flex-col sm:flex-row
+                  sm:items-center sm:justify-between
+                  gap-6 sm:gap-8">
+
+        <!-- ЗАГОЛОВОК -->
+        <h2 class="font-[Racama] font-normal
+                   text-[42px] sm:text-[72px] lg:text-[96px]
+                   leading-[0.95]
+                   tracking-[-0.02em]">
+          Купить<br>билет
+        </h2>
+
+        <!-- КНОПКА -->
+        <a
+          href="#"
+          class="group inline-flex items-center justify-center gap-4
+                 bg-white text-[#62A37D]
+                 px-6 sm:px-10 lg:px-12
+                 py-4 sm:py-5
+                 w-full sm:w-[240px] lg:w-[360px]
+                 text-base sm:text-lg font-semibold leading-[160%]
+                 border border-white
+                 transition-all
+                 sm:hover:bg-transparent sm:hover:text-white"
         >
-          <!-- если у тебя есть большой SVG-узор музея — подключи его сюда -->
-          <include src="/assets/svg/museum-mark.svg"></include>
-        </div>
+          Купить билет
+
+          <img
+            src="/assets/svg/ticket.svg"
+            alt=""
+            class="w-6 h-6 transition
+                   sm:group-hover:brightness-0 sm:group-hover:invert"
+          >
+        </a>
+
       </div>
     </div>
   </div>

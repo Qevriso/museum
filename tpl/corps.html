@@ -1,33 +1,64 @@
-<section class="w-full px-4 lg:px-16 py-12 lg:py-16">
-  <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold mb-8 lg:mb-10 text-[#24272A]">
-    Корпуса музея
-  </h2>
+<section class="w-full px-4 sm:px-8 lg:px-[60px] py-16">
 
-  <div class="grid md:grid-cols-3 gap-6 lg:gap-10">
+    <!-- Заголовок блока -->
+    <div class="flex items-end justify-between mb-10">
+        <h2 class="text-[40px] lg:text-[56px] font-bold leading-[95%] tracking-[-0.02em]">
+            Коллекции музея
+        </h2>
 
-    <a href="#" class="group block">
-      <div class="w-full h-[200px] sm:h-[230px] lg:h-[260px] bg-gray-200 overflow-hidden rounded-xl mb-4">
-        <img src="../assets/img/corpus-1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition" alt="">
-      </div>
-      <h3 class="text-lg lg:text-xl font-semibold mb-1.5">Троицкий корпус</h3>
-      <p class="text-sm text-[#5B5D60]">Историческое ядро коллекции музея.</p>
-    </a>
+        <a href="#"
+           class="hidden sm:flex items-center gap-3 border border-[#24272A] px-8 py-4 text-base font-semibold leading-[160%] hover:bg-[#24272A] hover:text-white transition">
+            Подробнее →
+        </a>
+    </div>
 
-    <a href="#" class="group block">
-      <div class="w-full h-[200px] sm:h-[230px] lg:h-[260px] bg-gray-200 overflow-hidden rounded-xl mb-4">
-        <img src="../assets/img/corpus-2.jpg" class="w-full h-full object-cover group-hover:scale-105 transition" alt="">
-      </div>
-      <h3 class="text-lg lg:text-xl font-semibold mb-1.5">Красногорский корпус</h3>
-      <p class="text-sm text-[#5B5D60]">Выставочные пространства временных экспозиций.</p>
-    </a>
+    <!-- Сетка изображений -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-    <a href="#" class="group block">
-      <div class="w-full h-[200px] sm:h-[230px] lg:h-[260px] bg-gray-200 overflow-hidden rounded-xl mb-4">
-        <img src="../assets/img/corpus-3.jpg" class="w-full h-full object-cover group-hover:scale-105 transition" alt="">
-      </div>
-      <h3 class="text-lg lg:text-xl font-semibold mb-1.5">Конный двор</h3>
-      <p class="text-sm text-[#5B5D60]">Атмосферное пространство с уникальной архитектурой.</p>
-    </a>
+        <!-- Карточка 1 -->
+        <article class="group overflow-hidden rounded-t-[240px] bg-[#F0F1F2]">
+            <img
+                src="/assets/img/collection-1.png"
+                alt="Экспонаты музея"
+                class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
+            />
+        </article>
 
-  </div>
+        <!-- Карточка 2 -->
+        <article class="group overflow-hidden rounded-t-[240px] bg-[#F0F1F2]">
+            <img
+                src="/assets/img/collection-2.png"
+                alt="Резьба по дереву"
+                class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
+            />
+        </article>
+
+        <!-- Карточка 3 -->
+        <article class="group overflow-hidden rounded-t-[240px] bg-[#F0F1F2]">
+            <img
+                src="/assets/img/collection-3.png"
+                alt="Декоративное искусство"
+                class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
+            />
+        </article>
+
+        <!-- Карточка 4 -->
+        <article class="group overflow-hidden rounded-t-[240px] bg-[#F0F1F2]">
+            <img
+                src="/assets/img/collection-4.png"
+                alt="Живопись"
+                class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
+            />
+        </article>
+
+    </div>
+
+    <!-- Кнопка для мобилки -->
+    <div class="mt-10 sm:hidden">
+        <a href="#"
+           class="flex w-full justify-center items-center gap-3 border border-[#24272A] px-8 py-4 text-base font-semibold leading-[160%]">
+            Подробнее →
+        </a>
+    </div>
+
 </section>

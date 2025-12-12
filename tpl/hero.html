@@ -1,90 +1,110 @@
-<section 
-    x-data="heroSlider()" 
-    class="relative w-full overflow-hidden bg-[#C93635] text-white">
+<section
+    x-data="{
+        current: 0,
+        slides: [1, 2],
+        next() {
+            this.current = (this.current + 1) % this.slides.length
+        },
+        prev() {
+            this.current = (this.current - 1 + this.slides.length) % this.slides.length
+        }
+    }"
+    class="relative w-full h-screen overflow-hidden bg-[#C92E32] text-white">
 
-    <div class="relative w-full h-full">
+    <!-- SLIDES -->
+    <template x-for="(slide, index) in slides" :key="index">
+        <div
+            x-show="current === index"
+            x-transition.opacity.duration.500ms
+            class="absolute inset-0">
 
-        <template x-for="(slide, index) in slides" :key="index">
-            <div 
-                x-show="current === index"
-                x-transition.opacity.duration.600ms
-                class="px-4 lg:px-16 py-4 lg:py-6 grid lg:grid-cols-2 gap-6 lg:gap-10 items-center
-                       min-h-56 lg:min-h-64"
-            >
+            <div class="relative h-full max-w-[1600px] mx-auto px-[60px] flex items-center">
 
-                <!-- ЛЕВАЯ ЧАСТЬ -->
-                <div class="relative z-20">
-                    <div class="text-lg mb-2 opacity-80" x-text="slide.date"></div>
+                <!-- LEFT -->
+                <div class="w-1/2 z-10">
+                    <!-- DATE -->
+                    <div class="flex items-center gap-3 text-lg mb-6 opacity-90">
+                        <span>20 мая</span>
+                        <span class="block w-14 h-[2px] bg-white"></span>
+                        <span>26 июня</span>
+                    </div>
 
-                    <h1 class="text-4xl sm:text-6xl lg:text-[70px] font-bold leading-[0.95] mb-5">
-                        <span x-text="slide.titleLine1"></span><br>
-                        <span x-text="slide.titleLine2"></span>
+                    <!-- TITLE -->
+                    <h1 class="font-[Racama] leading-[0.95] mb-6">
+                        <span class="block text-[96px]">Русская</span>
+                        <span class="block text-[96px]">
+                            матрёшка <span class="opacity-40">— <span x-text="slide"></span></span>
+                        </span>
                     </h1>
 
-                    <p class="text-lg opacity-90 mb-6" x-text="slide.subtitle"></p>
+                    <p class="text-lg mb-10 opacity-90">
+                        Музейный комплекс «Конный двор»
+                    </p>
 
-                    <div class="flex flex-wrap items-center gap-4">
-                        <button class="px-6 py-3 border border-white rounded-lg text-base font-semibold hover:bg-white hover:text-[#C93635] transition flex items-center gap-2">
-                            Купить билет 
-                            <img src="assets/svg/ticket.svg" class="w-4 h-4" alt="">
+                    <!-- BUTTONS -->
+                    <div class="flex gap-4">
+                        <button
+                            class="flex items-center gap-3 px-8 py-4 bg-white text-[#C92E32] font-semibold rounded-lg hover:bg-opacity-90 transition">
+                            Купить билет
+                            <include src="/assets/svg/ticket.svg"/>
                         </button>
 
-                        <button class="px-6 py-3 border border-white rounded-lg text-base font-semibold hover:bg-white hover:text-[#C93635] transition flex items-center gap-2">
+                        <button
+                            class="flex items-center gap-3 px-8 py-4 border border-white rounded-lg font-semibold hover:bg-white hover:text-[#C92E32] transition">
                             Постоянная выставка
-                            <span class="text-xl leading-3">→</span>
+                            <span class="text-xl">→</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- ПРАВАЯ ЧАСТЬ — МАТРЁШКА -->
-                <div class="relative flex justify-center lg:justify-end items-end">
+                <!-- RIGHT -->
+                <div class="absolute right-0 bottom-0 w-1/2 h-full pointer-events-none">
 
-                    <!-- КРУГ -->
+                    <!-- CIRCLE -->
                     <div
                         class="absolute rounded-full bg-[#D95B58] opacity-40
-                               w-[520px] h-[520px] lg:w-[700px] lg:h-[700px]
-                               bottom-[-160px] right-[-100px]">
+                               w-[720px] h-[720px]
+                               right-[-220px] bottom-[-220px]">
                     </div>
 
-                    <!-- МАТРЁШКА -->
-                    <img 
-                        :src="slide.img"
+                    <!-- MATRESHKA -->
+                    <img
+                        src="/assets/img/matreshka.png"
                         alt="Матрешка"
-                        class="relative z-10
-                               max-h-[480px] sm:max-h-[520px] lg:max-h-[620px]
+                        class="absolute
+                               right-[-60px]
+                               bottom-[-80px]
+                               h-[115%]
                                object-contain
-                               -translate-x-16   /* левее */
-                               translate-y-28    /* ниже */
-                        "
-                    >
+                               select-none"
+                    />
                 </div>
-
             </div>
-        </template>
+        </div>
+    </template>
 
-    </div>
+    <!-- CONTROLS -->
+    <div class="absolute bottom-10 left-[60px] flex items-center gap-4 z-20">
 
-    <!-- СТРЕЛКИ + ТОЧКИ -->
-    <div class="absolute bottom-6 flex items-center gap-4 left-4 lg:left-16 z-50">
-        <button 
-            class="w-10 h-10 flex items-center justify-center border border-white rounded hover:bg-white hover:text-[#C93635] transition"
-            @click="prev()">
+        <button
+            @click="prev()"
+            class="w-10 h-10 flex items-center justify-center border border-white rounded hover:bg-white hover:text-[#C92E32] transition">
             ←
         </button>
 
-        <div class="flex items-center gap-2">
-            <template x-for="(slide, index) in slides">
-                <div 
-                    class="w-3 h-3 rounded-full border border-white cursor-pointer transition"
-                    :class="current === index ? 'bg-white' : 'bg-transparent'"
-                    @click="current = index">
+        <div class="flex gap-2">
+            <template x-for="(slide, i) in slides" :key="i">
+                <div
+                    class="w-3 h-3 border border-white cursor-pointer transition"
+                    :class="current === i ? 'bg-white' : 'bg-transparent'"
+                    @click="current = i">
                 </div>
             </template>
         </div>
 
-        <button 
-            class="w-10 h-10 flex items-center justify-center border border-white rounded hover:bg-white hover:text-[#C93635] transition"
-            @click="next()">
+        <button
+            @click="next()"
+            class="w-10 h-10 flex items-center justify-center border border-white rounded hover:bg-white hover:text-[#C92E32] transition">
             →
         </button>
     </div>

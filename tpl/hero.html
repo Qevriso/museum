@@ -7,29 +7,33 @@
     }"
     class="relative bg-[#C93635] overflow-hidden"
 >
-
     <!-- CONTENT -->
     <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px] pt-10 lg:pt-20 pb-16 relative z-10">
 
         <div class="grid lg:grid-cols-2 gap-10 items-center">
 
             <!-- LEFT -->
-            <div class="text-white">
+            <div class="text-white font-[Racama]">
 
                 <!-- DATE -->
-                <div class="flex items-center gap-4 text-sm mb-6">
+                <div class="flex items-center gap-4 text-sm font-normal opacity-90 mb-6">
                     <span>20 мая</span>
-                    <span class="w-10 h-px bg-white opacity-70"></span>
+                    <span class="w-10 h-px bg-white/70"></span>
                     <span>26 июня</span>
                 </div>
 
                 <!-- TITLE -->
-                <h1 class="font-serif text-[36px] leading-tight lg:text-[64px] lg:leading-[1.1] mb-4">
+                <h1
+                    class="font-semibold
+                           text-[36px] leading-[1.15]
+                           lg:text-[64px] lg:leading-[1.1]
+                           mb-4"
+                >
                     Русская<br class="lg:hidden"> матрёшка
                 </h1>
 
                 <!-- SUB -->
-                <p class="text-sm lg:text-base opacity-90 mb-8">
+                <p class="text-sm lg:text-base font-normal opacity-90 mb-8">
                     Музейный комплекс «Конный двор»
                 </p>
 
@@ -39,19 +43,27 @@
                     <!-- BUY -->
                     <a
                         href="#"
-                        class="group inline-flex items-center justify-center gap-3 h-[52px] px-6 bg-white text-[#24272A] rounded-lg font-semibold border border-white transition hover:bg-transparent hover:text-white"
+                        class="group inline-flex items-center justify-center gap-3 h-[52px] px-6
+                               bg-white text-[#24272A] font-semibold
+                               border border-white
+                               transition-colors
+                               hover:bg-transparent hover:text-white cursor-pointer"
                     >
                         Купить билет
                         <img
                             src="/assets/svg/ticket.svg"
                             class="w-5 h-5 transition group-hover:invert"
+                            alt=""
                         >
                     </a>
 
                     <!-- INFO -->
                     <a
                         href="#"
-                        class="inline-flex items-center justify-center gap-3 h-[52px] px-6 border border-white rounded-lg font-semibold text-white hover:bg-white/10 transition"
+                        class="inline-flex items-center justify-center gap-3 h-[52px] px-6
+                               border border-white font-semibold text-white
+                               transition-colors
+                               hover:bg-white/10 cursor-pointer"
                     >
                         Постоянная выставка
                         <span>→</span>
@@ -59,11 +71,14 @@
                 </div>
 
                 <!-- SLIDER CONTROLS -->
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 text-white">
 
                     <button
                         @click="prev"
-                        class="w-10 h-10 border border-white/70 rounded-lg flex items-center justify-center hover:bg-white/10 transition"
+                        class="w-10 h-10 border border-white/70 flex items-center justify-center
+                               hover:bg-white/10 transition-colors cursor-pointer"
+                        type="button"
+                        aria-label="Предыдущий слайд"
                     >
                         ←
                     </button>
@@ -72,7 +87,7 @@
                     <div class="flex gap-2">
                         <template x-for="i in slides">
                             <span
-                                class="w-6 h-1 rounded transition"
+                                class="w-6 h-1 transition-colors"
                                 :class="slide === i-1 ? 'bg-white' : 'bg-white/40'"
                             ></span>
                         </template>
@@ -80,7 +95,10 @@
 
                     <button
                         @click="next"
-                        class="w-10 h-10 border border-white/70 rounded-lg flex items-center justify-center hover:bg-white/10 transition"
+                        class="w-10 h-10 border border-white/70 flex items-center justify-center
+                               hover:bg-white/10 transition-colors cursor-pointer"
+                        type="button"
+                        aria-label="Следующий слайд"
                     >
                         →
                     </button>
@@ -91,9 +109,11 @@
             <!-- RIGHT IMAGE -->
             <div class="relative flex justify-center lg:justify-end">
 
-                <!-- OVAL -->
+                <!-- OVAL (декоративный, оставляем rounded-full) -->
                 <div
-                    class="absolute right-0 top-1/2 -translate-y-1/2 w-[260px] h-[260px] lg:w-[420px] lg:h-[420px] rounded-full bg-white/15"
+                    class="absolute right-0 top-1/2 -translate-y-1/2
+                           w-[260px] h-[260px] lg:w-[420px] lg:h-[420px]
+                           rounded-full bg-white/15"
                 ></div>
 
                 <!-- MATRYOSHKA -->

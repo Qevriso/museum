@@ -1,23 +1,41 @@
 <section class="w-full bg-white">
   <div
-    class="max-w-[1600px] mx-auto px-[60px] py-[80px]
-           grid grid-cols-2 gap-[80px]
-           lg:grid-cols-2 grid-cols-1 items-center">
+    class="max-w-[1600px] mx-auto
+           px-4 sm:px-8 lg:px-[60px]
+           py-12 sm:py-16 lg:py-[80px]
+           grid grid-cols-1 lg:grid-cols-2
+           gap-10 lg:gap-[80px]
+           items-center"
+  >
 
-    <!-- левая колонка -->
-    <div class="flex flex-col gap-8 max-w-[520px]">
+    <!-- ИЗОБРАЖЕНИЕ (на мобиле сверху) -->
+    <div class="order-1 lg:order-2 w-full">
+      <img
+        src="/assets/img/pushkin-card.png"
+        alt="Пушкинская карта"
+        class="w-full h-auto object-cover"
+      >
+    </div>
+
+    <!-- ТЕКСТ -->
+    <div class="order-2 lg:order-1 flex flex-col gap-6 max-w-[520px]">
+
       <h2
-        class="font-[Racama] text-[72px] leading-[95%] tracking-[-0.02em] text-[#24272A]">
+        class="font-[Racama]
+               text-[40px] sm:text-[56px] lg:text-[72px]
+               leading-[95%] tracking-[-0.02em]
+               text-[#24272A]"
+      >
         Пушкинская<br>карта
       </h2>
 
-      <p class="text-[#24272A] text-[16px] leading-[160%]">
+      <p class="text-[#24272A] text-[15px] sm:text-[16px] leading-[160%]">
         С 1 сентября 2021 года в России стартовал масштабный проект —
         Пушкинская карта. Благодаря ему молодые люди в возрасте от 14 до 22 лет
         могут за счёт государства посещать культурные мероприятия по всей стране.
       </p>
 
-      <p class="text-[#24272A] text-[16px] leading-[160%] font-semibold">
+      <p class="text-[#24272A] text-[15px] sm:text-[16px] leading-[160%] font-semibold">
         С 1 января 2025 года государство перечислило на Пушкинскую карту
         5000 рублей.
       </p>
@@ -29,17 +47,13 @@
                px-8 py-5
                text-[#24272A] text-[16px] font-semibold
                hover:bg-[#24272A] hover:text-white
-               transition w-fit">
-        Подробнее →
+               transition
+               w-full sm:w-fit"
+      >
+        Подробнее
+        <span class="text-lg">→</span>
       </a>
-    </div>
 
-    <!-- правая колонка -->
-    <div class="w-full">
-      <img
-        src="/assets/img/pushkin-card.png"
-        alt="Пушкинская карта"
-        class="w-full h-auto object-cover">
     </div>
 
   </div>

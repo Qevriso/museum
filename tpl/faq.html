@@ -1,126 +1,172 @@
 <section class="w-full bg-white">
-  <div class="max-w-[1600px] mx-auto px-[60px] py-[80px]">
+  <div
+    class="max-w-[1600px] mx-auto
+           px-4 sm:px-8 lg:px-[60px]
+           py-12 sm:py-16 lg:py-[80px]"
+  >
 
-    <!-- заголовок -->
+    <!-- ЗАГОЛОВОК -->
     <h2
-      class="font-[Racama] text-[72px] leading-[95%] tracking-[-0.02em]
-             text-[#24272A] mb-[60px]">
-      Часто задаваемые вопросы
+      class="font-[Racama]
+             text-[32px] sm:text-[48px] lg:text-[72px]
+             leading-[1.05] tracking-[-0.02em]
+             text-[#24272A]
+             mb-8 sm:mb-12 lg:mb-[60px]"
+    >
+      Часто<br class="sm:hidden"> задаваемые вопросы
     </h2>
 
-    <!-- список -->
-    <div class="max-w-[850px] mx-auto flex flex-col gap-4"
-         x-data="{open: null}">
+    <!-- СПИСОК -->
+    <div
+      class="max-w-[850px] mx-auto flex flex-col divide-y divide-[#DCDEE0]"
+      x-data="{ open: null }"
+    >
 
-      <!-- item -->
-      <div class="border-b border-[#DCDEE0]">
+      <!-- ITEM -->
+      <div>
         <button
           @click="open === 1 ? open = null : open = 1"
-          class="w-full flex justify-between items-start gap-6
-                 py-6 text-left">
-
-          <span class="text-[28px] leading-[130%] tracking-[-0.02em]
-                       font-semibold text-[#24272A]">
+          class="w-full flex items-start justify-between gap-4
+                 py-5 sm:py-6 text-left"
+        >
+          <span
+            class="font-semibold
+                   text-[18px] sm:text-[22px] lg:text-[28px]
+                   leading-[130%] tracking-[-0.02em]
+                   text-[#24272A]"
+          >
             Как работает музей?
           </span>
 
           <span
-            class="transition-transform duration-300"
-            :class="open === 1 ? 'rotate-45' : ''">
-            +
+            class="shrink-0 mt-1 transition-transform duration-300"
+            :class="open === 1 ? 'rotate-180' : ''"
+          >
+            <img
+              src="/assets/svg/arrow-down.svg"
+              alt=""
+              class="w-5 h-5 sm:w-6 sm:h-6"
+            >
           </span>
         </button>
 
         <div
           x-show="open === 1"
           x-collapse
-          class="pb-6 text-[16px] leading-[160%] text-[#24272A]">
+          class="pb-5 sm:pb-6
+                 text-[14px] sm:text-[15px] lg:text-[16px]
+                 leading-[160%] text-[#24272A]"
+        >
           Музей работает в соответствии с утверждённым расписанием.
           Актуальные часы работы, режим посещения и условия входа
           публикуются на официальном сайте.
         </div>
       </div>
 
-      <!-- item -->
-      <div class="border-b border-[#DCDEE0]">
+      <!-- ITEM -->
+      <div>
         <button
           @click="open === 2 ? open = null : open = 2"
-          class="w-full flex justify-between items-start gap-6
-                 py-6 text-left">
-
-          <span class="text-[28px] leading-[130%] tracking-[-0.02em]
-                       font-semibold text-[#24272A]">
+          class="w-full flex items-start justify-between gap-4
+                 py-5 sm:py-6 text-left"
+        >
+          <span
+            class="font-semibold
+                   text-[18px] sm:text-[22px] lg:text-[28px]
+                   leading-[130%] tracking-[-0.02em]
+                   text-[#24272A]"
+          >
             Правила посещения музея
           </span>
 
           <span
-            class="transition-transform duration-300"
-            :class="open === 2 ? 'rotate-45' : ''">
-            +
+            class="shrink-0 mt-1 transition-transform duration-300"
+            :class="open === 2 ? 'rotate-180' : ''"
+          >
+            <img src="/assets/svg/arrow-down.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="">
           </span>
         </button>
 
         <div
           x-show="open === 2"
           x-collapse
-          class="pb-6 text-[16px] leading-[160%] text-[#24272A]">
+          class="pb-5 sm:pb-6
+                 text-[14px] sm:text-[15px] lg:text-[16px]
+                 leading-[160%] text-[#24272A]"
+        >
           Посетители обязаны соблюдать правила поведения в музейных
           пространствах. Фото- и видеосъёмка возможна только
           в разрешённых зонах.
         </div>
       </div>
 
-      <!-- item -->
-      <div class="border-b border-[#DCDEE0]">
+      <!-- ITEM -->
+      <div>
         <button
           @click="open === 3 ? open = null : open = 3"
-          class="w-full flex justify-between items-start gap-6
-                 py-6 text-left">
-
-          <span class="text-[28px] leading-[130%] tracking-[-0.02em]
-                       font-semibold text-[#24272A]">
+          class="w-full flex items-start justify-between gap-4
+                 py-5 sm:py-6 text-left"
+        >
+          <span
+            class="font-semibold
+                   text-[18px] sm:text-[22px] lg:text-[28px]
+                   leading-[130%] tracking-[-0.02em]
+                   text-[#24272A]"
+          >
             Как приобрести билеты в музей?
           </span>
 
           <span
-            class="transition-transform duration-300"
-            :class="open === 3 ? 'rotate-45' : ''">
-            +
+            class="shrink-0 mt-1 transition-transform duration-300"
+            :class="open === 3 ? 'rotate-180' : ''"
+          >
+            <img src="/assets/svg/arrow-down.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="">
           </span>
         </button>
 
         <div
           x-show="open === 3"
           x-collapse
-          class="pb-6 text-[16px] leading-[160%] text-[#24272A]">
+          class="pb-5 sm:pb-6
+                 text-[14px] sm:text-[15px] lg:text-[16px]
+                 leading-[160%] text-[#24272A]"
+        >
           Билеты можно приобрести онлайн на сайте музея
           или в кассах музейного комплекса.
         </div>
       </div>
 
-      <!-- item -->
-      <div class="border-b border-[#DCDEE0]">
+      <!-- ITEM -->
+      <div>
         <button
           @click="open === 4 ? open = null : open = 4"
-          class="w-full flex justify-between items-start gap-6
-                 py-6 text-left">
-
-          <span class="text-[28px] leading-[130%] tracking-[-0.02em]
-                       font-semibold text-[#24272A]">
+          class="w-full flex items-start justify-between gap-4
+                 py-5 sm:py-6 text-left"
+        >
+          <span
+            class="font-semibold
+                   text-[18px] sm:text-[22px] lg:text-[28px]
+                   leading-[130%] tracking-[-0.02em]
+                   text-[#24272A]"
+          >
             Возврат денежных средств
           </span>
 
           <span
-            class="transition-transform duration-300"
-            :class="open === 4 ? 'rotate-45' : ''">
-            +
+            class="shrink-0 mt-1 transition-transform duration-300"
+            :class="open === 4 ? 'rotate-180' : ''"
+          >
+            <img src="/assets/svg/arrow-down.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="">
           </span>
         </button>
 
         <div
           x-show="open === 4"
           x-collapse
-          class="pb-6 text-[16px] leading-[160%] text-[#24272A]">
+          class="pb-5 sm:pb-6
+                 text-[14px] sm:text-[15px] lg:text-[16px]
+                 leading-[160%] text-[#24272A]"
+        >
           Возврат билетов осуществляется в соответствии
           с правилами продажи и действующим законодательством.
         </div>

@@ -1,153 +1,206 @@
-<footer class="w-full bg-white border-t border-[#DCDEE0]">
+<footer class="w-full bg-white border-t border-[#DCDEE0]" x-data="{ open: null }">
 
-    <!-- ОСНОВНАЯ СЕТКА -->
-    <div class="max-w-[1600px] mx-auto px-[60px] pt-[72px] pb-[56px]">
-        <div class="grid grid-cols-4 gap-x-[72px] gap-y-[48px] text-[#24272A] text-sm leading-[160%]">
+  <!-- ================= DESKTOP ================= -->
+  <div class="hidden lg:block max-w-[1600px] mx-auto px-[60px] pt-[72px] pb-[56px]">
+    <div class="grid grid-cols-4 gap-x-[72px] gap-y-[48px] text-[#24272A] text-sm leading-[160%]">
 
-            <!-- Колонка 1 -->
-            <div class="space-y-6">
-                <div>
-                    <div class="font-semibold mb-3">Корпуса</div>
-                    <ul class="space-y-2">
-                        <li>Главный корпус</li>
-                        <li>Ризница Троице-Сергиевской Лавры</li>
-                        <li>Музейный комплекс «Конный двор»</li>
-                        <li>Краеведческий корпус</li>
-                    </ul>
-                </div>
-
-                <div class="font-semibold">Интерактивная карта</div>
-
-                <div>
-                    <div class="font-semibold mb-3">Для групп</div>
-                    <ul class="space-y-2">
-                        <li>Турфирмам</li>
-                        <li>Группам учащихся</li>
-                        <li>Социальным группам и людям с инвалидностью</li>
-                        <li>Паломникам</li>
-                        <li>Билеты и услуги для групп</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Колонка 2 -->
-            <div class="space-y-6">
-                <div>
-                    <div class="font-semibold mb-3">Посетителям</div>
-                    <ul class="space-y-2">
-                        <li>Часто задаваемые вопросы</li>
-                        <li>Билеты</li>
-                        <li>Пушкинская карта</li>
-                        <li>Рекомендованные маршруты</li>
-                        <li>Музей детям</li>
-                        <li>Мастер-классы</li>
-                        <li>Концерты</li>
-                        <li>Посетителям с ОВЗ</li>
-                        <li>Правила посещения и возврата денег</li>
-                        <li>Спланировать визит</li>
-                        <li>Услуги</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <div class="font-semibold mb-3">Мероприятия</div>
-                    <ul class="space-y-2">
-                        <li>Афиша</li>
-                        <li>Выходные в Сергиевом Посаде</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Колонка 3 -->
-            <div class="space-y-6">
-                <div class="font-semibold">Экскурсии</div>
-
-                <div>
-                    <div class="font-semibold mb-3">О музее</div>
-                    <ul class="space-y-2">
-                        <li>Научная деятельность</li>
-                        <li>Документы</li>
-                        <li>История музея</li>
-                        <li>Коллекции</li>
-                        <li>Заказ изображений</li>
-                        <li>Вакансии</li>
-                    </ul>
-                </div>
-
-                <div class="font-semibold">Контакты</div>
-            </div>
-
-            <!-- Колонка 4 -->
-            <div class="space-y-6">
-                <button
-                    class="w-full border border-[#24272A] py-3 text-sm font-semibold hover:bg-[#24272A] hover:text-white transition">
-                    Обратный звонок
-                </button>
-
-                <div class="font-semibold">sergiev-mus@mail.ru</div>
-
-                <div class="space-y-4">
-                    <div>
-                        <div class="text-xs text-[#6B7280] mb-1">Заказ экскурсий</div>
-                        <div>8 496 540-53-56</div>
-                        <div>8 985 040-45-17</div>
-                    </div>
-
-                    <div>
-                        <div class="text-xs text-[#6B7280] mb-1">Вопросы и сотрудничество</div>
-                        <div>8 496 540-63-58</div>
-                    </div>
-                </div>
-
-                <!-- Соцсети -->
-                <div class="flex gap-4 pt-2">
-                    <a class="w-10 h-10 flex items-center justify-center bg-[#F3F4F6]">
-                        <include src="/assets/svg/telegram.svg"></include>
-                    </a>
-                    <a class="w-10 h-10 flex items-center justify-center bg-[#F3F4F6]">
-                        <include src="/assets/svg/vk.svg"></include>
-                    </a>
-                    <a class="w-10 h-10 flex items-center justify-center bg-[#F3F4F6]">
-                        <include src="/assets/svg/youtube.svg"></include>
-                    </a>
-                    <a class="w-10 h-10 flex items-center justify-center bg-[#F3F4F6]">
-                        <include src="/assets/svg/ok.svg"></include>
-                    </a>
-                </div>
-            </div>
-
+      <!-- COL 1 -->
+      <div class="space-y-6">
+        <div>
+          <div class="font-semibold mb-3">Корпуса</div>
+          <ul class="space-y-2">
+            <li>Главный корпус</li>
+            <li>Ризница Троице-Сергиевской Лавры</li>
+            <li>Музейный комплекс «Конный двор»</li>
+            <li>Краеведческий корпус</li>
+          </ul>
         </div>
+
+        <div class="font-semibold">Интерактивная карта</div>
+
+        <div>
+          <div class="font-semibold mb-3">Для групп</div>
+          <ul class="space-y-2">
+            <li>Турфирмам</li>
+            <li>Группам учащихся</li>
+            <li>Социальным группам и людям с инвалидностью</li>
+            <li>Паломникам</li>
+            <li>Билеты и услуги для групп</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- COL 2 -->
+      <div>
+        <div class="font-semibold mb-3">Посетителям</div>
+        <ul class="space-y-2">
+          <li>Часто задаваемые вопросы</li>
+          <li>Билеты</li>
+          <li>Пушкинская карта</li>
+          <li>Рекомендованные маршруты</li>
+          <li>Музей детям</li>
+          <li>Мастер-классы</li>
+          <li>Концерты</li>
+          <li>Посетителям с ОВЗ</li>
+          <li>Правила посещения и возврата денег</li>
+          <li>Спланировать визит</li>
+          <li>Услуги</li>
+        </ul>
+      </div>
+
+      <!-- COL 3 -->
+      <div>
+        <div class="font-semibold mb-3">О музее</div>
+        <ul class="space-y-2">
+          <li>Научная деятельность</li>
+          <li>Документы</li>
+          <li>История музея</li>
+          <li>Коллекции</li>
+          <li>Заказ изображений</li>
+          <li>Вакансии</li>
+        </ul>
+      </div>
+
+      <!-- COL 4 -->
+      <div class="space-y-6">
+        <button class="w-full border border-[#24272A] py-3 font-semibold hover:bg-[#24272A] hover:text-white transition">
+          Обратный звонок
+        </button>
+
+        <div class="font-semibold">sergiev-mus@mail.ru</div>
+
+        <div class="space-y-3">
+          <div>
+            <div class="text-xs text-[#6B7280]">Заказ экскурсий</div>
+            <div>8 496 540-53-56</div>
+            <div>8 985 040-45-17</div>
+          </div>
+          <div>
+            <div class="text-xs text-[#6B7280]">Вопросы и сотрудничество</div>
+            <div>8 496 540-63-58</div>
+          </div>
+        </div>
+
+        <div class="flex gap-4 pt-2">
+          <include src="/assets/svg/telegram.svg"></include>
+          <include src="/assets/svg/vk.svg"></include>
+          <include src="/assets/svg/youtube.svg"></include>
+          <include src="/assets/svg/ok.svg"></include>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= MOBILE ================= -->
+<div class="lg:hidden px-4 pt-10 pb-8 text-sm text-[#24272A]" x-data="{ open: null }">
+
+  <!-- Корпуса -->
+  <div class="border-b border-[#DCDEE0]">
+    <button
+      @click="open === 1 ? open = null : open = 1"
+      class="w-full flex justify-between items-center py-4 font-semibold"
+    >
+      <span>Корпуса</span>
+      <span :class="open === 1 ? 'rotate-45' : ''" class="transition">+</span>
+    </button>
+
+    <div x-show="open === 1" x-collapse class="pb-4 space-y-2">
+      <div>Главный корпус</div>
+      <div>Ризница Троице-Сергиевской Лавры</div>
+      <div>Музейный комплекс «Конный двор»</div>
+      <div>Краеведческий корпус</div>
+    </div>
+  </div>
+
+  <!-- Для групп -->
+  <div class="border-b border-[#DCDEE0]">
+    <button
+      @click="open === 2 ? open = null : open = 2"
+      class="w-full flex justify-between items-center py-4 font-semibold"
+    >
+      <span>Для групп</span>
+      <span :class="open === 2 ? 'rotate-45' : ''" class="transition">+</span>
+    </button>
+
+    <div x-show="open === 2" x-collapse class="pb-4 space-y-2">
+      <div>Турфирмам</div>
+      <div>Группам учащихся</div>
+      <div>Социальным группам и людям с инвалидностью</div>
+      <div>Паломникам</div>
+      <div>Билеты и услуги для групп</div>
+    </div>
+  </div>
+
+  <!-- Посетителям -->
+  <div class="border-b border-[#DCDEE0]">
+    <button
+      @click="open === 3 ? open = null : open = 3"
+      class="w-full flex justify-between items-center py-4 font-semibold"
+    >
+      <span>Посетителям</span>
+      <span :class="open === 3 ? 'rotate-45' : ''" class="transition">+</span>
+    </button>
+
+    <div x-show="open === 3" x-collapse class="pb-4 space-y-2">
+      <div>Часто задаваемые вопросы</div>
+      <div>Билеты</div>
+      <div>Пушкинская карта</div>
+      <div>Рекомендованные маршруты</div>
+      <div>Музей детям</div>
+      <div>Мастер-классы</div>
+      <div>Концерты</div>
+      <div>Посетителям с ОВЗ</div>
+      <div>Правила посещения и возврата денег</div>
+      <div>Спланировать визит</div>
+      <div>Услуги</div>
+    </div>
+  </div>
+
+  <!-- О музее -->
+  <div class="border-b border-[#DCDEE0]">
+    <button
+      @click="open === 4 ? open = null : open = 4"
+      class="w-full flex justify-between items-center py-4 font-semibold"
+    >
+      <span>О музее</span>
+      <span :class="open === 4 ? 'rotate-45' : ''" class="transition">+</span>
+    </button>
+
+    <div x-show="open === 4" x-collapse class="pb-4 space-y-2">
+      <div>Научная деятельность</div>
+      <div>Документы</div>
+      <div>История музея</div>
+      <div>Коллекции</div>
+      <div>Заказ изображений</div>
+      <div>Вакансии</div>
+    </div>
+  </div>
+
+  <!-- Контакты -->
+  <div class="mt-8 space-y-4">
+    <button class="w-full border border-[#24272A] py-3 font-semibold">
+      Обратный звонок
+    </button>
+
+    <div class="font-semibold">sergiev-mus@mail.ru</div>
+
+    <div>
+      <div class="text-xs text-[#6B7280]">Заказ экскурсий</div>
+      <div>8 496 540-53-56</div>
+      <div>8 985 040-45-17</div>
     </div>
 
-    <!-- НИЖНЯЯ ПОЛОСА -->
-    <div class="border-t border-[#DCDEE0]">
-        <div
-            class="max-w-[1600px] mx-auto px-[60px] py-6
-                   flex flex-col gap-3 text-xs text-[#6B7280]">
-
-            <div>
-                141310, Россия, Московская область, г. Сергиев Посад,
-                Проспект Красной Армии, д. 144
-            </div>
-
-            <div class="flex flex-wrap gap-6 items-center">
-                <span>
-                    © 2025 ФГБУК «Сергиево-Посадский государственный
-                    историко-художественный музей-заповедник»
-                </span>
-                <span>
-                    Использование материалов сайта без разрешения правообладателя — запрещено
-                </span>
-                <span class="underline cursor-pointer">
-                    Политика конфиденциальности
-                </span>
-                <span class="ml-auto flex items-center gap-1 text-[#24272A]">
-                    Создано в
-                    <span class="font-semibold">?</span>
-                </span>
-            </div>
-
-        </div>
+    <div>
+      <div class="text-xs text-[#6B7280]">Вопросы и сотрудничество</div>
+      <div>8 496 540-63-58</div>
     </div>
 
-</footer>
+    <div class="flex gap-4 pt-4">
+      <include src="/assets/svg/telegram.svg"></include>
+      <include src="/assets/svg/vk.svg"></include>
+      <include src="/assets/svg/youtube.svg"></include>
+      <include src="/assets/svg/ok.svg"></include>
+    </div>
+  </div>
+</div>

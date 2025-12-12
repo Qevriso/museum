@@ -8,53 +8,54 @@
             <div 
                 x-show="current === index"
                 x-transition.opacity.duration.600ms
-                class="px-4 lg:px-16 py-6 lg:py-8 grid lg:grid-cols-2 gap-8 lg:gap-14 items-center min-h-[380px] lg:min-h-[440px]"
+                class="px-4 lg:px-16 py-4 lg:py-6 grid lg:grid-cols-2 gap-6 lg:gap-10 items-center
+                       min-h-56 lg:min-h-64"
             >
 
                 <!-- ЛЕВАЯ ЧАСТЬ -->
                 <div class="relative z-20">
-                    <div class="text-lg mb-3 opacity-80" x-text="slide.date"></div>
+                    <div class="text-lg mb-2 opacity-80" x-text="slide.date"></div>
 
-                    <h1 class="text-4xl sm:text-6xl lg:text-[76px] font-bold leading-[0.9] mb-6">
+                    <h1 class="text-4xl sm:text-6xl lg:text-[70px] font-bold leading-[0.95] mb-5">
                         <span x-text="slide.titleLine1"></span><br>
                         <span x-text="slide.titleLine2"></span>
                     </h1>
 
-                    <p class="text-lg opacity-90 mb-8" x-text="slide.subtitle"></p>
+                    <p class="text-lg opacity-90 mb-6" x-text="slide.subtitle"></p>
 
                     <div class="flex flex-wrap items-center gap-4">
-
                         <button class="px-6 py-3 border border-white rounded-lg text-base font-semibold hover:bg-white hover:text-[#C93635] transition flex items-center gap-2">
                             Купить билет 
-                            <img src="assets/svg/ticket.svg" class="w-4 h-4">
+                            <img src="assets/svg/ticket.svg" class="w-4 h-4" alt="">
                         </button>
 
                         <button class="px-6 py-3 border border-white rounded-lg text-base font-semibold hover:bg-white hover:text-[#C93635] transition flex items-center gap-2">
                             Постоянная выставка
                             <span class="text-xl leading-3">→</span>
                         </button>
-
                     </div>
                 </div>
 
                 <!-- ПРАВАЯ ЧАСТЬ — МАТРЁШКА -->
                 <div class="relative flex justify-center lg:justify-end items-end">
 
-                    <!-- ФОНОВЫЙ КРУГ -->
-                    <div class="absolute rounded-full bg-[#D95B58] opacity-40 
-                                w-[600px] h-[600px] lg:w-[760px] lg:h-[760px]
-                                bottom-[-200px] right-[-120px]">
+                    <!-- КРУГ -->
+                    <div
+                        class="absolute rounded-full bg-[#D95B58] opacity-40
+                               w-[520px] h-[520px] lg:w-[700px] lg:h-[700px]
+                               bottom-[-160px] right-[-100px]">
                     </div>
 
                     <!-- МАТРЁШКА -->
                     <img 
                         :src="slide.img"
                         alt="Матрешка"
-                        class="relative z-10 
-                               max-h-[520px] sm:max-h-[620px] lg:max-h-[720px]
+                        class="relative z-10
+                               max-h-[480px] sm:max-h-[520px] lg:max-h-[620px]
                                object-contain
-                               translate-x-[60px] lg:translate-x-[90px]
-                               translate-y-[120px]"
+                               -translate-x-16   /* левее */
+                               translate-y-28    /* ниже */
+                        "
                     >
                 </div>
 
@@ -65,7 +66,6 @@
 
     <!-- СТРЕЛКИ + ТОЧКИ -->
     <div class="absolute bottom-6 flex items-center gap-4 left-4 lg:left-16 z-50">
-
         <button 
             class="w-10 h-10 flex items-center justify-center border border-white rounded hover:bg-white hover:text-[#C93635] transition"
             @click="prev()">
@@ -87,6 +87,5 @@
             @click="next()">
             →
         </button>
-
     </div>
 </section>

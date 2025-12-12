@@ -1,100 +1,123 @@
-<header class="w-full border-b border-[#DCDEE0] bg-white">
-    <div class="flex items-center gap-6 px-[60px] py-5">
+<header
+    x-data="{ searchOpen:false }"
+    class="w-full bg-white border-b border-[#DCDEE0]"
+>
+    <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px] h-[64px] flex items-center justify-between">
 
-        <!-- ЛОГОТИП -->
+        <!-- LOGO -->
         <a href="/" class="flex items-center gap-3 shrink-0">
             <img
                 src="/assets/svg/logo.svg"
                 alt="Сергиево-Посадский музей-заповедник"
-                class="h-[46px] w-auto object-contain"
+                class="h-[40px] w-auto"
             />
         </a>
 
-        <!-- ПОИСК -->
-        <div class="relative flex-1 max-w-[520px]">
+        <!-- SEARCH (DESKTOP) -->
+        <div class="hidden lg:flex relative ml-6 flex-1 max-w-[520px]">
             <input
+                x-show="searchOpen"
+                x-transition
                 type="text"
                 placeholder="Поиск"
-                class="w-full h-[48px] rounded-lg bg-[#F0F1F2] pl-4 pr-12 text-base outline-none focus:bg-white transition"
+                class="w-full h-[44px] rounded-lg bg-[#F0F1F2] pl-4 pr-10 outline-none"
             />
-            <span class="absolute right-4 top-1/2 -translate-y-1/2">
-                <img src="/assets/svg/search.svg" alt="" class="w-5 h-5 opacity-70">
-            </span>
+            <button
+                @click="searchOpen = !searchOpen"
+                class="absolute right-3 top-1/2 -translate-y-1/2"
+            >
+                <img src="/assets/svg/search.svg" class="w-5 h-5 opacity-70">
+            </button>
         </div>
 
-        <!-- КНОПКИ -->
-        <div class="flex items-center gap-3 ml-auto">
+        <!-- RIGHT ACTIONS -->
+        <div class="flex items-center gap-2 lg:gap-3">
 
-            <!-- Купить билет -->
+            <!-- SEARCH (MOBILE ICON ONLY) -->
+            <button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-[#F0F1F2]">
+                <img src="/assets/svg/search.svg" class="w-5 h-5">
+            </button>
+
+            <!-- BUY TICKET (DESKTOP) -->
             <a
                 href="#"
-                class="flex items-center gap-3 px-5 h-[48px] border border-[#24272A] rounded-lg text-[#24272A] font-semibold whitespace-nowrap hover:bg-[#24272A] hover:text-white transition"
+                class="hidden lg:flex items-center gap-3 px-5 h-[44px]
+                       border border-[#24272A] rounded-lg font-semibold
+                       text-[#24272A]
+                       hover:bg-[#24272A] hover:text-white transition
+                       group"
             >
                 Купить билет
-                <img src="/assets/svg/ticket.svg" alt="" class="w-5 h-5">
+                <img
+                    src="/assets/svg/ticket.svg"
+                    class="w-5 h-5 transition group-hover:invert"
+                >
             </a>
 
-            <!-- Заказать экскурсию -->
+            <!-- EXCURSION (DESKTOP) -->
             <a
                 href="#"
-                class="flex items-center gap-3 px-5 h-[48px] rounded-lg bg-[#24272A] text-white font-semibold whitespace-nowrap hover:bg-black transition"
+                class="hidden lg:flex items-center gap-3 px-5 h-[44px]
+                       bg-[#24272A] text-white rounded-lg font-semibold
+                       hover:bg-black transition"
             >
                 Заказать экскурсию
-                <img src="/assets/svg/users.svg" alt="" class="w-5 h-5 invert">
+                <img
+                    src="/assets/svg/users.svg"
+                    class="w-5 h-5 invert"
+                >
             </a>
 
-            <!-- ИКОНКИ -->
-            <div class="flex items-center gap-2 ml-2">
+            <!-- NOTIFICATIONS -->
+            <button class="relative w-10 h-10 flex items-center justify-center rounded-lg hover:bg-[#F0F1F2] transition">
+                <img src="/assets/svg/bell.svg" class="w-5 h-5">
+                <span class="absolute top-1 right-1 w-5 h-5 text-xs bg-[#C93635] text-white rounded-full flex items-center justify-center">
+                    3
+                </span>
+            </button>
 
-                <!-- Уведомления -->
-                <button class="relative w-12 h-12 flex items-center justify-center rounded-lg hover:bg-[#F0F1F2] transition">
-                    <img src="/assets/svg/bell.svg" alt="" class="w-5 h-5">
-                    <span class="absolute top-1 right-1 w-5 h-5 text-xs bg-[#C93635] text-white rounded-full flex items-center justify-center">
-                        3
-                    </span>
-                </button>
+            <!-- ACCESSIBILITY -->
+            <button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-[#F0F1F2] transition">
+                <img src="/assets/svg/eye.svg" class="w-5 h-5">
+            </button>
 
-                <!-- Версия для слабовидящих -->
-                <button class="w-12 h-12 flex items-center justify-center rounded-lg hover:bg-[#F0F1F2] transition">
-                    <img src="/assets/svg/eye.svg" alt="" class="w-5 h-5">
-                </button>
+            <!-- LANGUAGE -->
+            <div
+                class="relative"
+                x-data="{ open:false, value:'RU' }"
+                @click.outside="open=false"
+            >
+                <button
+                    @click="open=!open"
+                    class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-[#F0F1F2] font-semibold"
+                    x-text="value"
+                ></button>
 
-                <!-- ЯЗЫК -->
                 <div
-                    class="relative"
-                    x-data="{ open:false, value:'RU' }"
-                    @click.outside="open=false"
+                    x-show="open"
+                    x-transition
+                    class="absolute right-0 mt-2 w-16 bg-white border rounded-lg shadow-lg z-50"
                 >
-                    <button
-                        @click="open = !open"
-                        class="w-12 h-12 flex items-center justify-center rounded-lg hover:bg-[#F0F1F2] transition font-semibold"
-                        x-text="value"
-                    ></button>
-
-                    <div
-                        x-show="open"
-                        x-transition
-                        class="absolute right-0 top-full mt-2 w-16 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50"
-                    >
-                        <div
-                            class="px-3 py-2 text-center cursor-pointer hover:bg-[#F0F1F2]"
-                            @click="value='RU';open=false"
-                        >RU</div>
-                        <div
-                            class="px-3 py-2 text-center cursor-pointer hover:bg-[#F0F1F2]"
-                            @click="value='EN';open=false"
-                        >EN</div>
-                    </div>
+                    <div class="px-3 py-2 text-center hover:bg-[#F0F1F2]" @click="value='RU';open=false">RU</div>
+                    <div class="px-3 py-2 text-center hover:bg-[#F0F1F2]" @click="value='EN';open=false">EN</div>
                 </div>
-
-                <!-- ПУШКИНСКАЯ КАРТА -->
-                <img
-                    src="/assets/img/pushkin-card1.png"
-                    alt="Пушкинская карта"
-                    class="h-[32px] w-auto ml-2"
-                />
-
             </div>
+
+            <!-- PUSHKIN CARD (DESKTOP) -->
+            <img
+                src="/assets/img/pushkin-card1.png"
+                alt="Пушкинская карта"
+                class="hidden lg:block h-[32px] ml-2"
+            />
+
+            <!-- HAMBURGER (MOBILE, SINGLE) -->
+            <button
+                class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-[#F0F1F2]"
+                @click="$dispatch('toggle-menu')"
+            >
+                <img src="/assets/svg/menu.svg" class="w-6 h-6">
+            </button>
+
         </div>
     </div>
 </header>

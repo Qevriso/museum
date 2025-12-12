@@ -1,64 +1,90 @@
-<section class="w-full px-4 sm:px-8 lg:px-[60px] py-16">
+<section class="w-full px-4 sm:px-8 lg:px-[60px] py-20">
 
-    <!-- Заголовок блока -->
-    <div class="flex items-end justify-between mb-10">
-        <h2 class="text-[40px] lg:text-[56px] font-bold leading-[95%] tracking-[-0.02em]">
-            Коллекции музея
-        </h2>
+    <!-- Заголовок -->
+    <h2 class="text-[40px] lg:text-[56px] font-bold leading-[95%] tracking-[-0.02em] mb-14">
+        Корпусы музея
+    </h2>
 
-        <a href="#"
-           class="hidden sm:flex items-center gap-3 border border-[#24272A] px-8 py-4 text-base font-semibold leading-[160%] hover:bg-[#24272A] hover:text-white transition">
-            Подробнее →
-        </a>
-    </div>
-
-    <!-- Сетка изображений -->
+    <!-- Сетка -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-        <!-- Карточка 1 -->
-        <article class="group overflow-hidden rounded-t-[240px] bg-[#F0F1F2]">
-            <img
-                src="/assets/img/collection-1.png"
-                alt="Экспонаты музея"
-                class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
-            />
-        </article>
-
-        <!-- Карточка 2 -->
-        <article class="group overflow-hidden rounded-t-[240px] bg-[#F0F1F2]">
-            <img
-                src="/assets/img/collection-2.png"
-                alt="Резьба по дереву"
-                class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
-            />
-        </article>
-
-        <!-- Карточка 3 -->
-        <article class="group overflow-hidden rounded-t-[240px] bg-[#F0F1F2]">
-            <img
-                src="/assets/img/collection-3.png"
-                alt="Декоративное искусство"
-                class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
-            />
-        </article>
-
-        <!-- Карточка 4 -->
-        <article class="group overflow-hidden rounded-t-[240px] bg-[#F0F1F2]">
-            <img
-                src="/assets/img/collection-4.png"
-                alt="Живопись"
-                class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
-            />
-        </article>
-
-    </div>
-
-    <!-- Кнопка для мобилки -->
-    <div class="mt-10 sm:hidden">
+        <!-- КАРТОЧКА 1 -->
         <a href="#"
-           class="flex w-full justify-center items-center gap-3 border border-[#24272A] px-8 py-4 text-base font-semibold leading-[160%]">
-            Подробнее →
-        </a>
-    </div>
+           class="group block bg-[#F9EAEA] transition-colors duration-300 hover:bg-[#F2C6C6]">
 
+            <!-- ТЕКСТ (ПРЯМОУГОЛЬНИК) -->
+            <div class="px-6 pt-10 pb-6">
+                <h3 class="text-[20px] font-semibold leading-tight">
+                    Главный<br>корпус
+                </h3>
+            </div>
+
+            <!-- ПОЛУКРУГ + ИЗОБРАЖЕНИЕ -->
+            <div class="relative overflow-hidden rounded-t-[260px]">
+                <img
+                    src="/assets/img/collection-1.png"
+                    alt="Главный корпус"
+                    class="w-full h-[420px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+            </div>
+        </a>
+
+        <!-- КАРТОЧКА 2 -->
+        <a href="#"
+           class="group block bg-[#EEF0FA] transition-colors duration-300 hover:bg-[#7A7CCB]">
+
+            <div class="px-6 pt-10 pb-6">
+                <h3 class="text-[20px] font-semibold leading-tight transition-colors duration-300 group-hover:text-white">
+                    Ризница Троице-<br>Сергиевской Лавры
+                </h3>
+            </div>
+
+            <div class="relative overflow-hidden rounded-t-[260px]">
+                <img
+                    src="/assets/img/collection-2.png"
+                    alt="Ризница ТСЛ"
+                    class="w-full h-[420px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+            </div>
+        </a>
+
+        <!-- КАРТОЧКА 3 -->
+        <a href="#"
+           class="group block bg-[#F6F2E8] transition-colors duration-300 hover:bg-[#E7D7B8]">
+
+            <div class="px-6 pt-10 pb-6">
+                <h3 class="text-[20px] font-semibold leading-tight">
+                    Музейный комплекс<br>«Конный двор»
+                </h3>
+            </div>
+
+            <div class="relative overflow-hidden rounded-t-[260px]">
+                <img
+                    src="/assets/img/collection-3.png"
+                    alt="Конный двор"
+                    class="w-full h-[420px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+            </div>
+        </a>
+
+        <!-- КАРТОЧКА 4 -->
+        <a href="#"
+           class="group block bg-[#EEF5EF] transition-colors duration-300 hover:bg-[#CFE3D4]">
+
+            <div class="px-6 pt-10 pb-6">
+                <h3 class="text-[20px] font-semibold leading-tight">
+                    Краеведческий<br>корпус
+                </h3>
+            </div>
+
+            <div class="relative overflow-hidden rounded-t-[260px]">
+                <img
+                    src="/assets/img/collection-4.png"
+                    alt="Краеведческий корпус"
+                    class="w-full h-[420px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+            </div>
+        </a>
+
+    </div>
 </section>

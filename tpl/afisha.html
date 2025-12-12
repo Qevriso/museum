@@ -1,167 +1,87 @@
-<section class="w-full px-4 lg:px-[60px] py-14" x-data="{ activeDay: 5 }">
+<section
+    class="w-full px-4 lg:px-[60px] py-14"
+    x-data="{
+        activeDay: 5,
+        items: [
+            { id:1, day:5, img:'/assets/img/afisha-1.png', date:'01.09.2025 – 31.05.2026', title:'Музей: ученикам, учителям, родителям' },
+            { id:2, day:5, img:'/assets/img/afisha-2.png', date:'27.10.2025 – 31.05.2026', title:'Детский музейный центр «Матрёшка»' },
+            { id:3, day:6, img:'/assets/img/afisha-3.png', date:'28.10.2025 – 17.05.2026', title:'Клуб «Юный археолог». 2025–2026' },
+            { id:4, day:6, img:'/assets/img/afisha-4.png', date:'28.11.2025 – 31.12.2025', title:'Экскурсии в декабре 2025' },
+            { id:5, day:7, img:'/assets/img/afisha-5.png', date:'28.11.2025 – 03.01.2026', title:'Ёлка в музее' },
+            { id:6, day:7, img:'/assets/img/afisha-6.png', date:'28.11.2025 – 26.12.2025', title:'Новый год с Музеем' },
+            { id:7, day:8, img:'/assets/img/afisha-7.png', date:'03.12.2025 – 10.12.2025', title:'Лекция «Троицкий собор и рака прп. Сергия Радонежского»' },
+            { id:8, day:8, img:'/assets/img/afisha-8.png', date:'04.12.2025 – 18.12.2025', title:'Лекция «Секреты древнего стекла»' }
+        ]
+    }"
+>
 
-    <!-- Заголовок -->
-    <div class="flex items-center justify-between mb-10">
-        <h2 class="text-4xl font-semibold text-[#24272A]">Афиша</h2>
+    <!-- HEADER -->
+    <div class="flex items-center justify-between mb-8">
+        <h2 class="text-[32px] lg:text-[40px] font-semibold">Афиша</h2>
 
         <a href="#"
-           class="flex items-center gap-2 border border-[#24272A] px-5 py-3 text-base font-semibold hover:bg-[#24272A] hover:text-white transition">
+           class="hidden sm:flex items-center gap-2 border border-[#24272A] px-6 py-3 text-sm font-semibold hover:bg-[#24272A] hover:text-white transition">
             Все мероприятия →
         </a>
     </div>
 
-    <!-- ДАТЫ (ТАБЫ) -->
-    <div class="w-full overflow-x-auto mb-12">
-        <div class="flex gap-4 min-w-max">
-
-            <!-- TAB -->
+    <!-- DATES -->
+    <div class="w-full overflow-x-auto mb-10">
+        <div class="flex gap-3 min-w-max">
             <template x-for="day in [
-                {d:5, w:'пт'},
-                {d:6, w:'сб'},
-                {d:7, w:'вс'},
-                {d:8, w:'пн'},
-                {d:9, w:'вт'},
-                {d:10, w:'ср'},
-                {d:11, w:'чт'},
-                {d:12, w:'пт'},
-                {d:13, w:'сб'},
-                {d:14, w:'вс'},
-                {d:15, w:'пн'},
-                {d:16, w:'вт'}
+                {d:5,w:'пт'},{d:6,w:'сб'},{d:7,w:'вс'},{d:8,w:'пн'},
+                {d:9,w:'вт'},{d:10,w:'ср'},{d:11,w:'чт'},
+                {d:12,w:'пт'},{d:13,w:'сб'},{d:14,w:'вс'},
+                {d:15,w:'пн'},{d:16,w:'вт'}
             ]">
-
                 <button
                     @click="activeDay = day.d"
-                    class="w-[72px] h-[88px] rounded-t-full flex flex-col items-center justify-center transition border"
-                    :class="activeDay === day.d
+                    class="w-[64px] h-[80px] rounded-t-full flex flex-col items-center justify-center border transition"
+                    :class="activeDay===day.d
                         ? 'bg-[#C93635] text-white border-[#C93635]'
                         : 'bg-[#F0F1F2] text-[#24272A] border-transparent hover:bg-[#E6E7E9]'"
                 >
-                    <div class="text-2xl font-semibold" x-text="day.d"></div>
-                    <div class="text-sm opacity-80" x-text="day.w"></div>
+                    <div class="text-xl font-semibold" x-text="day.d"></div>
+                    <div class="text-xs opacity-80" x-text="day.w"></div>
                 </button>
-
             </template>
         </div>
     </div>
 
-    <!-- КАРТОЧКИ -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- CARDS -->
+    <div class="relative">
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8
+                   max-sm:flex max-sm:overflow-x-auto max-sm:gap-4 max-sm:pb-4"
+        >
+            <template x-for="item in items.filter(i => i.day === activeDay)" :key="item.id">
+                <article class="min-w-[260px] sm:min-w-0 cursor-pointer">
 
-        <!-- CARD -->
-        <article class="group cursor-pointer">
-            <div class="rounded-t-[120px] overflow-hidden mb-4">
-                <img src="/assets/img/afisha-1.jpg"
-                     class="w-full h-[200px] object-cover group-hover:scale-105 transition duration-500"
-                     alt="">
-            </div>
-            <div class="text-sm text-[#8B8E91] mb-2">
-                01.09.2025 – 31.05.2026
-            </div>
-            <h3 class="text-lg font-semibold text-[#24272A]">
-                Музей: ученикам, учителям, родителям
-            </h3>
-        </article>
+                    <div class="w-full h-[200px] overflow-hidden bg-[#F0F1F2]">
+                        <img
+                            :src="item.img"
+                            alt=""
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        />
+                    </div>
 
-        <article class="group cursor-pointer">
-            <div class="rounded-t-[120px] overflow-hidden mb-4 bg-[#C93635]">
-                <img src="/assets/img/afisha-2.jpg"
-                     class="w-full h-[200px] object-contain group-hover:scale-105 transition duration-500"
-                     alt="">
-            </div>
-            <div class="text-sm text-[#8B8E91] mb-2">
-                27.10.2025 – 31.05.2026
-            </div>
-            <h3 class="text-lg font-semibold text-[#24272A]">
-                Детский музейный центр «Матрёшка»
-            </h3>
-        </article>
+                    <div class="text-sm text-[#8B8E91] mt-4 mb-2" x-text="item.date"></div>
 
-        <article class="group cursor-pointer">
-            <div class="rounded-t-[120px] overflow-hidden mb-4">
-                <img src="/assets/img/afisha-3.jpg"
-                     class="w-full h-[200px] object-cover group-hover:scale-105 transition duration-500"
-                     alt="">
-            </div>
-            <div class="text-sm text-[#8B8E91] mb-2">
-                28.10.2025 – 17.05.2026
-            </div>
-            <h3 class="text-lg font-semibold text-[#24272A]">
-                Клуб «Юный археолог». 2025–2026
-            </h3>
-        </article>
+                    <h3 class="text-base font-semibold leading-snug text-[#24272A]"
+                        x-text="item.title">
+                    </h3>
 
-        <article class="group cursor-pointer">
-            <div class="rounded-t-[120px] overflow-hidden mb-4">
-                <img src="/assets/img/afisha-4.jpg"
-                     class="w-full h-[200px] object-cover group-hover:scale-105 transition duration-500"
-                     alt="">
-            </div>
-            <div class="text-sm text-[#8B8E91] mb-2">
-                28.11.2025 – 31.12.2025
-            </div>
-            <h3 class="text-lg font-semibold text-[#24272A]">
-                Экскурсии в декабре 2025
-            </h3>
-        </article>
+                </article>
+            </template>
+        </div>
+    </div>
 
-        <!-- второй ряд -->
-        <article class="group cursor-pointer">
-            <div class="rounded-t-[120px] overflow-hidden mb-4">
-                <img src="/assets/img/afisha-5.jpg"
-                     class="w-full h-[200px] object-cover group-hover:scale-105 transition duration-500"
-                     alt="">
-            </div>
-            <div class="text-sm text-[#8B8E91] mb-2">
-                28.11.2025 – 03.01.2026
-            </div>
-            <h3 class="text-lg font-semibold text-[#24272A]">
-                Ёлка в музее
-            </h3>
-        </article>
-
-        <article class="group cursor-pointer">
-            <div class="rounded-t-[120px] overflow-hidden mb-4">
-                <img src="/assets/img/afisha-6.jpg"
-                     class="w-full h-[200px] object-cover group-hover:scale-105 transition duration-500"
-                     alt="">
-            </div>
-            <div class="text-sm text-[#8B8E91] mb-2">
-                28.11.2025 – 26.12.2025
-            </div>
-            <h3 class="text-lg font-semibold text-[#24272A]">
-                Новый год с Музеем
-            </h3>
-        </article>
-
-        <article class="group cursor-pointer">
-            <div class="rounded-t-[120px] overflow-hidden mb-4">
-                <img src="/assets/img/afisha-7.jpg"
-                     class="w-full h-[200px] object-cover group-hover:scale-105 transition duration-500"
-                     alt="">
-            </div>
-            <div class="text-sm text-[#8B8E91] mb-2">
-                03.12.2025 – 10.12.2025
-            </div>
-            <h3 class="text-lg font-semibold text-[#24272A]">
-                Лекция «Троицкий собор и рака прп. Сергия Радонежского»
-            </h3>
-        </article>
-
-        <article class="group cursor-pointer">
-            <div class="rounded-t-[120px] overflow-hidden mb-4">
-                <img src="/assets/img/afisha-8.jpg"
-                     class="w-full h-[200px] object-cover group-hover:scale-105 transition duration-500"
-                     alt="">
-            </div>
-            <div class="text-sm text-[#8B8E91] mb-2">
-                04.12.2025 – 18.12.2025
-            </div>
-            <h3 class="text-lg font-semibold text-[#24272A]">
-                Лекция «Секреты древнего стекла»
-            </h3>
-        </article>
-
+    <!-- MOBILE BUTTON -->
+    <div class="mt-10 sm:hidden">
+        <a href="#"
+           class="flex w-full justify-center items-center gap-2 border border-[#24272A] px-6 py-3 text-sm font-semibold">
+            Все мероприятия →
+        </a>
     </div>
 
 </section>

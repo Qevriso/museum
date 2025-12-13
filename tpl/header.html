@@ -1,151 +1,149 @@
 <header
-    x-data="{ searchOpen:false }"
-    class="w-full bg-white border-b border-[#DCDEE0]"
+  x-data="{ searchOpen:false }"
+  class="w-full bg-white border-b border-[#DCDEE0]"
 >
-    <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px] h-[64px] flex items-center justify-between">
+  <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px] h-[64px] flex items-center justify-between">
 
-        <!-- LOGO -->
-        <a href="/" class="flex items-center gap-3 shrink-0 cursor-pointer">
-            <img
-                src="/assets/svg/logo.svg"
-                alt="Сергиево-Посадский музей-заповедник"
-                class="h-[40px] w-auto"
-            />
-        </a>
+    <!-- LOGO -->
+    <a href="/" class="flex items-center gap-3 shrink-0 cursor-pointer">
+      <img
+        src="/assets/svg/logo.svg"
+        alt="Сергиево-Посадский музей-заповедник"
+        class="h-[40px] w-auto"
+      />
+    </a>
 
-        <!-- SEARCH (DESKTOP) -->
-        <div class="hidden lg:flex relative ml-6 flex-1 max-w-[520px]">
-            <input
-                x-show="searchOpen"
-                x-transition
-                type="text"
-                placeholder="Поиск"
-                class="w-full h-[44px] bg-[#F0F1F2] pl-4 pr-10 outline-none"
-            />
-            <button
-                @click="searchOpen = !searchOpen"
-                class="absolute right-3 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 transition-opacity cursor-pointer"
-                type="button"
-                aria-label="Поиск"
-            >
-                <img src="/assets/svg/search.svg" class="w-5 h-5" alt="">
-            </button>
-        </div>
-
-        <!-- RIGHT ACTIONS -->
-        <div class="flex items-center gap-2 lg:gap-3">
-
-            <!-- SEARCH (MOBILE) -->
-            <button
-                class="lg:hidden w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
-                type="button"
-                aria-label="Поиск"
-            >
-                <img src="/assets/svg/search.svg" class="w-5 h-5" alt="">
-            </button>
-
-            <!-- BUY TICKET -->
-            <a
-                href="#"
-                class="hidden lg:flex items-center gap-3 px-5 h-[44px]
-                       border border-[#24272A]
-                       font-semibold text-[#24272A]
-                       transition-colors
-                       hover:bg-[#24272A] hover:text-white
-                       group cursor-pointer"
-            >
-                Купить билет
-                <img
-                    src="/assets/svg/ticket2.svg"
-                    class="w-5 h-5 transition group-hover:invert"
-                    alt=""
-                >
-            </a>
-
-            <!-- EXCURSION (FIXED ICON INVERT) -->
-          <a
-    href="#"
-    class="hidden lg:flex items-center gap-3 px-5 h-[44px]
-           bg-[#24272A] text-white
-           font-semibold
-           border border-[#24272A]
-           transition-colors
-           hover:bg-white hover:text-[#24272A]
-           group cursor-pointer"
->
-    Заказать экскурсию
-    <img
-        src="/assets/svg/users.svg"
-        class="w-5 h-5 transition-colors
-               text-white group-hover:text-[#24272A]"
-        alt=""
-    >
-</a>
-
-
-
-            <!-- NOTIFICATIONS -->
-            <button
-                class="relative w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
-                type="button"
-                aria-label="Уведомления"
-            >
-                <img src="/assets/svg/bell.svg" class="w-5 h-5" alt="">
-                <span class="absolute top-1 right-1 w-5 h-5 text-xs bg-[#C93635] text-white flex items-center justify-center">
-                    3
-                </span>
-            </button>
-
-            <!-- ACCESSIBILITY -->
-            <button
-                class="w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
-                type="button"
-                aria-label="Версия для слабовидящих"
-            >
-                <img src="/assets/svg/eye.svg" class="w-5 h-5" alt="">
-            </button>
-
-            <!-- LANGUAGE -->
-            <div
-                class="relative"
-                x-data="{ open:false, value:'RU' }"
-                @click.outside="open=false"
-            >
-                <button
-                    @click="open=!open"
-                    class="w-10 h-10 flex items-center justify-center font-semibold hover:bg-[#F0F1F2] transition-colors cursor-pointer"
-                    type="button"
-                    aria-label="Язык"
-                    x-text="value"
-                ></button>
-
-                <div
-                    x-show="open"
-                    x-transition
-                    class="absolute right-0 mt-2 w-16 bg-white border border-[#DCDEE0] shadow-lg z-50"
-                >
-                    <div class="px-3 py-2 text-center hover:bg-[#F0F1F2] cursor-pointer" @click="value='RU';open=false">RU</div>
-                    <div class="px-3 py-2 text-center hover:bg-[#F0F1F2] cursor-pointer" @click="value='EN';open=false">EN</div>
-                </div>
-            </div>
-
-            <!-- PUSHKIN CARD (SVG) -->
-            <img
-                src="/assets/svg/pushkin-card.svg"
-                alt="Пушкинская карта"
-                class="hidden lg:block h-[32px] ml-2"
-            />
-
-            <!-- HAMBURGER -->
-            <button
-                class="lg:hidden w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
-                @click="$dispatch('toggle-menu')"
-                type="button"
-                aria-label="Меню"
-            >
-                <img src="/assets/img/menu.png" class="w-6 h-6" alt="">
-            </button>
-
-        </div>
+    <!-- SEARCH (DESKTOP) -->
+    <div class="hidden lg:flex relative ml-6 flex-1 max-w-[520px]">
+      <input
+        x-show="searchOpen"
+        x-transition
+        type="text"
+        placeholder="Поиск"
+        class="w-full h-[44px] bg-[#F0F1F2] pl-4 pr-10 outline-none"
+      />
+      <button
+        @click="searchOpen = !searchOpen"
+        class="absolute right-3 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 transition-opacity cursor-pointer"
+        type="button"
+        aria-label="Поиск"
+      >
+        <img src="/assets/svg/search.svg" class="w-5 h-5" alt="">
+      </button>
     </div>
+
+    <!-- RIGHT ACTIONS -->
+    <div class="flex items-center gap-2 lg:gap-3">
+
+      <!-- SEARCH (MOBILE) -->
+      <button
+        class="lg:hidden w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
+        type="button"
+        aria-label="Поиск"
+      >
+        <img src="/assets/svg/search.svg" class="w-5 h-5" alt="">
+      </button>
+
+      <!-- BUY TICKET -->
+      <a
+        href="#"
+        class="hidden lg:flex items-center gap-3 px-5 h-[44px]
+               border border-[#24272A]
+               font-semibold
+               text-[#24272A]
+               transition-colors
+               hover:bg-[#24272A] hover:text-white
+               group cursor-pointer"
+      >
+        Купить билет
+        <img
+          src="/assets/svg/ticket2.svg"
+          class="w-5 h-5 text-current"
+          alt=""
+        >
+      </a>
+
+      <!-- EXCURSION -->
+      <a
+        href="#"
+        class="hidden lg:flex items-center gap-3 px-5 h-[44px]
+               bg-[#24272A] text-white
+               font-semibold
+               border border-[#24272A]
+               transition-colors
+               hover:bg-white hover:text-[#24272A]
+               group cursor-pointer"
+      >
+        Заказать экскурсию
+        <img
+          src="/assets/svg/users.svg"
+          class="w-5 h-5 text-current"
+          alt=""
+        >
+      </a>
+
+      <!-- NOTIFICATIONS -->
+      <button
+        class="relative w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
+        type="button"
+        aria-label="Уведомления"
+      >
+        <img src="/assets/svg/bell.svg" class="w-5 h-5" alt="">
+        <span class="absolute top-1 right-1 w-5 h-5 text-xs bg-[#C93635] text-white flex items-center justify-center">
+          3
+        </span>
+      </button>
+
+      <!-- ACCESSIBILITY -->
+      <button
+        class="w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
+        type="button"
+        aria-label="Версия для слабовидящих"
+      >
+        <img src="/assets/svg/eye.svg" class="w-5 h-5" alt="">
+      </button>
+
+      <!-- LANGUAGE -->
+      <div
+        class="relative"
+        x-data="{ open:false, value:'RU' }"
+        @click.outside="open=false"
+      >
+        <button
+          @click="open=!open"
+          class="w-10 h-10 flex items-center justify-center font-semibold hover:bg-[#F0F1F2] transition-colors cursor-pointer"
+          type="button"
+          aria-label="Язык"
+          x-text="value"
+        ></button>
+
+        <div
+          x-show="open"
+          x-transition
+          class="absolute right-0 mt-2 w-16 bg-white border border-[#DCDEE0] shadow-lg z-50"
+        >
+          <div class="px-3 py-2 text-center hover:bg-[#F0F1F2] cursor-pointer" @click="value='RU';open=false">RU</div>
+          <div class="px-3 py-2 text-center hover:bg-[#F0F1F2] cursor-pointer" @click="value='EN';open=false">EN</div>
+        </div>
+      </div>
+
+      <!-- PUSHKIN CARD -->
+      <img
+        src="/assets/svg/pushkin-card.svg"
+        alt="Пушкинская карта"
+        class="hidden lg:block h-[32px] ml-2"
+      />
+
+      <!-- HAMBURGER -->
+      <button
+        class="lg:hidden w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
+        @click="$dispatch('toggle-menu')"
+        type="button"
+        aria-label="Меню"
+      >
+        <img src="/assets/img/menu.png" class="w-6 h-6" alt="">
+      </button>
+
+    </div>
+  </div>
 </header>

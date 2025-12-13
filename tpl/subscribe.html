@@ -1,29 +1,34 @@
-<section class="w-full bg-[#7474C2] relative overflow-hidden">
+<section
+  x-data="{
+    email: '',
+    error: '',
+    success: false,
 
-  <!-- ПАТТЕРН / ВОДЯНОЙ ЗНАК -->
+    validateEmail() {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!re.test(this.email)) {
+        this.error = 'Ошибка в email, проверьте свой адрес';
+        return false;
+      }
+      this.error = '';
+      return true;
+    },
+
+    submit() {
+      if (!this.validateEmail()) return;
+      this.success = true;
+    }
+  }"
+  class="w-full bg-[#7474C2] relative overflow-hidden"
+>
+
+  <!-- ПАТТЕРН -->
   <div
     aria-hidden="true"
     class="pointer-events-none absolute
            left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
            w-[720px] h-[720px]
-           opacity-20
-           hidden lg:block"
-  >
-    <img
-      src="/assets/img/museum-mark.png"
-      alt=""
-      class="w-full h-full object-contain"
-    >
-  </div>
-
-  <!-- MOBILE PATTERN -->
-  <div
-    aria-hidden="true"
-    class="pointer-events-none absolute
-           right-0 top-0
-           w-[180px] h-[180px]
-           opacity-20
-           lg:hidden"
+           opacity-20 hidden lg:block"
   >
     <img
       src="/assets/img/museum-mark.png"
@@ -33,55 +38,107 @@
   </div>
 
   <!-- CONTENT -->
-  <div
-    class="relative z-10
-           max-w-[1600px] mx-auto
-           px-4 sm:px-6 lg:px-[60px]
-           py-12 sm:py-16 lg:py-[80px]">
+  <div class="relative z-10 max-w-[1600px] mx-auto px-4 lg:px-[60px] py-[80px]">
 
-    <div class="flex flex-col lg:flex-row
-                items-start lg:items-center
-                justify-between gap-10 lg:gap-[80px]">
+    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
 
       <!-- LEFT -->
       <h2
-        class="font-[Racama] font-normal
-               text-white
+        class="font-[Racama] text-white
                text-[40px] sm:text-[56px] lg:text-[72px]
-               leading-[0.95]
-               tracking-[-0.02em]
+               leading-[0.95] tracking-[-0.02em]
                max-w-[420px]"
       >
         Рассылка<br>от музея
       </h2>
 
       <!-- RIGHT -->
-      <div class="w-full max-w-[360px] flex flex-col gap-4">
+      <div class="w-full max-w-[360px] flex flex-col gap-2">
+
+        <!-- EMAIL -->
         <input
           type="email"
+          x-model="email"
+          @input="error = ''"
           placeholder="Ваш email"
-          class="w-full
-                 px-6 py-5
+          class="w-full px-6 py-5
                  text-white placeholder-white/70
-                 bg-white/20
-                 border border-white/20
-                 focus:outline-none
-                 focus:bg-white/30
-                 transition"
+                 bg-white/20 border
+                 focus:outline-none focus:bg-white/30 transition"
+          :class="error
+            ? 'border-red-400 focus:border-red-400'
+            : 'border-white/20 focus:border-white/40'"
         >
 
+        <!-- ERROR -->
+        <p
+          x-show="error"
+          x-transition
+          class="text-red-300 text-sm mt-1"
+          x-text="error"
+        ></p>
+
+        <!-- BUTTON -->
         <button
-          class="w-full
-                 px-6 py-5
+          @click="submit"
+          class="w-full mt-3 px-6 py-5
                  bg-white text-[#7474C2]
-                 font-semibold text-base
-                 transition
-                 hover:bg-white/90"
+                 font-semibold
+                 hover:bg-white/90 transition"
         >
           Подписаться на рассылку
         </button>
+
       </div>
+    </div>
+  </div>
+
+  <!-- ================= POPUP ================= -->
+  <div
+    x-show="success"
+    x-transition
+    x-cloak
+    @keydown.escape.window="success = false"
+    class="fixed inset-0 z-[100] flex items-center justify-center"
+  >
+
+    <!-- OVERLAY -->
+    <div
+      class="absolute inset-0 bg-black/60"
+      @click="success = false"
+    ></div>
+
+    <!-- MODAL -->
+    <div
+      class="relative bg-[#6FAE86]
+             px-10 py-12
+             w-[90%] max-w-[520px]
+             text-center text-white"
+      @click.outside="success = false"
+    >
+
+      <!-- CLOSE -->
+      <button
+        @click="success = false"
+        class="absolute -right-12 top-0 text-white text-[32px] leading-none"
+        aria-label="Закрыть"
+      >
+        ×
+      </button>
+
+      <p class="text-[28px] leading-[1.2] mb-8">
+        Вы успешно подписались<br>на рассылку!
+      </p>
+
+      <button
+        @click="success = false"
+        class="w-full bg-white text-[#6FAE86]
+               py-4 font-semibold hover:bg-white/90"
+      >
+        Закрыть
+      </button>
 
     </div>
   </div>
+
 </section>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>О музее — Сергиево-Посадский музей-заповедник</title>
+  <meta name="description" content="О музее — Сергиево-Посадский государственный историко-художественный музей-заповедник">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind 4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-[#24272A]">
+
+  <!-- HEADER -->
+  <div data-include="/tpl/header.html"></div>
+  <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
+
+    <section
+      class="pt-10 pb-16 lg:pt-[80px] lg:pb-[120px]
+             grid grid-cols-1 lg:grid-cols-[1fr_480px]
+             gap-12 lg:gap-[145px]
+             items-start"
+    >
+
+      <!-- LEFT -->
+      <div>
+
+        <!-- TITLE -->
+        <h1
+          class="font-[Racama]
+                 text-[48px] sm:text-[64px] lg:text-[140px]
+                 leading-[95%] tracking-[-0.02em]
+                 mb-8 lg:mb-[60px]"
+        >
+          О музее
+        </h1>
+
+        <!-- LIST -->
+        <nav class="flex flex-col text-[20px] sm:text-[22px] lg:text-[28px]">
+
+          <a href="/about/science.html"
+             class="flex items-center justify-between
+                    border-b border-[#DCDEE0]
+                    py-4 sm:py-6
+                    hover:text-[#C93635] transition">
+            <span>Научная деятельность</span>
+            <span>→</span>
+          </a>
+
+          <a href="/about/documents/"
+             class="flex items-center justify-between
+                    border-b border-[#DCDEE0]
+                    py-4 sm:py-6
+                    hover:text-[#C93635] transition">
+            <span>Документы</span>
+            <span>→</span>
+          </a>
+
+          <a href="/about/history/"
+             class="flex items-center justify-between
+                    border-b border-[#DCDEE0]
+                    py-4 sm:py-6
+                    hover:text-[#C93635] transition">
+            <span>История музея</span>
+            <span>→</span>
+          </a>
+
+          <a href="/about/collections/"
+             class="flex items-center justify-between
+                    border-b border-[#DCDEE0]
+                    py-4 sm:py-6
+                    hover:text-[#C93635] transition">
+            <span>Коллекции</span>
+            <span>→</span>
+          </a>
+
+          <a href="/about/images/"
+             class="flex items-center justify-between
+                    border-b border-[#DCDEE0]
+                    py-4 sm:py-6
+                    hover:text-[#C93635] transition">
+            <span>Заказ изображений</span>
+            <span>→</span>
+          </a>
+
+          <a href="/about/jobs/"
+             class="flex items-center justify-between
+                    border-b border-[#DCDEE0]
+                    py-4 sm:py-6
+                    hover:text-[#C93635] transition">
+            <span>Вакансии</span>
+            <span>→</span>
+          </a>
+
+        </nav>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="w-full">
+
+        <img
+          src="/assets/img/about/about-hero.png"
+          alt="Сергиево-Посадский музей-заповедник"
+          class="w-full
+                 h-[300px] sm:h-[380px] lg:h-[520px]
+                 object-cover
+                 rounded-t-[240px] rounded-b-none"
+        >
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div data-include="/tpl/footer.html"></div>
+
+  <!-- INCLUDE -->
+  <script src="/include.js"></script>
+
+  <!-- Alpine (глобально для проекта) -->
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+</body>
+</html>

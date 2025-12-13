@@ -1,22 +1,28 @@
 <nav class="w-full bg-white border-b border-[#DCDEE0]">
 
   <div class="hidden lg:block max-w-[1600px] mx-auto px-[60px]">
-    <ul class="flex items-center justify-between w-full h-[64px]
-               text-[16px] font-normal leading-[1.6]
-               text-[#24272A]">
+    <ul
+      class="flex items-center justify-between w-full h-[64px]
+             text-[16px] font-normal leading-[1.6]
+             text-[#24272A]"
+    >
 
-      <!-- Корпуса -->
+      <!-- О музее -->
+      <li class="whitespace-nowrap">
+        <a href="/about/index.html" class="hover:text-[#C93635] transition">
+          О музее
+        </a>
+      </li>
+
+      <!-- ОБЪЕКТЫ -->
       <li class="relative h-full flex items-center group whitespace-nowrap">
         <a
           href="/corps/index.html"
-          class="h-full flex items-center
-                 hover:text-[#C93635]
-                 transition cursor-pointer"
+          class="h-full flex items-center hover:text-[#C93635] transition"
         >
-          Корпуса
+          Объекты
         </a>
 
-        <!-- DROPDOWN -->
         <div
           class="absolute top-full left-0 hidden group-hover:block
                  bg-white border border-[#DCDEE0]
@@ -24,44 +30,65 @@
                  z-50"
         >
           <ul class="py-4 px-6 space-y-3">
-            <li><a href="/corps/main.html" class="hover:text-[#C93635] block">Главный корпус</a></li>
-            <li><a href="/corps/riznitsa.html" class="hover:text-[#C93635] block">Ризница ТСЛ</a></li>
-            <li><a href="/corps/konny-dvor.html" class="hover:text-[#C93635] block">Конный двор</a></li>
-            <li><a href="/corps/local-history.html" class="hover:text-[#C93635] block">Краеведческий корпус</a></li>
+
+            <li>
+              <a href="/map.html" class="block hover:text-[#C93635]">
+                Интерактивная карта
+              </a>
+            </li>
+
+            <li class="border-t border-[#DCDEE0] pt-3"></li>
+
+            <li><a href="/corps/main.html" class="block hover:text-[#C93635]">Главный корпус</a></li>
+            <li><a href="/corps/riznitsa.html" class="block hover:text-[#C93635]">Ризница Троице-Сергиевской Лавры</a></li>
+            <li><a href="/corps/konny-dvor.html" class="block hover:text-[#C93635]">Музейный комплекс «Конный двор»</a></li>
+            <li><a href="/corps/local-history.html" class="block hover:text-[#C93635]">Краеведческий корпус</a></li>
+
           </ul>
         </div>
       </li>
 
-      <li><a href="/map.html" class="hover:text-[#C93635] transition">Интерактивная карта</a></li>
-
-      <!-- Для групп -->
-      <li class="relative h-full flex items-center group whitespace-nowrap">
-        <button class="h-full flex items-center hover:text-[#C93635] transition">
-          Для групп
-        </button>
-
-        <div
-          class="absolute top-full left-0 hidden group-hover:block
-                 bg-white border border-[#DCDEE0]
-                 shadow-xl min-w-[300px]
-                 z-50"
-        >
-          <ul class="py-4 px-6 space-y-3">
-            <li><a href="#" class="hover:text-[#C93635] block">Турфирмам</a></li>
-            <li><a href="#" class="hover:text-[#C93635] block">Группам учащихся</a></li>
-            <li><a href="#" class="hover:text-[#C93635] block">Социальным группам</a></li>
-            <li><a href="#" class="hover:text-[#C93635] block">Людям с инвалидностью</a></li>
-            <li><a href="#" class="hover:text-[#C93635] block">Паломникам</a></li>
-          </ul>
-        </div>
+      <!-- Посетителям -->
+      <li class="whitespace-nowrap">
+        <a href="/visitors.html" class="hover:text-[#C93635] transition">
+          Посетителям
+        </a>
       </li>
 
-      <li><a href="/visitors.html" class="hover:text-[#C93635] transition">Посетителям</a></li>
-      <li><a href="/events.html" class="hover:text-[#C93635] transition">Мероприятия</a></li>
-      <li><a href="/exhibitions.html" class="hover:text-[#C93635] transition">Выставки и экспозиции</a></li>
-      <li><a href="/excursions.html" class="hover:text-[#C93635] transition">Экскурсии</a></li>
-      <li><a href="/about.html" class="hover:text-[#C93635] transition">О музее</a></li>
-      <li><a href="/contacts.html" class="hover:text-[#C93635] transition">Контакты</a></li>
+      <!-- Мероприятия -->
+      <li class="whitespace-nowrap">
+        <a href="/events.html" class="hover:text-[#C93635] transition">
+          Мероприятия
+        </a>
+      </li>
+
+      <!-- Выставки -->
+      <li class="whitespace-nowrap">
+        <a href="/exhibitions.html" class="hover:text-[#C93635] transition">
+          Выставки и экспозиции
+        </a>
+      </li>
+
+      <!-- Экскурсии -->
+      <li class="whitespace-nowrap">
+        <a href="/excursions.html" class="hover:text-[#C93635] transition">
+          Экскурсии
+        </a>
+      </li>
+
+      <!-- Музей онлайн -->
+      <li class="whitespace-nowrap">
+        <a href="/online.html" class="hover:text-[#C93635] transition">
+          Музей-онлайн
+        </a>
+      </li>
+
+      <!-- Контакты -->
+      <li class="whitespace-nowrap">
+        <a href="/contacts.html" class="hover:text-[#C93635] transition">
+          Контакты
+        </a>
+      </li>
 
     </ul>
   </div>

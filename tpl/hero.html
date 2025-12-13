@@ -1,137 +1,127 @@
 <section
-    x-data="heroSlider()"
-    class="relative bg-[#C93635] overflow-hidden"
+  x-data="heroSlider()"
+  class="relative bg-[#C93635] overflow-hidden"
 >
-    <!-- CONTENT -->
-    <div
-        class="max-w-[1600px] mx-auto
-               px-4 lg:px-[60px]
-               pt-8 lg:pt-12
-               pb-10 lg:pb-16
-               relative z-10"
-    >
 
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <!-- SHAPE / ARCA (ПРИВЯЗАНА К СЕКЦИИ) -->
+  <img
+    src="/assets/svg/arca.svg"
+    alt=""
+    class="absolute
+           right-0 bottom-0
+           w-[520px] lg:w-[665px]
+           h-auto
+           pointer-events-none select-none
+           z-0"
+  >
 
-            <!-- LEFT -->
-            <div class="text-white font-[Racama]">
+  <!-- CONTENT -->
+  <div
+    class="relative z-10
+           max-w-[1600px] mx-auto
+           px-4 lg:px-[60px]
+           pt-8 lg:pt-12
+           pb-10 lg:pb-16"
+  >
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-                <!-- DATE -->
-                <div class="flex items-center gap-4 text-sm opacity-90 mb-6">
-                    <span x-text="slides[current].date.split('—')[0]"></span>
-                    <span class="w-10 h-px bg-white/70"></span>
-                    <span x-text="slides[current].date.split('—')[1]"></span>
-                </div>
+      <!-- LEFT -->
+      <div class="text-white font-[Racama]">
 
-                <!-- TITLE -->
-                <h1
-                    class="font-semibold
-                           text-[44px] leading-[1.1]
-                           lg:text-[72px] lg:leading-[1.05]
-                           mb-6"
-                >
-                    <span x-text="slides[current].titleLine1"></span><br>
-                    <span x-text="slides[current].titleLine2"></span>
-                </h1>
-
-                <!-- SUBTITLE -->
-                <p
-                    class="text-sm lg:text-base opacity-90 mb-10"
-                    x-text="slides[current].subtitle"
-                ></p>
-
-                <!-- BUTTONS -->
-                <div class="flex gap-4 mb-12">
-
-                    <a
-                        href="#"
-                        class="group inline-flex items-center gap-3
-                               h-[52px] px-6
-                               bg-white text-[#24272A] font-semibold
-                               border border-white
-                               hover:bg-transparent hover:text-white transition"
-                    >
-                        Купить билет
-                        <img
-                            src="/assets/svg/ticket1.svg"
-                            class="w-5 h-5 transition group-hover:invert"
-                            alt=""
-                        >
-                    </a>
-
-                    <a
-                        href="#"
-                        class="inline-flex items-center gap-3
-                               h-[52px] px-6
-                               border border-white font-semibold
-                               hover:bg-white/10 transition"
-                    >
-                        Постоянная выставка →
-                    </a>
-                </div>
-
-                <!-- SLIDER CONTROLS -->
-                <div class="flex items-center gap-4">
-
-                    <button
-                        @click="prev"
-                        class="w-10 h-10 border border-white/70
-                               flex items-center justify-center
-                               hover:bg-white/10 transition"
-                    >
-                        ←
-                    </button>
-
-                    <div class="flex gap-2">
-                        <template x-for="(item, index) in slides" :key="index">
-                            <span
-                                class="w-6 h-1 transition-colors"
-                                :class="current === index ? 'bg-white' : 'bg-white/40'"
-                            ></span>
-                        </template>
-                    </div>
-
-                    <button
-                        @click="next"
-                        class="w-10 h-10 border border-white/70
-                               flex items-center justify-center
-                               hover:bg-white/10 transition"
-                    >
-                        →
-                    </button>
-                </div>
-            </div>
-
-            <!-- RIGHT -->
-            <div
-                class="relative
-                       min-h-[360px] lg:min-h-[430px]
-                       flex justify-end"
-            >
-
-                <!-- OVAL -->
-                <div
-                    class="absolute
-                           right-0
-                           bottom-[40px]
-                           w-[480px] h-[480px]
-                           lg:w-[560px] lg:h-[560px]
-                           rounded-full bg-white/15"
-                ></div>
-
-                <!-- MATRYOSHKA -->
-                <img
-                    :src="slides[current].img"
-                    alt=""
-                    class="absolute
-                           right-0
-                           bottom-[-250px]
-                           w-[520px] lg:w-[640px]
-                           z-10
-                           pointer-events-none"
-                >
-            </div>
-
+        <!-- DATE -->
+        <div class="flex items-center gap-4 text-sm opacity-90 mb-6">
+          <span x-text="slides[current].date.split('—')[0]"></span>
+          <span class="w-10 h-px bg-white/70"></span>
+          <span x-text="slides[current].date.split('—')[1]"></span>
         </div>
+
+        <!-- TITLE -->
+        <h1
+          class="font-semibold
+                 text-[44px] leading-[1.1]
+                 lg:text-[72px] lg:leading-[1.05]
+                 mb-6"
+        >
+          <span x-text="slides[current].titleLine1"></span><br>
+          <span x-text="slides[current].titleLine2"></span>
+        </h1>
+
+        <!-- SUBTITLE -->
+        <p
+          class="text-sm lg:text-base opacity-90 mb-10"
+          x-text="slides[current].subtitle"
+        ></p>
+
+        <!-- BUTTONS -->
+        <div class="flex gap-4 mb-12">
+          <a
+            href="#"
+            class="group inline-flex items-center gap-3
+                   h-[52px] px-6
+                   bg-white text-[#24272A] font-semibold
+                   border border-white
+                   hover:bg-transparent hover:text-white transition"
+          >
+            Купить билет
+            <img
+              src="/assets/svg/ticket1.svg"
+              class="w-5 h-5 transition group-hover:invert"
+              alt=""
+            >
+          </a>
+
+          <a
+            href="#"
+            class="inline-flex items-center gap-3
+                   h-[52px] px-6
+                   border border-white font-semibold
+                   hover:bg-white/10 transition"
+          >
+            Постоянная выставка →
+          </a>
+        </div>
+
+        <!-- SLIDER CONTROLS -->
+        <div class="flex items-center gap-4">
+          <button
+            @click="prev"
+            class="w-10 h-10 border border-white/70
+                   flex items-center justify-center
+                   hover:bg-white/10 transition"
+          >←</button>
+
+          <div class="flex gap-2">
+            <template x-for="(item, index) in slides" :key="index">
+              <span
+                class="w-6 h-1 transition-colors"
+                :class="current === index ? 'bg-white' : 'bg-white/40'"
+              ></span>
+            </template>
+          </div>
+
+          <button
+            @click="next"
+            class="w-10 h-10 border border-white/70
+                   flex items-center justify-center
+                   hover:bg-white/10 transition"
+          >→</button>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="relative min-h-[360px] lg:min-h-[430px] flex justify-end">
+        <img
+          :src="slides[current].img"
+          alt=""
+          class="absolute
+                 right-0
+                 bottom-[-250px]
+                 w-[520px] lg:w-[640px]
+                 z-10
+                 pointer-events-none"
+        >
+      </div>
+
     </div>
+  </div>
 </section>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Отчётная научная конференция по итогам работы за 2023 г. —
+    Сергиево-Посадский музей-заповедник
+  </title>
+
+  <meta
+    name="description"
+    content="Отчётная научная конференция по итогам работы за 2023 года Сергиево-Посадского музея-заповедника"
+  >
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- x-cloak -->
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-[#24272A]">
+
+  <!-- HEADER -->
+  <div data-include="/tpl/header.html"></div>
+  <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-[60px]">
+
+    <!-- BREADCRUMBS -->
+    <div class="pt-10 text-sm text-[#8D9399] flex flex-wrap gap-2 max-w-[1200px]">
+      <a href="/about/index.html" class="hover:text-[#24272A]">О музее</a>
+      <span>/</span>
+      <a href="/about/science.html" class="hover:text-[#24272A]">Научная деятельность</a>
+      <span>/</span>
+      <span class="text-[#24272A]">
+        Отчётная научная конференция по итогам работы за 2023 г.
+      </span>
+    </div>
+
+    <!-- TITLE BLOCK (ШИРЕ ТЕКСТА) -->
+    <div class="mt-10 max-w-[1200px]">
+      <h1
+        class="
+          font-['Racama']
+          text-[36px]
+          sm:text-[48px]
+          lg:text-[72px]
+          leading-[1.05]
+          tracking-[-0.02em]
+        "
+      >
+        Отчётная научная конференция по итогам работы за 2023 г.
+        Сергиево-Посадского музея-заповедника
+      </h1>
+    </div>
+
+    <!-- ARTICLE CONTENT -->
+    <article class="mt-10 max-w-[860px]">
+
+      <!-- IMAGE -->
+      <div>
+        <img
+          src="/assets/img/about/science/1.png"
+          alt=""
+          class="w-full object-cover"
+        >
+      </div>
+
+      <!-- TEXT -->
+      <div class="mt-8 space-y-6 text-[16px] leading-[160%]">
+
+        <p class="text-[#8D9399]">
+          29 февраля в Сергиево-Посадском музее-заповеднике состоялась
+          Отчётная научная конференция по итогам работы за 2023 год.
+        </p>
+
+        <p>
+          Конференцию открыла исполнительный директор музея
+          Н.В. Григорьева, кратко определившая новые задачи музея
+          в связи с переводом его в федеральный статус:
+          «Держать руку на пульсе и знать, как нам двигаться вперед —
+          это очень важно. Конференция должна стать не только отчетом
+          нашего коллектива, но и площадкой для анализа опыта других коллективов».
+        </p>
+
+        <p>
+          Зам. ген. директора по научной работе С.В. Николаева
+          в своем выступлении конкретизировала основные направления
+          научной работы коллектива в 2023 г., выразившиеся в
+          каталогизации музейных коллекций, исследованиях тем
+          по вопросам археологии, народной культуры, искусства,
+          истории Троице-Сергиевой лавры и местного края.
+        </p>
+
+        <p>
+          Было подчеркнуто, что научная работа в музее носит
+          прикладной характер и находит отражение в методической,
+          культурно-просветительской и образовательной деятельности музея,
+          в создании новых экспозиций и выставок.
+        </p>
+
+        <p>
+          Всего на конференции было заслушано 29 выступлений,
+          сопровождавшихся презентациями. Заслушанные исследования
+          имеют важное значение не только для дальнейшего развития науки,
+          но и для практического применения в работе музея.
+        </p>
+
+        <p>
+          В конференции приняли участие представители Центральной
+          городской библиотеки им. А.С. Горловского, Центральной библиотеки
+          им. В.В. Розанова, Сергиево-Посадского института игрушки,
+          филиала ФГБОУ ВО «Высшая школа народных искусств (академия)»
+          и газеты «Вперёд».
+        </p>
+
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div data-include="/tpl/footer.html"></div>
+
+  <!-- INCLUDE -->
+  <script src="/include.js"></script>
+
+  <!-- ALPINE -->
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+  <!-- FIX DETAILS -->
+  <script>
+    window.addEventListener('load', () => {
+      document.querySelectorAll('details[open]').forEach(d => {
+        d.removeAttribute('open');
+      });
+    });
+  </script>
+
+</body>
+</html>

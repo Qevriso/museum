@@ -4,25 +4,23 @@
         open: false,
         active: null
     }"
+    x-cloak
     @toggle-menu.window="open = !open"
     x-show="open"
     x-transition.opacity.duration.200ms
     class="fixed inset-0 z-50 bg-white lg:hidden overflow-x-hidden"
-    style="display: none;"
 >
 
     <!-- TOP BAR -->
     <div class="h-[64px] px-4 flex items-center justify-between border-b border-[#DCDEE0] shrink-0">
-        <div class="flex items-center gap-2">
-            <img
-                src="/assets/svg/logo.svg"
-                alt="Сергиево-Посадский музей-заповедник"
-                class="h-[36px] w-auto"
-            >
-        </div>
+        <img
+            src="/assets/svg/logo.svg"
+            alt="Сергиево-Посадский музей-заповедник"
+            class="h-[36px] w-auto"
+        >
 
         <button
-            @click="open=false"
+            @click="open = false"
             class="w-10 h-10 flex items-center justify-center text-2xl leading-none"
             aria-label="Закрыть меню"
         >
@@ -54,19 +52,14 @@
                     x-collapse
                     class="px-6 pb-4 text-base space-y-3"
                 >
-                    <a href="#" class="block">Главный корпус</a>
-                    <a href="#" class="block">Ризница ТСЛ</a>
-                    <a href="#" class="block">Конный двор</a>
-                    <a href="#" class="block">Краеведческий корпус</a>
+                    <a href="/corps/main.html" class="block">Главный корпус</a>
+                    <a href="/corps/riznitsa.html" class="block">Ризница ТСЛ</a>
+                    <a href="/corps/konny-dvor.html" class="block">Конный двор</a>
+                    <a href="/corps/local-history.html" class="block">Краеведческий корпус</a>
                 </div>
             </li>
 
-            <!-- Интерактивная карта -->
-            <li>
-                <a href="#" class="block px-4 py-5">
-                    Интерактивная карта
-                </a>
-            </li>
+            <li><a href="/map.html" class="block px-4 py-5">Интерактивная карта</a></li>
 
             <!-- Для групп -->
             <li>
@@ -94,32 +87,7 @@
                 </div>
             </li>
 
-            <!-- Посетителям -->
-            <li>
-                <button
-                    @click="active === 'visitors' ? active=null : active='visitors'"
-                    class="w-full flex items-center justify-between px-4 py-5 text-left"
-                >
-                    <span>Посетителям</span>
-                    <span
-                        class="transition-transform duration-200"
-                        :class="active==='visitors' ? 'rotate-180' : ''"
-                    >⌄</span>
-                </button>
-
-                <div
-                    x-show="active==='visitors'"
-                    x-collapse
-                    class="px-6 pb-4 text-base space-y-3"
-                >
-                    <a href="#" class="block">FAQ</a>
-                    <a href="#" class="block">Билеты</a>
-                    <a href="#" class="block">Пушкинская карта</a>
-                    <a href="#" class="block">Маршруты</a>
-                    <a href="#" class="block">Правила посещения</a>
-                </div>
-            </li>
-
+            <li><a href="#" class="block px-4 py-5">Посетителям</a></li>
             <li><a href="#" class="block px-4 py-5">Мероприятия</a></li>
             <li><a href="#" class="block px-4 py-5">Выставки и экспозиции</a></li>
             <li><a href="#" class="block px-4 py-5">Экскурсии</a></li>
@@ -130,25 +98,20 @@
 
         <!-- ACTION BUTTONS -->
         <div class="px-4 py-5 space-y-3 border-t border-[#DCDEE0]">
-
-            <button
-                class="block w-full max-w-full box-border
-                       py-3 text-center
-                       border border-[#24272A]
-                       rounded-lg"
+            <a
+                href="#"
+                class="block w-full py-3 text-center border border-[#24272A] rounded-lg"
             >
                 Купить билет
-            </button>
+            </a>
 
-            <button
-                class="block w-full max-w-full box-border
-                       py-3 text-center
-                       bg-[#24272A] text-white
-                       rounded-lg"
+            <a
+                href="#"
+                class="block w-full py-3 text-center bg-[#24272A] text-white rounded-lg"
             >
                 Заказать экскурсию
-            </button>
-
+            </a>
         </div>
+
     </div>
 </div>

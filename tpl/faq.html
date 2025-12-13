@@ -42,17 +42,14 @@
             class="shrink-0 mt-1 transition-transform duration-300"
             :class="open === 1 ? 'rotate-180' : ''"
           >
-            <img
-              src="/assets/svg/arrow-down.svg"
-              alt=""
-              class="w-5 h-5 sm:w-6 sm:h-6"
-            >
+            <img src="/assets/svg/arrow-down.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="">
           </span>
         </button>
 
         <div
           x-show="open === 1"
-          x-collapse
+          x-transition
+          x-cloak
           class="pb-5 sm:pb-6
                  text-[14px] sm:text-[15px] lg:text-[16px]
                  leading-[160%] text-[#24272A]"
@@ -70,12 +67,7 @@
           class="w-full flex items-start justify-between gap-4
                  py-5 sm:py-6 text-left"
         >
-          <span
-            class="font-semibold
-                   text-[18px] sm:text-[22px] lg:text-[28px]
-                   leading-[130%] tracking-[-0.02em]
-                   text-[#24272A]"
-          >
+          <span class="font-semibold text-[18px] sm:text-[22px] lg:text-[28px]">
             Правила посещения музея
           </span>
 
@@ -89,10 +81,9 @@
 
         <div
           x-show="open === 2"
-          x-collapse
-          class="pb-5 sm:pb-6
-                 text-[14px] sm:text-[15px] lg:text-[16px]
-                 leading-[160%] text-[#24272A]"
+          x-transition
+          x-cloak
+          class="pb-5 sm:pb-6 text-[14px] sm:text-[15px] lg:text-[16px] leading-[160%]"
         >
           Посетители обязаны соблюдать правила поведения в музейных
           пространствах. Фото- и видеосъёмка возможна только
@@ -107,12 +98,7 @@
           class="w-full flex items-start justify-between gap-4
                  py-5 sm:py-6 text-left"
         >
-          <span
-            class="font-semibold
-                   text-[18px] sm:text-[22px] lg:text-[28px]
-                   leading-[130%] tracking-[-0.02em]
-                   text-[#24272A]"
-          >
+          <span class="font-semibold text-[18px] sm:text-[22px] lg:text-[28px]">
             Как приобрести билеты в музей?
           </span>
 
@@ -126,10 +112,9 @@
 
         <div
           x-show="open === 3"
-          x-collapse
-          class="pb-5 sm:pb-6
-                 text-[14px] sm:text-[15px] lg:text-[16px]
-                 leading-[160%] text-[#24272A]"
+          x-transition
+          x-cloak
+          class="pb-5 sm:pb-6 text-[14px] sm:text-[15px] lg:text-[16px] leading-[160%]"
         >
           Билеты можно приобрести онлайн на сайте музея
           или в кассах музейного комплекса.
@@ -143,12 +128,7 @@
           class="w-full flex items-start justify-between gap-4
                  py-5 sm:py-6 text-left"
         >
-          <span
-            class="font-semibold
-                   text-[18px] sm:text-[22px] lg:text-[28px]
-                   leading-[130%] tracking-[-0.02em]
-                   text-[#24272A]"
-          >
+          <span class="font-semibold text-[18px] sm:text-[22px] lg:text-[28px]">
             Возврат денежных средств
           </span>
 
@@ -162,10 +142,9 @@
 
         <div
           x-show="open === 4"
-          x-collapse
-          class="pb-5 sm:pb-6
-                 text-[14px] sm:text-[15px] lg:text-[16px]
-                 leading-[160%] text-[#24272A]"
+          x-transition
+          x-cloak
+          class="pb-5 sm:pb-6 text-[14px] sm:text-[15px] lg:text-[16px] leading-[160%]"
         >
           Возврат билетов осуществляется в соответствии
           с правилами продажи и действующим законодательством.

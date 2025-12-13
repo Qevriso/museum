@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Уведомления — Сергиево-Посадский музей-заповедник</title>
+  <meta name="description" content="Все уведомления Сергиево-Посадского музея-заповедника">
+
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-[#24272A]">
+
+  <!-- HEADER -->
+  <div data-include="/tpl/header.html"></div>
+    <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
+
+  <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] py-[60px] lg:py-[80px]">
+
+    <h1 class="font-['Racama'] text-[48px] lg:text-[72px] leading-[95%] tracking-[-0.02em] mb-[60px]">
+      Уведомления
+    </h1>
+
+    <div class="max-w-[880px] flex flex-col">
+
+      <!-- ITEM -->
+      <div class="bg-[#F0F1F2] px-6 py-5 mb-4">
+        <div class="text-[14px] text-[#8D9399] mb-2">
+          10.12.25, 13:00
+        </div>
+        <div class="text-[20px] leading-[160%] font-['Wix Madefor Display']">
+          Главный корпус закрыт на ремонт с 10 по 11 декабря.
+          Подробности смотрите в разделе
+          <a href="/corps/index.html" class="text-[#3B5BDB] hover:underline">
+            Корпуса
+          </a>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="px-6 py-5 border-b border-[#DCDEE0]">
+        <div class="text-[14px] text-[#8D9399] mb-2">
+          10.12.25, 13:00
+        </div>
+        <div class="text-[20px] leading-[160%] font-['Wix Madefor Display']">
+          Главный корпус закрыт на ремонт с 10 по 11 декабря.
+          Подробности смотрите в разделе
+          <a href="/corps/index.html" class="text-[#3B5BDB] hover:underline">
+            Корпуса
+          </a>
+        </div>
+      </div>
+
+      <!-- дальше список по аналогии -->
+
+    </div>
+
+  </main>
+
+  <div data-include="/tpl/footer.html"></div>
+
+  <script src="/include.js"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+</body>
+</html>

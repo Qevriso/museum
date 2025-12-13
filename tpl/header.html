@@ -1,6 +1,6 @@
 <header
   x-data="{ searchOpen:false }"
-  class="w-full bg-white border-b border-[#DCDEE0]"
+  class="w-full bg-white border-b border-[#DCDEE0] relative z-50"
 >
   <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px] h-[64px] flex items-center justify-between">
 
@@ -37,8 +37,7 @@
 
       <!-- SEARCH (MOBILE) -->
       <button
-        class="lg:hidden w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
-        type="button"
+        class="lg:hidden w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors"
         aria-label="Поиск"
       >
         <img src="/assets/svg/search.svg" class="w-5 h-5" alt="">
@@ -49,81 +48,128 @@
         href="#"
         class="hidden lg:flex items-center gap-3 px-5 h-[44px]
                border border-[#24272A]
-               font-semibold
-               text-[#24272A]
-               transition-colors
-               hover:bg-[#24272A] hover:text-white
-               group cursor-pointer"
+               font-semibold text-[#24272A]
+               hover:bg-[#24272A] hover:text-white transition-colors"
       >
         Купить билет
-        <img
-          src="/assets/svg/ticket2.svg"
-          class="w-5 h-5 text-current"
-          alt=""
-        >
+        <img src="/assets/svg/ticket2.svg" class="w-5 h-5" alt="">
       </a>
 
       <!-- EXCURSION -->
       <a
         href="#"
         class="hidden lg:flex items-center gap-3 px-5 h-[44px]
-               bg-[#24272A] text-white
-               font-semibold
+               bg-[#24272A] text-white font-semibold
                border border-[#24272A]
-               transition-colors
-               hover:bg-white hover:text-[#24272A]
-               group cursor-pointer"
+               hover:bg-white hover:text-[#24272A] transition-colors"
       >
         Заказать экскурсию
-        <img
-          src="/assets/svg/users.svg"
-          class="w-5 h-5 text-current"
-          alt=""
-        >
+        <img src="/assets/svg/users.svg" class="w-5 h-5" alt="">
       </a>
 
       <!-- NOTIFICATIONS -->
-      <button
-        class="relative w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
-        type="button"
+      <div
+        x-data="{ open:false }"
+        class="relative hidden lg:block"
+        @mouseenter="open = true"
+        @mouseleave="open = false"
+      >
+        <!-- ICON -->
+        <a
+          href="/tpl/notifications.html"
+          class="relative w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2]"
+          aria-label="Уведомления"
+        >
+          <img src="/assets/svg/bell.svg" class="w-5 h-5" alt="">
+          <span class="absolute top-1 right-1 w-5 h-5 text-xs bg-[#C93635] text-white flex items-center justify-center">
+            3
+          </span>
+        </a>
+
+        <!-- DROPDOWN -->
+        <div
+          x-show="open"
+          x-transition
+          class="absolute right-0 mt-2 w-[420px]
+                 bg-white border border-[#DCDEE0]
+                 shadow-xl z-50"
+        >
+
+          <!-- ITEM -->
+          <a
+            href="/tpl/notifications.html"
+            class="block px-6 py-4 border-b border-[#DCDEE0] hover:bg-[#F0F1F2]"
+          >
+            <div class="text-[14px] text-[#8D9399] mb-1">
+              10.12.25, 13:00
+            </div>
+            <div class="text-[16px] leading-[160%]">
+              Главный корпус закрыт на ремонт с 10 по 11 декабря.
+              Подробности смотрите в разделе
+              <span class="text-[#3B5BDB]">Корпуса</span>
+            </div>
+          </a>
+
+          <!-- ITEM -->
+          <a
+            href="/tpl/notifications.html"
+            class="block px-6 py-4 border-b border-[#DCDEE0] hover:bg-[#F0F1F2]"
+          >
+            <div class="text-[14px] text-[#8D9399] mb-1">
+              10.12.25, 13:00
+            </div>
+            <div class="text-[16px] leading-[160%]">
+              Главный корпус закрыт на ремонт с 10 по 11 декабря.
+              Подробности смотрите в разделе
+              <span class="text-[#3B5BDB]">Корпуса</span>
+            </div>
+          </a>
+
+          <!-- FOOTER -->
+          <a
+            href="/tpl/notifications.html"
+            class="flex items-center justify-center gap-3 px-6 py-4 text-[#8D9399]
+                   hover:text-[#24272A] transition-colors"
+          >
+            Все уведомления
+            <span>→</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- MOBILE NOTIFICATIONS -->
+      <a
+        href="/tpl/notifications.html"
+        class="lg:hidden w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2]"
         aria-label="Уведомления"
       >
         <img src="/assets/svg/bell.svg" class="w-5 h-5" alt="">
-        <span class="absolute top-1 right-1 w-5 h-5 text-xs bg-[#C93635] text-white flex items-center justify-center">
-          3
-        </span>
-      </button>
+      </a>
 
       <!-- ACCESSIBILITY -->
       <button
-        class="w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
-        type="button"
+        class="w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2]"
         aria-label="Версия для слабовидящих"
       >
         <img src="/assets/svg/eye.svg" class="w-5 h-5" alt="">
       </button>
 
       <!-- LANGUAGE -->
-      <div
-        class="relative"
-        x-data="{ open:false, value:'RU' }"
-        @click.outside="open=false"
-      >
+      <div x-data="{ open:false, value:'RU' }" class="relative">
         <button
           @click="open=!open"
-          class="w-10 h-10 flex items-center justify-center font-semibold hover:bg-[#F0F1F2] transition-colors cursor-pointer"
-          type="button"
-          aria-label="Язык"
+          class="w-10 h-10 flex items-center justify-center font-semibold hover:bg-[#F0F1F2]"
           x-text="value"
         ></button>
 
         <div
           x-show="open"
-          x-transition
-          class="absolute right-0 mt-2 w-16 bg-white border border-[#DCDEE0] shadow-lg z-50"
+          @click.outside="open=false"
+          class="absolute right-0 mt-2 w-16 bg-white border border-[#DCDEE0] shadow-lg"
         >
-          <div class="px-3 py-2 text-center hover:bg-[#F0F1F2] cursor-pointer" @click="value='RU';open=false">RU</div>
-          <div class="px-3 py-2 text-center hover:bg-[#F0F1F2] cursor-pointer" @click="value='EN';open=false">EN</div>
+          <div class="px-3 py-2 text-center hover:bg-[#F0F1F2]" @click="value='RU';open=false">RU</div>
+          <div class="px-3 py-2 text-center hover:bg-[#F0F1F2]" @click="value='EN';open=false">EN</div>
         </div>
       </div>
 
@@ -136,9 +182,8 @@
 
       <!-- HAMBURGER -->
       <button
-        class="lg:hidden w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2] transition-colors cursor-pointer"
+        class="lg:hidden w-10 h-10 flex items-center justify-center hover:bg-[#F0F1F2]"
         @click="$dispatch('toggle-menu')"
-        type="button"
         aria-label="Меню"
       >
         <img src="/assets/img/menu.png" class="w-6 h-6" alt="">

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Контакты — Сергиево-Посадский музей-заповедник</title>
+  <meta name="description" content="Контакты Сергиево-Посадского музея-заповедника">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind 4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- скрываю Alpine-блоки до инициализации -->
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
+
+  <!-- Alpine (гружу в head с defer, чтобы dropdown’ы не мигали на старте) -->
+  <script src="/assets/js/alpine.min.js" defer></script>
+</head>
+
+<body class="bg-white text-[#24272A] relative">
+
+  <!-- GLOBAL -->
+  <div data-include="/tpl/header.html"></div>
+  <div data-include="/tpl/menu.html"></div>
+
+  <!-- MOBILE MENU -->
+  <div data-include="/tpl/menu-mobile.html"></div>
+
+  <!-- ================= MAIN ================= -->
+  <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] py-[40px] lg:py-[80px]">
+
+    <!-- TITLE -->
+    <h1
+      class="font-['Racama']
+             text-[48px] sm:text-[72px] lg:text-[140px]
+             leading-[0.95]
+             tracking-[-0.02em]
+             mb-[24px] lg:mb-[60px]">
+      Контакты
+    </h1>
+
+    <!-- ================= TOP ================= -->
+    <section class="grid grid-cols-1 lg:grid-cols-[1fr_520px] gap-[40px] lg:gap-[145px]">
+
+      <!-- LEFT -->
+      <div class="flex flex-col gap-[40px] lg:gap-[60px]">
+
+        <!-- EMAIL -->
+        <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
+          sergiev-mus@mail.ru
+        </div>
+
+        <!-- CONTACTS -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-10">
+
+          <!-- Заказ экскурсий -->
+          <div>
+            <div class="text-[16px] leading-[1.6] text-[#24272A]/70 mb-3">
+              Заказ экскурсий
+            </div>
+
+            <div class="border-b border-[#DCDEE0] pb-4">
+              <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
+                8 496 540-53-56
+              </div>
+            </div>
+
+            <div class="border-b border-[#DCDEE0] pt-6 pb-4">
+              <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
+                8 985 040-45-17
+              </div>
+            </div>
+          </div>
+
+          <!-- Вопросы и сотрудничество -->
+          <div>
+            <div class="text-[16px] leading-[1.6] text-[#24272A]/70 mb-3">
+              Вопросы и сотрудничество
+            </div>
+
+            <div class="border-b border-[#DCDEE0] pb-4">
+              <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
+                8 496 540-63-58
+              </div>
+            </div>
+          </div>
+
+          <!-- Директор -->
+          <div>
+            <div class="text-[16px] font-semibold mb-1">
+              Директор
+            </div>
+            <div class="text-[16px] leading-[1.6] text-[#24272A]/70 mb-4">
+              Гузиков Феогност Михайлович
+            </div>
+
+            <div class="border-b border-[#DCDEE0] pb-4">
+              <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
+                496 541-35-63
+              </div>
+            </div>
+          </div>
+
+          <!-- Секретарь -->
+          <div>
+            <div class="text-[16px] font-semibold mb-1">
+              Секретарь
+            </div>
+            <div class="text-[16px] leading-[1.6] text-[#24272A]/70 mb-4">
+              Ротерман Татьяна Андреевна
+            </div>
+
+            <div class="border-b border-[#DCDEE0] pb-4">
+              <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
+                496 540-63-58
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[760px]">
+
+          <button
+            class="h-[56px] bg-[#C92E32] text-white
+                   font-['Wix_Madefor_Display']
+                   text-[16px] leading-[1.6] font-semibold">
+            Обратный звонок
+          </button>
+
+          <button
+            class="h-[56px] border border-[#24272A]
+                   font-['Wix_Madefor_Display']
+                   text-[16px] leading-[1.6] font-semibold"
+            x-data
+            @click="$dispatch('review-open')">
+            Оставить отзыв
+          </button>
+
+          <a
+            href="/contacts/other-contacts.html"
+            class="lg:col-span-2
+                   h-[56px]
+                   border border-[#24272A]
+                   flex items-center justify-center gap-3
+                   font-['Wix_Madefor_Display']
+                   text-[16px] leading-[1.6] font-semibold">
+            Прочие контакты →
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="hidden lg:block">
+        <img
+          src="/assets/img/placeholder.jpg"
+          alt=""
+          class="w-full h-[520px] object-cover rounded-full">
+      </div>
+
+    </section>
+
+    <!-- ================= ADDRESS ================= -->
+    <section class="mt-[60px] lg:mt-[100px]">
+
+      <h2 class="font-['Racama'] text-[28px] lg:text-[40px] leading-[0.95] mb-4">
+        Адрес
+      </h2>
+
+      <p class="font-['Wix_Madefor_Display'] text-[16px] lg:text-[20px] leading-[1.6] max-w-[520px] mb-6">
+        141300, Московская обл., г. Сергиев Посад, ул. 1-ой Ударной Армии, д. 2
+      </p>
+
+      <a
+        href="#map"
+        class="inline-flex items-center justify-center
+               border border-[#24272A]
+               w-full sm:w-auto
+               px-6 lg:px-10 h-[48px] lg:h-[56px]
+               font-['Wix_Madefor_Display']
+               text-[16px] lg:text-[20px]
+               hover:bg-[#24272A] hover:text-white transition-colors mb-6">
+        Интерактивная карта →
+      </a>
+
+      <div id="map" class="w-full h-[320px] lg:h-[420px]"></div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="relative z-0">
+    <div data-include="/tpl/footer.html"></div>
+  </footer>
+
+  <!-- INCLUDE -->
+  <script src="/include.js"></script>
+
+  <!-- закрываю открытые details после подгрузки include (иначе язык/уведомления открываются при старте) -->
+  <script>
+    function closeAllDetails() {
+      document.querySelectorAll('details[open]').forEach(d => d.removeAttribute('open'));
+    }
+
+    window.addEventListener('load', () => {
+      // 1) сразу после полной загрузки
+      closeAllDetails();
+
+      // 2) и на всякий — если include дорисовал что-то после load
+      const obs = new MutationObserver(() => closeAllDetails());
+      obs.observe(document.body, { childList: true, subtree: true });
+
+      // 3) можно отключить наблюдение через короткое время, чтобы не держать лишнее
+      setTimeout(() => obs.disconnect(), 1500);
+    });
+  </script>
+
+  <!-- YANDEX MAP -->
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+  <script>
+    ymaps.ready(() => {
+      const map = new ymaps.Map('map', {
+        center: [56.3000, 38.1333],
+        zoom: 15,
+        controls: ['zoomControl']
+      });
+
+      map.geoObjects.add(new ymaps.Placemark([56.3000, 38.1333]));
+    });
+  </script>
+
+</body>
+</html>

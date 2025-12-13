@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Заказ изображений — Сергиево-Посадский музей-заповедник</title>
+  <meta name="description" content="Заказ изображений музейных предметов и коллекций Сергиево-Посадского музея-заповедника">
+
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <style>
+    [x-cloak] { display: none !important; }
+
+    /* dotted leader like in макет (.....) */
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .price-row__label {
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+    .price-row__dots {
+      flex: 1 1 auto;
+      border-bottom: 1px dotted #8D9399;
+      transform: translateY(-2px); /* визуально как в макете */
+    }
+    .price-row__value {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-[#24272A]">
+
+  <!-- HEADER -->
+  <div data-include="/tpl/header.html"></div>
+  <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-[60px]">
+
+    <!-- BREADCRUMBS -->
+    <div class="pt-10 text-sm text-[#8D9399] flex gap-2 flex-wrap">
+      <span>Мероприятия</span>
+      <span>/</span>
+      <span class="text-[#24272A]">Заказ изображений</span>
+    </div>
+
+    <!-- TITLE -->
+    <h1 class="mt-8 font-['Racama'] text-[40px] sm:text-[56px] lg:text-[72px] leading-[1.05] tracking-[-0.02em]">
+      Заказ изображений
+    </h1>
+
+    <!-- GRID -->
+    <section class="mt-16 grid gap-16 lg:grid-cols-[1fr_480px] items-start">
+
+      <!-- LEFT -->
+      <div class="space-y-12">
+
+        <!-- IMAGE + TEXT -->
+        <div class="space-y-8">
+          <img
+            src="/assets/img/about/order-images/1.png"
+            alt=""
+            class="w-full h-[480px] object-cover bg-[#F3F4F6]"
+          >
+
+          <div class="space-y-4 text-[16px] leading-[160%] max-w-[860px]">
+            <p>
+              Оцифрованные копии музейных предметов из собрания Сергиево-Посадского
+              государственного историко-художественного музея-заповедника и права на их
+              воспроизведение могут быть предоставлены юридическим и физическим лицам
+              для культурно-образовательных, просветительских и научных целей.
+            </p>
+
+            <p>
+              При некоммерческом использовании изображений музейных предметов предусмотрены льготы.
+            </p>
+
+            <p>
+              Для получения информации о порядке предоставления изображений и права их воспроизведения
+              необходимо направить в форме электронного документа по адресу
+              <a href="mailto:sergiev-mus@mail.ru" class="underline">sergiev-mus@mail.ru</a>
+              заполненный бланк заявки.
+            </p>
+
+            <p class="font-semibold">
+              Решение по заявке принимается в течение 3-х рабочих дней с момента её получения.
+              Информация о принятом решении направляется заявителю по электронной почте.
+            </p>
+
+            <p>
+              В случае положительного решения между заявителем и Сергиево-Посадским государственным
+              историко-художественным музеем-заповедником заключается договор в письменной форме.
+            </p>
+          </div>
+        </div>
+
+        <!-- PRICES -->
+        <div class="space-y-10">
+
+          <h2 class="font-['Racama'] text-[32px] tracking-[-0.02em]">
+            Цены
+          </h2>
+
+          <p class="max-w-[860px] leading-[160%]">
+            На использование изображений музейных предметов и музейных коллекций, а также зданий и
+            памятников, принадлежащих ФГБУК «Сергиево-Посадский государственный
+            историко-художественный музей-заповедник». Размер вознаграждения по группам.
+          </p>
+
+          <!-- dotted list -->
+          <div class="space-y-4 text-[16px] leading-[160%] max-w-[980px]">
+
+            <div class="price-row">
+              <span class="price-row__label">Для публикации в научных трудах</span>
+              <span class="price-row__dots" aria-hidden="true"></span>
+              <span class="price-row__value">900 ₽ / 5.000 ₽</span>
+            </div>
+
+            <div class="price-row">
+              <span class="price-row__label">
+                Для публикации в путеводителях, буклетах, периодических и иных печатных
+                изданиях научно-просветительского
+              </span>
+              <span class="price-row__dots" aria-hidden="true"></span>
+              <span class="price-row__value">900 ₽ / 5.000 ₽</span>
+            </div>
+
+            <div class="price-row">
+              <span class="price-row__label">Для публикации в периодических изданиях (журналы и газеты)</span>
+              <span class="price-row__dots" aria-hidden="true"></span>
+              <span class="price-row__value">900 ₽ / 12.000 ₽</span>
+            </div>
+
+            <div class="price-row">
+              <span class="price-row__label">Для публикации в художественных изданиях, альбомах, каталогах</span>
+              <span class="price-row__dots" aria-hidden="true"></span>
+              <span class="price-row__value">900 ₽ / 12.000 ₽</span>
+            </div>
+
+            <div class="pt-6 space-y-3">
+              <div class="font-semibold">
+                Для использования на товарах народного потребления
+              </div>
+              <div>
+                (за исключением названных выше), в том числе на упаковках, кроме использования в качестве
+                элементов товарного знака, знака обслуживания:
+              </div>
+
+              <div class="pl-4 space-y-3">
+                <div class="price-row">
+                  <span class="price-row__label">
+                    • 1 год использования 1 изображения при массовом производстве товаров народного потребления
+                  </span>
+                  <span class="price-row__dots" aria-hidden="true"></span>
+                  <span class="price-row__value">10.000 ₽ / 20.000 ₽</span>
+                </div>
+
+                <div class="price-row">
+                  <span class="price-row__label">
+                    • Использование 1 изображения при серийном производстве товаров народного потребления
+                  </span>
+                  <span class="price-row__dots" aria-hidden="true"></span>
+                  <span class="price-row__value">5.000 ₽ / 12.000 ₽</span>
+                </div>
+
+                <div class="price-row">
+                  <span class="price-row__label">
+                    • Использование 1 изображения на 1 товаре народного потребления при штучном выпуске
+                  </span>
+                  <span class="price-row__dots" aria-hidden="true"></span>
+                  <span class="price-row__value">600 ₽ / 5.000 ₽</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6 price-row">
+              <span class="price-row__label">
+                Для использования изображения в качестве элемента товарного знака, знака обслуживания,
+                вне зависимости от
+              </span>
+              <span class="price-row__dots" aria-hidden="true"></span>
+              <span class="price-row__value">50.000 ₽ / 100.000 ₽</span>
+            </div>
+
+            <div class="price-row">
+              <span class="price-row__label">Для публикации в периодических изданиях (журналы и газеты)</span>
+              <span class="price-row__dots" aria-hidden="true"></span>
+              <span class="price-row__value">900 ₽ / 12.000 ₽</span>
+            </div>
+
+            <div class="price-row">
+              <span class="price-row__label">
+                Для публикации в путеводителях, буклетах, периодических и иных печатных
+                изданиях научно-просветительского
+              </span>
+              <span class="price-row__dots" aria-hidden="true"></span>
+              <span class="price-row__value">900 ₽ / 5.000 ₽</span>
+            </div>
+
+            <div class="price-row">
+              <span class="price-row__label">
+                Для публикации в путеводителях, буклетах, периодических и иных печатных
+                изданиях научно-просветительского
+              </span>
+              <span class="price-row__dots" aria-hidden="true"></span>
+              <span class="price-row__value">900 ₽ / 5.000 ₽</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDEBAR -->
+      <aside class="border border-[#DCDEE0] p-6 space-y-10 sticky top-24 self-start">
+
+        <div class="space-y-4">
+          <h3 class="font-['Racama'] text-[28px] tracking-[-0.02em]">
+            Сроки
+          </h3>
+          <p class="text-[18px]">3 рабочих дня</p>
+        </div>
+
+        <button class="w-full bg-[#62A37D] text-white py-6 text-[18px] font-semibold">
+          Заказать
+        </button>
+
+      </aside>
+    </section>
+
+    <div class="h-24"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <div data-include="/tpl/footer.html"></div>
+
+  <script src="/include.js"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+  <!-- FIX DETAILS -->
+  <script>
+    window.addEventListener('load', () => {
+      document.querySelectorAll('details[open]').forEach(d => d.removeAttribute('open'));
+    });
+  </script>
+
+</body>
+</html>

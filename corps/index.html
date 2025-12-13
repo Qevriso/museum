@@ -10,7 +10,7 @@
   <!-- ШРИФТЫ -->
   <link rel="stylesheet" href="/assets/css/fonts.css">
 
-  <!-- Tailwind 4 -->
+  <!-- Tailwind -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
@@ -34,41 +34,29 @@
 
         <ul id="corpsList" class="text-[22px] lg:text-[28px]">
 
-          <li
-            class="corp-item active"
-            data-img="/assets/img/collection-4.png"
-          >
-            <a href="/corps/main.html" class="flex items-center gap-5 w-full">
+          <li class="corp-item active" data-img="/assets/img/collection-4.png">
+            <a href="/corps/main.html">
               <span class="flex-1">Главный корпус</span>
               <span class="arrow">→</span>
             </a>
           </li>
 
-          <li
-            class="corp-item"
-            data-img="/assets/img/collection-3.png"
-          >
-            <a href="/corps/riznitsa.html" class="flex items-center gap-5 w-full">
+          <li class="corp-item" data-img="/assets/img/collection-3.png">
+            <a href="/corps/riznitsa.html">
               <span class="flex-1">Ризница Троице-Сергиевской Лавры</span>
               <span class="arrow">→</span>
             </a>
           </li>
 
-          <li
-            class="corp-item"
-            data-img="/assets/img/collection-2.png"
-          >
-            <a href="/corps/konny-dvor.html" class="flex items-center gap-5 w-full">
+          <li class="corp-item" data-img="/assets/img/collection-2.png">
+            <a href="/corps/konny-dvor.html">
               <span class="flex-1">Музейный комплекс «Конный двор»</span>
               <span class="arrow">→</span>
             </a>
           </li>
 
-          <li
-            class="corp-item"
-            data-img="/assets/img/collection-1.png"
-          >
-            <a href="/corps/local-history.html" class="flex items-center gap-5 w-full">
+          <li class="corp-item" data-img="/assets/img/collection-1.png">
+            <a href="/corps/local-history.html">
               <span class="flex-1">Краеведческий корпус</span>
               <span class="arrow">→</span>
             </a>
@@ -83,7 +71,10 @@
           id="corpImage"
           src="/assets/img/collection-4.png"
           alt="Экспонат музея"
-          class="w-[320px] sm:w-[420px] lg:w-[480px] h-auto object-cover rounded-full transition-all duration-300"
+          class="corp-preview-img
+                 w-[320px] sm:w-[420px] lg:w-[480px]
+                 h-auto object-cover
+                 transition-all duration-300"
         >
       </div>
 
@@ -96,7 +87,7 @@
   <!-- INCLUDE -->
   <script src="/include.js"></script>
 
-  <!-- ЛОГИКА PREVIEW -->
+  <!-- PREVIEW LOGIC -->
   <script>
     const items = document.querySelectorAll('.corp-item');
     const image = document.getElementById('corpImage');
@@ -110,7 +101,7 @@
     });
   </script>
 
-  <!-- ЛОКАЛЬНЫЕ СТИЛИ -->
+  <!-- LOCAL STYLES -->
   <style>
     .corp-item {
       padding: 24px 0;
@@ -137,6 +128,11 @@
 
     .corp-item.active .arrow {
       color: #C92E32;
+    }
+
+    /* 🔥 ВАЖНОЕ ИСПРАВЛЕНИЕ ОВАЛА */
+    .corp-preview-img {
+      border-radius: 9999px 9999px 0 0;
     }
   </style>
 

@@ -24,15 +24,19 @@
   <!-- ================= MAIN ================= -->
   <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
 
-    <section class="py-[80px] lg:py-[100px] flex flex-col lg:flex-row gap-[60px] lg:gap-[145px]">
+    <section class="py-[60px] lg:py-[100px] flex flex-col lg:flex-row gap-[40px] lg:gap-[145px]">
 
       <!-- LEFT -->
       <div class="flex-1">
-        <h1 class="font-['Racama'] text-[64px] lg:text-[140px] leading-[0.95] tracking-[-0.02em] mb-[60px]">
+        <h1 class="font-['Racama']
+                   text-[48px] sm:text-[64px] lg:text-[140px]
+                   leading-[0.95]
+                   tracking-[-0.02em]
+                   mb-[40px] lg:mb-[60px]">
           Корпуса
         </h1>
 
-        <ul id="corpsList" class="text-[22px] lg:text-[28px]">
+        <ul id="corpsList" class="text-[20px] sm:text-[22px] lg:text-[28px]">
 
           <li class="corp-item active" data-img="/assets/img/collection-4.png">
             <a href="/corps/main.html">
@@ -65,16 +69,15 @@
         </ul>
       </div>
 
-      <!-- RIGHT IMAGE -->
-      <div class="shrink-0">
+      <!-- RIGHT IMAGE (DESKTOP ONLY) -->
+      <div class="shrink-0 hidden lg:block">
         <img
           id="corpImage"
           src="/assets/img/collection-4.png"
           alt="Экспонат музея"
           class="corp-preview-img
-                 w-[320px] sm:w-[420px] lg:w-[480px]
-                 h-auto object-cover
-                 transition-all duration-300"
+                 w-[420px] lg:w-[480px]
+                 h-auto object-cover"
         >
       </div>
 
@@ -87,21 +90,43 @@
   <!-- INCLUDE -->
   <script src="/include.js"></script>
 
-  <!-- PREVIEW LOGIC -->
+  <!-- ================= MORPH LOGIC ================= -->
   <script>
     const items = document.querySelectorAll('.corp-item');
     const image = document.getElementById('corpImage');
 
+    let isAnimating = false;
+
     items.forEach(item => {
       item.addEventListener('mouseenter', () => {
+        if (!image || isAnimating) return;
+
+        const newSrc = item.dataset.img;
+        if (image.src.includes(newSrc)) return;
+
+        isAnimating = true;
+
         items.forEach(i => i.classList.remove('active'));
         item.classList.add('active');
-        image.src = item.dataset.img;
+
+        image.classList.add('morph-out');
+
+        setTimeout(() => {
+          image.src = newSrc;
+          image.classList.remove('morph-out');
+          image.classList.add('morph-in');
+
+          setTimeout(() => {
+            image.classList.remove('morph-in');
+            isAnimating = false;
+          }, 300);
+
+        }, 250);
       });
     });
   </script>
 
-  <!-- LOCAL STYLES -->
+  <!-- ================= LOCAL STYLES ================= -->
   <style>
     .corp-item {
       padding: 24px 0;
@@ -130,9 +155,21 @@
       color: #C92E32;
     }
 
-    /* 🔥 ВАЖНОЕ ИСПРАВЛЕНИЕ ОВАЛА */
+    /* IMAGE SHAPE */
     .corp-preview-img {
       border-radius: 9999px 9999px 0 0;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+
+    /* MORPH STATES */
+    .morph-out {
+      opacity: 0;
+      transform: scale(0.96) translateY(12px);
+    }
+
+    .morph-in {
+      opacity: 1;
+      transform: scale(1) translateY(0);
     }
   </style>
 

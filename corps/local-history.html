@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Краеведческий корпус — Сергиево-Посадский музей-заповедник</title>
+  <meta name="description" content="Краеведческий корпус — экспозиции, режим работы, билеты">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-[#24272A]">
+
+  <!-- GLOBAL -->
+  <div data-include="/tpl/header.html"></div>
+  <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
+
+  <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] py-[60px] lg:py-[80px]">
+
+    <!-- BREADCRUMBS -->
+    <nav class="text-[20px] leading-[160%] text-[#8D9399] mb-10 font-['Wix Madefor Display']">
+      <a href="/corps/index.html" class="hover:text-[#24272A]">Корпуса</a>
+      <span class="mx-2 text-[#DCDEE0]">/</span>
+      <span class="text-[#24272A]">Краеведческий корпус</span>
+    </nav>
+
+    <!-- TITLE -->
+    <h1 class="font-['Racama'] text-[48px] lg:text-[72px] leading-[95%] tracking-[-0.02em] mb-[60px]">
+      Краеведческий корпус
+    </h1>
+
+    <!-- ================= TOP ================= -->
+    <section class="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-[60px] lg:gap-[145px]">
+
+      <!-- LEFT -->
+      <div class="flex flex-col gap-[60px]">
+
+        <!-- IMAGE -->
+        <img
+          src="/assets/img/corps/kraeved/main.png"
+          alt="Краеведческий корпус"
+          class="w-full h-[480px] object-cover"
+        >
+
+        <!-- EXHIBITIONS -->
+        <section>
+          <h2 class="font-['Racama'] text-[32px] leading-[95%] tracking-[-0.02em] mb-8">
+            Экспозиции и выставки
+          </h2>
+
+          <div class="flex flex-col gap-8 text-[20px] leading-[160%] font-['Wix Madefor Display']">
+
+            <div class="flex gap-6">
+              <img src="/assets/img/corps/kraeved/v1.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <p>Экспозиция «Сергиев Посад в XX веке»</p>
+            </div>
+
+            <div class="flex gap-6">
+              <img src="/assets/img/corps/kraeved/v2.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <p>Выставка «Археология Сергиево-Посадской земли»</p>
+            </div>
+
+            <div class="flex gap-6">
+              <img src="/assets/img/corps/kraeved/v3.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <p>Выставка «Искусство. Война. Ополчение». К 80-летию Победы</p>
+            </div>
+
+            <div class="flex gap-6">
+              <img src="/assets/img/corps/kraeved/v4.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <p>Выставка «России верные сыны»</p>
+            </div>
+
+            <div class="flex gap-6">
+              <img src="/assets/img/corps/kraeved/v5.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <p>Выставка «Рождественские и новогодние праздники в Старом городе»</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- DESCRIPTION -->
+        <section x-data="{ open: false }">
+          <h2 class="font-['Racama'] text-[32px] leading-[95%] tracking-[-0.02em] mb-6">
+            Описание
+          </h2>
+
+          <h3 class="text-[20px] font-semibold mb-4 font-['Wix Madefor Display']">
+            История Краеведческого корпуса
+          </h3>
+
+          <div
+            class="relative max-w-[855px] text-[20px] leading-[160%] font-['Wix Madefor Display']
+                   overflow-hidden transition-all duration-500"
+            :class="open ? 'max-h-[4000px]' : 'max-h-[420px]'"
+          >
+            <p>
+              В 1935–1936 гг. был разработан и принят первый план реконструкции и развития
+              г. Загорска (ныне Сергиев Посад). Первым строительным объектом стал детский сад,
+              заложенный в июле 1937 года…
+              <br><br>
+              Двухэтажный кирпичный дом хорошо вписывался в городскую застройку и стал
+              одной из архитектурных доминант довоенного Загорска.
+              <br><br>
+              В 1997 году здание было передано Сергиево-Посадскому музею-заповеднику.
+              Сегодня здесь располагаются экспозиции и выставки,
+              посвящённые истории города XX–XXI веков.
+            </p>
+
+            <div
+              x-show="!open"
+              class="pointer-events-none absolute bottom-0 left-0 w-full h-[120px]
+                     bg-gradient-to-t from-white to-transparent"
+            ></div>
+          </div>
+
+          <button
+            @click="open = !open"
+            class="mt-6 w-full h-[56px] border border-[#24272A]
+                   flex items-center justify-center gap-3
+                   text-[20px] font-['Wix Madefor Display']
+                   hover:bg-[#24272A] hover:text-white transition-colors"
+          >
+            <span x-text="open ? 'Свернуть' : 'Развернуть'"></span>
+            <span :class="open ? 'rotate-180' : ''" class="transition-transform">↓</span>
+          </button>
+        </section>
+
+        <!-- EXCURSIONS -->
+        <section>
+          <h2 class="font-['Racama'] text-[32px] leading-[95%] tracking-[-0.02em] mb-4">
+            Заказ экскурсий
+          </h2>
+
+          <div class="flex gap-x-8 gap-y-2 flex-wrap text-[20px] font-['Wix Madefor Display']">
+            <a href="tel:+74965405356">8 496 540-53-56</a>
+            <a href="tel:+79850404517">8 985 040-45-17</a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT -->
+      <aside class="self-start">
+        <div data-include="/tpl/worktime.html"></div>
+      </aside>
+
+    </section>
+
+    <!-- ADDRESS -->
+    <section class="mt-[100px]">
+
+      <h2 class="font-['Racama'] text-[32px] leading-[95%] tracking-[-0.02em] mb-4">
+        Адрес
+      </h2>
+
+      <div class="flex items-start justify-between gap-10 mb-10">
+        <p class="text-[20px] leading-[160%] max-w-[520px] font-['Wix Madefor Display']">
+          141300, Московская обл., г. Сергиев Посад, Овражный переулок, 9А
+        </p>
+
+        <a
+          href="#"
+          class="inline-flex items-center gap-4 border border-[#24272A]
+                 px-8 h-[56px] text-[20px]
+                 hover:bg-[#24272A] hover:text-white transition-colors"
+        >
+          Интерактивная карта →
+        </a>
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-6">
+        <img src="/assets/img/corps/kraeved/map-city.png" class="w-full lg:flex-1 h-[360px] object-cover" alt="">
+        <img src="/assets/img/corps/kraeved/map-local.png" class="w-full lg:w-[360px] h-[360px] object-cover" alt="">
+      </div>
+
+    </section>
+
+  </main>
+
+  <div data-include="/tpl/footer.html"></div>
+
+  <script src="/include.js"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+</body>
+</html>

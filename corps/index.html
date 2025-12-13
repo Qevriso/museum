@@ -3,29 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Корпуса — Сергиево-Посадский музей-заповедник</title>
-  <meta name="description" content="Корпуса музея">
+  <meta name="description" content="Корпуса Сергиево-Посадского музея-заповедника">
 
   <!-- ШРИФТЫ -->
   <link rel="stylesheet" href="/assets/css/fonts.css">
 
-  <!-- Tailwind 4 CDN -->
+  <!-- Tailwind 4 -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="w-full bg-white text-[#24272A]">
 
-  <!-- ОБЩИЕ СЕКЦИИ -->
+  <!-- ОБЩИЕ МОДУЛИ -->
   <div data-include="/tpl/header.html"></div>
   <div data-include="/tpl/menu.html"></div>
   <div data-include="/tpl/menu-mobile.html"></div>
 
-  <!-- ОСНОВНОЙ КОНТЕНТ СТРАНИЦЫ -->
+  <!-- ================= MAIN ================= -->
   <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
 
     <section class="py-[80px] lg:py-[100px] flex flex-col lg:flex-row gap-[60px] lg:gap-[145px]">
 
-      <!-- ЛЕВАЯ ЧАСТЬ -->
+      <!-- LEFT -->
       <div class="flex-1">
         <h1 class="font-['Racama'] text-[64px] lg:text-[140px] leading-[0.95] tracking-[-0.02em] mb-[60px]">
           Корпуса
@@ -37,38 +38,46 @@
             class="corp-item active"
             data-img="/assets/img/collection-4.png"
           >
-            <span class="flex-1">Главный корпус</span>
-            <span class="arrow">→</span>
+            <a href="/corps/main.html" class="flex items-center gap-5 w-full">
+              <span class="flex-1">Главный корпус</span>
+              <span class="arrow">→</span>
+            </a>
           </li>
 
           <li
             class="corp-item"
             data-img="/assets/img/collection-3.png"
           >
-            <span class="flex-1">Ризница Троице-Сергиевской Лавры</span>
-            <span class="arrow">→</span>
+            <a href="/corps/riznitsa.html" class="flex items-center gap-5 w-full">
+              <span class="flex-1">Ризница Троице-Сергиевской Лавры</span>
+              <span class="arrow">→</span>
+            </a>
           </li>
 
           <li
             class="corp-item"
             data-img="/assets/img/collection-2.png"
           >
-            <span class="flex-1">Музейный комплекс «Конный двор»</span>
-            <span class="arrow">→</span>
+            <a href="/corps/konny-dvor.html" class="flex items-center gap-5 w-full">
+              <span class="flex-1">Музейный комплекс «Конный двор»</span>
+              <span class="arrow">→</span>
+            </a>
           </li>
 
           <li
             class="corp-item"
             data-img="/assets/img/collection-1.png"
           >
-            <span class="flex-1">Краеведческий корпус</span>
-            <span class="arrow">→</span>
+            <a href="/corps/local-history.html" class="flex items-center gap-5 w-full">
+              <span class="flex-1">Краеведческий корпус</span>
+              <span class="arrow">→</span>
+            </a>
           </li>
 
         </ul>
       </div>
 
-      <!-- ПРАВАЯ КАРТИНКА -->
+      <!-- RIGHT IMAGE -->
       <div class="shrink-0">
         <img
           id="corpImage"
@@ -87,7 +96,7 @@
   <!-- INCLUDE -->
   <script src="/include.js"></script>
 
-  <!-- ЛОГИКА КОРПУСОВ -->
+  <!-- ЛОГИКА PREVIEW -->
   <script>
     const items = document.querySelectorAll('.corp-item');
     const image = document.getElementById('corpImage');
@@ -101,16 +110,20 @@
     });
   </script>
 
-  <!-- СТИЛИ -->
+  <!-- ЛОКАЛЬНЫЕ СТИЛИ -->
   <style>
     .corp-item {
+      padding: 24px 0;
+      border-bottom: 1px solid #DCDEE0;
+      transition: color .2s, border-color .2s;
+    }
+
+    .corp-item a {
       display: flex;
       align-items: center;
       gap: 20px;
-      padding: 24px 0;
-      border-bottom: 1px solid #DCDEE0;
-      cursor: pointer;
-      transition: color .2s;
+      text-decoration: none;
+      color: inherit;
     }
 
     .corp-item.active {
@@ -127,7 +140,7 @@
     }
   </style>
 
-  <!-- ALPINE В КОНЦЕ (КАК НА ГЛАВНОЙ) -->
+  <!-- ALPINE -->
   <script src="https://unpkg.com/alpinejs" defer></script>
 
 </body>

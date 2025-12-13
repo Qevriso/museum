@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Музейный комплекс «Конный двор» — Сергиево-Посадский музей-заповедник</title>
+  <meta name="description" content="Музейный комплекс «Конный двор» — экспозиции, режим работы, билеты">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind 4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-[#24272A]">
+
+  <!-- GLOBAL -->
+  <div data-include="/tpl/header.html"></div>
+  <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
+
+  <!-- ================= MAIN ================= -->
+  <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] py-[60px] lg:py-[80px]">
+
+    <!-- BREADCRUMBS -->
+    <nav class="text-[20px] leading-[160%] text-[#8D9399] mb-10 font-['Wix Madefor Display']">
+      <a href="/corps/index.html" class="hover:text-[#24272A]">Корпуса</a>
+      <span class="mx-2 text-[#DCDEE0]">/</span>
+      <span class="text-[#24272A]">Музейный комплекс «Конный двор»</span>
+    </nav>
+
+    <!-- TITLE -->
+    <h1 class="font-['Racama'] text-[48px] lg:text-[72px] leading-[95%] tracking-[-0.02em] mb-[60px]">
+      Музейный комплекс «Конный двор»
+    </h1>
+
+    <!-- ================= TOP ================= -->
+    <section class="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-[60px] lg:gap-[145px]">
+
+      <!-- LEFT -->
+      <div class="flex flex-col gap-[60px]">
+
+        <!-- IMAGE -->
+        <img
+          src="/assets/img/corps/konny-dvor/main.png"
+          alt="Музейный комплекс Конный двор"
+          class="w-full h-[480px] object-cover"
+        >
+
+        <!-- EXHIBITIONS -->
+        <section>
+          <h2 class="font-['Racama'] text-[32px] leading-[95%] tracking-[-0.02em] mb-8">
+            Экспозиции и выставки
+          </h2>
+
+          <div class="flex flex-col gap-8 text-[20px] leading-[160%] font-['Wix Madefor Display']">
+
+            <div class="flex gap-6">
+              <img src="/assets/img/corps/konny-dvor/v1.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <p>Выставка «Любовью и единением спасёмся…»</p>
+            </div>
+
+            <div class="flex gap-6">
+              <img src="/assets/img/corps/konny-dvor/v2.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <p>Экспозиция «Русское декоративно-прикладное искусство XVIII–XXI вв.»</p>
+            </div>
+
+            <div class="flex gap-6">
+              <img src="/assets/img/corps/konny-dvor/v3.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <p>Экспозиция «Мир русской деревни»</p>
+            </div>
+
+            <div class="flex gap-6">
+              <img src="/assets/img/corps/konny-dvor/v4.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <p>Выставка «Музей русской матрёшки»</p>
+            </div>
+
+            <div class="flex gap-6">
+              <img src="/assets/img/corps/konny-dvor/v5.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <p>Выставка «Экипажи в собрании музея»</p>
+            </div>
+
+            <div class="flex gap-6">
+              <img src="/assets/img/corps/konny-dvor/v6.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <p>Выставка «Борис Непомнящий. LXXX. Графика»</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- DESCRIPTION -->
+        <section x-data="{ open: false }">
+          <h2 class="font-['Racama'] text-[32px] leading-[95%] tracking-[-0.02em] mb-6">
+            Описание
+          </h2>
+
+          <h3 class="text-[20px] font-semibold mb-4 font-['Wix Madefor Display']">
+            История «Конного двора»
+          </h3>
+
+          <div
+            class="relative max-w-[855px] text-[20px] leading-[160%] font-['Wix Madefor Display']
+                   overflow-hidden transition-all duration-500"
+            :class="open ? 'max-h-[3000px]' : 'max-h-[420px]'"
+          >
+            <p>
+              Среди старейших зданий Сергиева Посада первое место, без сомнения,
+              занимает музейный комплекс «Конный двор». Расположенный на берегу
+              Белого пруда, он относится к числу важнейших архитектурных памятников города.
+              <br><br>
+              История Конного двора неотделима от истории конюшенного хозяйства Лавры.
+              Уже в XVII–XVIII вв. Троицкая обитель содержала огромное конюшенное хозяйство.
+              <br><br>
+              В 1790–1791 гг. был построен каменный Конный двор в виде замкнутого каре
+              одноэтажных корпусов с круглыми башнями по углам.
+              <br><br>
+              После 1918 года строения пришли в упадок, но позднее были восстановлены
+              усилиями музея-заповедника. Сегодня здесь размещены экспозиции,
+              представляющие историю края и народное искусство России.
+              <br><br>
+              Среди старейших зданий Сергиева Посада первое место, без сомнения,
+              занимает музейный комплекс «Конный двор». Расположенный на берегу
+              Белого пруда, он относится к числу важнейших архитектурных памятников города.
+            </p>
+
+            <div
+              x-show="!open"
+              class="pointer-events-none absolute bottom-0 left-0 w-full h-[120px]
+                     bg-gradient-to-t from-white to-transparent"
+            ></div>
+          </div>
+
+          <button
+            @click="open = !open"
+            class="mt-6 w-full h-[56px] border border-[#24272A]
+                   flex items-center justify-center gap-3
+                   text-[20px] font-['Wix Madefor Display']
+                   hover:bg-[#24272A] hover:text-white transition-colors"
+          >
+            <span x-text="open ? 'Свернуть' : 'Развернуть'"></span>
+            <span :class="open ? 'rotate-180' : ''" class="transition-transform">↓</span>
+          </button>
+        </section>
+
+        <!-- EXCURSIONS -->
+        <section>
+          <h2 class="font-['Racama'] text-[32px] leading-[95%] tracking-[-0.02em] mb-4">
+            Заказ экскурсий
+          </h2>
+
+          <div class="flex gap-x-8 gap-y-2 flex-wrap text-[20px] font-['Wix Madefor Display']">
+            <a href="tel:+74965405356" class="hover:underline">8 496 540-53-56</a>
+            <a href="tel:+79850404517" class="hover:underline">8 985 040-45-17</a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT -->
+      <aside class="self-start">
+        <div data-include="/tpl/worktime.html"></div>
+      </aside>
+
+    </section>
+
+    <!-- ADDRESS -->
+    <section class="mt-[100px]">
+
+      <h2 class="font-['Racama'] text-[32px] leading-[95%] tracking-[-0.02em] mb-4">
+        Адрес
+      </h2>
+
+      <div class="flex items-start justify-between gap-10 mb-10">
+        <p class="text-[20px] leading-[160%] max-w-[520px] font-['Wix Madefor Display']">
+          141300, Московская обл., г. Сергиев Посад,  
+          ул. 1-ой Ударной Армии, д. 2
+        </p>
+
+        <a
+          href="#"
+          class="inline-flex items-center gap-4 border border-[#24272A]
+                 px-8 h-[56px] text-[20px]
+                 hover:bg-[#24272A] hover:text-white transition-colors shrink-0"
+        >
+          Интерактивная карта →
+        </a>
+      </div>
+
+      <!-- MAPS (FIXED) -->
+      <div class="flex flex-col lg:flex-row gap-6">
+        <img
+          src="/assets/img/corps/konny-dvor/map-city.png"
+          alt="Карта города"
+          class="w-full lg:flex-1 h-[360px] object-cover"
+        >
+        <img
+          src="/assets/img/corps/konny-dvor/map-local.png"
+          alt="Схема территории"
+          class="w-full lg:w-[360px] h-[360px] object-cover"
+        >
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div data-include="/tpl/footer.html"></div>
+
+  <!-- INCLUDE -->
+  <script src="/include.js"></script>
+
+  <!-- ALPINE -->
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+</body>
+</html>

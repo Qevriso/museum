@@ -1,91 +1,69 @@
 <nav class="w-full bg-white border-b border-[#DCDEE0]">
 
-    <!-- DESKTOP MENU -->
-    <div class="hidden lg:block max-w-[1600px] mx-auto px-[60px]">
-        <ul class="flex items-center justify-between w-full h-[64px]
-                   text-[16px] font-normal leading-[1.6]
-                   text-[#24272A]">
+  <div class="hidden lg:block max-w-[1600px] mx-auto px-[60px]">
+    <ul class="flex items-center justify-between w-full h-[64px]
+               text-[16px] font-normal leading-[1.6]
+               text-[#24272A]">
 
-            <!-- Корпуса -->
-            <li class="relative h-full flex items-center group whitespace-nowrap">
-                <button
-                    class="h-full flex items-center
-                           hover:text-[#C93635]
-                           transition cursor-pointer"
-                    type="button"
-                >
-                    Корпуса
-                </button>
+      <!-- Корпуса -->
+      <li class="relative h-full flex items-center group whitespace-nowrap">
+        <a
+          href="/corps/index.html"
+          class="h-full flex items-center
+                 hover:text-[#C93635]
+                 transition cursor-pointer"
+        >
+          Корпуса
+        </a>
 
-                <!-- DROPDOWN -->
-                <div
-                    class="absolute top-full left-0 hidden group-hover:block
-                           bg-white border border-[#DCDEE0]
-                           shadow-xl min-w-[320px]
-                           z-50"
-                >
-                    <ul class="py-4 px-6 space-y-3">
-                        <li><a class="hover:text-[#C93635] block" href="#">Главный корпус</a></li>
-                        <li><a class="hover:text-[#C93635] block" href="#">Ризница ТСЛ</a></li>
-                        <li><a class="hover:text-[#C93635] block" href="#">Конный двор</a></li>
-                        <li><a class="hover:text-[#C93635] block" href="#">Краеведческий корпус</a></li>
-                    </ul>
-                </div>
-            </li>
+        <!-- DROPDOWN -->
+        <div
+          class="absolute top-full left-0 hidden group-hover:block
+                 bg-white border border-[#DCDEE0]
+                 shadow-xl min-w-[320px]
+                 z-50"
+        >
+          <ul class="py-4 px-6 space-y-3">
+            <li><a href="/corps/main.html" class="hover:text-[#C93635] block">Главный корпус</a></li>
+            <li><a href="/corps/riznitsa.html" class="hover:text-[#C93635] block">Ризница ТСЛ</a></li>
+            <li><a href="/corps/konny-dvor.html" class="hover:text-[#C93635] block">Конный двор</a></li>
+            <li><a href="/corps/local-history.html" class="hover:text-[#C93635] block">Краеведческий корпус</a></li>
+          </ul>
+        </div>
+      </li>
 
-            <li class="whitespace-nowrap">
-                <a class="hover:text-[#C93635] transition cursor-pointer" href="#">
-                    Интерактивная карта
-                </a>
-            </li>
+      <li><a href="/map.html" class="hover:text-[#C93635] transition">Интерактивная карта</a></li>
 
-            <!-- Для групп -->
-            <li class="relative h-full flex items-center group whitespace-nowrap">
-                <button
-                    class="h-full flex items-center
-                           hover:text-[#C93635]
-                           transition cursor-pointer"
-                    type="button"
-                >
-                    Для групп
-                </button>
+      <!-- Для групп -->
+      <li class="relative h-full flex items-center group whitespace-nowrap">
+        <button class="h-full flex items-center hover:text-[#C93635] transition">
+          Для групп
+        </button>
 
-                <div
-                    class="absolute top-full left-0 hidden group-hover:block
-                           bg-white border border-[#DCDEE0]
-                           shadow-xl min-w-[300px]
-                           z-50"
-                >
-                    <ul class="py-4 px-6 space-y-3">
-                        <li><a class="hover:text-[#C93635] block" href="#">Турфирмам</a></li>
-                        <li><a class="hover:text-[#C93635] block" href="#">Группам учащихся</a></li>
-                        <li><a class="hover:text-[#C93635] block" href="#">Социальным группам</a></li>
-                        <li><a class="hover:text-[#C93635] block" href="#">Людям с инвалидностью</a></li>
-                        <li><a class="hover:text-[#C93635] block" href="#">Паломникам</a></li>
-                    </ul>
-                </div>
-            </li>
+        <div
+          class="absolute top-full left-0 hidden group-hover:block
+                 bg-white border border-[#DCDEE0]
+                 shadow-xl min-w-[300px]
+                 z-50"
+        >
+          <ul class="py-4 px-6 space-y-3">
+            <li><a href="#" class="hover:text-[#C93635] block">Турфирмам</a></li>
+            <li><a href="#" class="hover:text-[#C93635] block">Группам учащихся</a></li>
+            <li><a href="#" class="hover:text-[#C93635] block">Социальным группам</a></li>
+            <li><a href="#" class="hover:text-[#C93635] block">Людям с инвалидностью</a></li>
+            <li><a href="#" class="hover:text-[#C93635] block">Паломникам</a></li>
+          </ul>
+        </div>
+      </li>
 
-            <li class="whitespace-nowrap">
-                <a class="hover:text-[#C93635] transition cursor-pointer" href="#">Посетителям</a>
-            </li>
-            <li class="whitespace-nowrap">
-                <a class="hover:text-[#C93635] transition cursor-pointer" href="#">Мероприятия</a>
-            </li>
-            <li class="whitespace-nowrap">
-                <a class="hover:text-[#C93635] transition cursor-pointer" href="#">Выставки и экспозиции</a>
-            </li>
-            <li class="whitespace-nowrap">
-                <a class="hover:text-[#C93635] transition cursor-pointer" href="#">Экскурсии</a>
-            </li>
-            <li class="whitespace-nowrap">
-                <a class="hover:text-[#C93635] transition cursor-pointer" href="#">О музее</a>
-            </li>
-            <li class="whitespace-nowrap">
-                <a class="hover:text-[#C93635] transition cursor-pointer" href="#">Контакты</a>
-            </li>
+      <li><a href="/visitors.html" class="hover:text-[#C93635] transition">Посетителям</a></li>
+      <li><a href="/events.html" class="hover:text-[#C93635] transition">Мероприятия</a></li>
+      <li><a href="/exhibitions.html" class="hover:text-[#C93635] transition">Выставки и экспозиции</a></li>
+      <li><a href="/excursions.html" class="hover:text-[#C93635] transition">Экскурсии</a></li>
+      <li><a href="/about.html" class="hover:text-[#C93635] transition">О музее</a></li>
+      <li><a href="/contacts.html" class="hover:text-[#C93635] transition">Контакты</a></li>
 
-        </ul>
-    </div>
+    </ul>
+  </div>
 
 </nav>

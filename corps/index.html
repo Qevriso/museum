@@ -1,141 +1,134 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корпуса — Сергиево-Посадский музей-заповедник</title>
+  <meta name="description" content="Корпуса музея">
 
-  <title>Корпуса — Сергиево-Посадский музей</title>
+  <!-- ШРИФТЫ -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
 
-  <!-- Tailwind -->
-  <link rel="stylesheet" href="/assets/css/main.css">
-
-  <!-- Alpine -->
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Tailwind 4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-white text-[#24272A]">
+<body class="w-full bg-white text-[#24272A]">
 
-  <!-- HEADER -->
+  <!-- ОБЩИЕ СЕКЦИИ -->
   <div data-include="/tpl/header.html"></div>
-
-  <!-- MENU -->
   <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
 
-  <!-- PAGE CONTENT -->
-  <main class="w-full bg-white">
+  <!-- ОСНОВНОЙ КОНТЕНТ СТРАНИЦЫ -->
+  <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
 
-    <!-- === КОРПУСА === -->
-    <section
-      class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-[60px]
-             py-10 sm:py-14 lg:py-[80px]"
-      x-data="{ active: 'main' }"
-    >
+    <section class="py-[80px] lg:py-[100px] flex flex-col lg:flex-row gap-[60px] lg:gap-[145px]">
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[120px]">
+      <!-- ЛЕВАЯ ЧАСТЬ -->
+      <div class="flex-1">
+        <h1 class="font-['Racama'] text-[64px] lg:text-[140px] leading-[0.95] tracking-[-0.02em] mb-[60px]">
+          Корпуса
+        </h1>
 
-        <!-- LEFT -->
-        <div>
-          <h1
-            class="font-[Racama] text-[48px] sm:text-[64px] lg:text-[96px]
-                   leading-[0.95] tracking-[-0.02em] mb-10"
+        <ul id="corpsList" class="text-[22px] lg:text-[28px]">
+
+          <li
+            class="corp-item active"
+            data-img="/assets/img/collection-4.png"
           >
-            Корпуса
-          </h1>
+            <span class="flex-1">Главный корпус</span>
+            <span class="arrow">→</span>
+          </li>
 
-          <div class="divide-y divide-[#DCDEE0]">
-
-            <button
-              @mouseenter="active='main'"
-              @click="active='main'"
-              class="w-full flex justify-between py-6 text-left"
-            >
-              <span class="text-[22px] sm:text-[28px]">Главный корпус</span>
-              <span>→</span>
-            </button>
-
-            <button
-              @mouseenter="active='riza'"
-              @click="active='riza'"
-              class="w-full flex justify-between py-6 text-left"
-            >
-              <span class="text-[22px] sm:text-[28px]">
-                Ризница Троице-Сергиевской Лавры
-              </span>
-              <span>→</span>
-            </button>
-
-            <button
-              @mouseenter="active='konny'"
-              @click="active='konny'"
-              class="w-full flex justify-between py-6 text-left"
-            >
-              <span class="text-[22px] sm:text-[28px]">
-                Музейный комплекс «Конный двор»
-              </span>
-              <span>→</span>
-            </button>
-
-            <button
-              @mouseenter="active='local'"
-              @click="active='local'"
-              class="w-full flex justify-between py-6 text-left"
-            >
-              <span class="text-[22px] sm:text-[28px]">
-                Краеведческий корпус
-              </span>
-              <span>→</span>
-            </button>
-
-          </div>
-        </div>
-
-        <!-- RIGHT -->
-        <div class="relative max-w-[520px] mx-auto">
-
-          <img
-            x-show="active === 'main'"
-            x-transition.opacity
-            src="/assets/img/corps-main.jpg"
-            class="w-full aspect-square object-cover rounded-full"
-            alt="Главный корпус"
+          <li
+            class="corp-item"
+            data-img="/assets/img/collection-3.png"
           >
+            <span class="flex-1">Ризница Троице-Сергиевской Лавры</span>
+            <span class="arrow">→</span>
+          </li>
 
-          <img
-            x-show="active === 'riza'"
-            x-transition.opacity
-            src="/assets/img/corps-riza.jpg"
-            class="w-full aspect-square object-cover rounded-full"
-            alt="Ризница"
+          <li
+            class="corp-item"
+            data-img="/assets/img/collection-2.png"
           >
+            <span class="flex-1">Музейный комплекс «Конный двор»</span>
+            <span class="arrow">→</span>
+          </li>
 
-          <img
-            x-show="active === 'konny'"
-            x-transition.opacity
-            src="/assets/img/corps-konny.jpg"
-            class="w-full aspect-square object-cover rounded-full"
-            alt="Конный двор"
+          <li
+            class="corp-item"
+            data-img="/assets/img/collection-1.png"
           >
+            <span class="flex-1">Краеведческий корпус</span>
+            <span class="arrow">→</span>
+          </li>
 
-          <img
-            x-show="active === 'local'"
-            x-transition.opacity
-            src="/assets/img/corps-local.jpg"
-            class="w-full aspect-square object-cover rounded-full"
-            alt="Краеведческий корпус"
-          >
-
-        </div>
-
+        </ul>
       </div>
-    </section>
 
+      <!-- ПРАВАЯ КАРТИНКА -->
+      <div class="shrink-0">
+        <img
+          id="corpImage"
+          src="/assets/img/collection-4.png"
+          alt="Экспонат музея"
+          class="w-[320px] sm:w-[420px] lg:w-[480px] h-auto object-cover rounded-full transition-all duration-300"
+        >
+      </div>
+
+    </section>
   </main>
 
   <!-- FOOTER -->
   <div data-include="/tpl/footer.html"></div>
 
-  <!-- INCLUDE ENGINE -->
+  <!-- INCLUDE -->
   <script src="/include.js"></script>
+
+  <!-- ЛОГИКА КОРПУСОВ -->
+  <script>
+    const items = document.querySelectorAll('.corp-item');
+    const image = document.getElementById('corpImage');
+
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        items.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        image.src = item.dataset.img;
+      });
+    });
+  </script>
+
+  <!-- СТИЛИ -->
+  <style>
+    .corp-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid #DCDEE0;
+      cursor: pointer;
+      transition: color .2s;
+    }
+
+    .corp-item.active {
+      color: #C92E32;
+      border-bottom: 2px solid #C92E32;
+    }
+
+    .corp-item .arrow {
+      font-size: 20px;
+    }
+
+    .corp-item.active .arrow {
+      color: #C92E32;
+    }
+  </style>
+
+  <!-- ALPINE В КОНЦЕ (КАК НА ГЛАВНОЙ) -->
+  <script src="https://unpkg.com/alpinejs" defer></script>
 
 </body>
 </html>

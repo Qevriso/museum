@@ -1,52 +1,66 @@
-<section class="relative w-full bg-[#A38641] min-h-[200px] overflow-hidden">
+<section class="w-full bg-[#A38641] relative overflow-hidden">
 
-  <!-- ПАТТЕРН / ВОДЯНОЙ ЗНАК -->
-  <div class="absolute inset-0 pointer-events-none opacity-20 z-0">
+  <!-- ПАТТЕРН (аналогично предыдущим CTA) -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 flex items-center justify-center"
+  >
     <img
-      src="/assets/img/send-vector1.png"
+      src="/assets/svg/patern1.svg"
       alt=""
-      class="w-full h-full object-cover"
+      class="
+        w-[320px] h-[320px]
+        sm:w-[400px] sm:h-[400px]
+        lg:w-[520px] lg:h-[520px]
+        opacity-[0.2]
+      "
+      style="transform: translateY(-8%);"
     >
   </div>
 
-  <!-- КОНТЕНТ -->
+  <!-- CONTENT -->
   <div
     class="relative z-10
            max-w-[1600px] mx-auto
-           px-6 lg:px-[60px]
-           py-12 lg:py-[72px]
-           flex flex-col lg:flex-row
-           items-start lg:items-center
-           justify-between
-           gap-10"
+           px-4 lg:px-[60px]
+           min-h-[324px]
+           flex items-center"
   >
 
-    <!-- ТЕКСТ -->
-    <h2
-      class="text-white font-[Racama] font-normal
-             text-[40px] sm:text-[48px] lg:text-[56px]
-             leading-[1.05]
-             max-w-[640px]"
+    <div
+      class="w-full flex flex-col lg:flex-row
+             items-start lg:items-center
+             justify-between gap-10"
     >
-      Расскажите,<br>
-      как музей может<br>
-      стать лучше?
-    </h2>
 
-    <!-- КНОПКА -->
-    <a
-      href="#"
-      class="shrink-0
-             bg-white text-[#A38641]
-             px-[32px] py-[16px]
-             min-w-[355px]
-             text-[16px] font-semibold
-             border border-white
-             hover:bg-transparent hover:text-white
-             transition"
-    >
-      Оставить отзыв
-    </a>
+      <!-- ТЕКСТ -->
+      <h2
+        class="text-white font-[Racama] font-normal
+               text-[40px] sm:text-[48px] lg:text-[56px]
+               leading-[1.05]
+               max-w-[640px]"
+      >
+        Расскажите,<br>
+        как музей может<br>
+        стать лучше?
+      </h2>
 
+      <!-- КНОПКА -->
+      <a
+        href="#"
+        class="shrink-0
+               flex items-center justify-center text-center
+               bg-white text-[#A38641]
+               px-[32px] py-[16px]
+               min-w-[355px]
+               text-[16px] font-semibold
+               border border-white
+               transition
+               hover:bg-transparent hover:text-white"
+      >
+        Оставить отзыв
+      </a>
+
+    </div>
   </div>
 </section>

@@ -7,30 +7,37 @@
       class="pointer-events-none absolute inset-0 flex items-center justify-center"
     >
       <img
-        src="/assets/img/museum-mark.png"
+        src="/assets/svg/patern.svg"
         alt=""
-        class="w-[220px] h-[220px]
-               sm:w-[250px] sm:h-[250px]
-               lg:w-[300px] lg:h-[300px]
-               opacity-[0.45]"
+        class="
+          w-[300px] h-[300px]
+          sm:w-[380px] sm:h-[380px]
+          lg:w-[480px] lg:h-[480px]
+          opacity-[0.45]
+        "
+        style="transform: translateY(-10%);"
       >
     </div>
 
     <!-- КОНТЕНТ -->
-    <div class="relative z-10
-                px-4 sm:px-6 lg:px-[60px]
-                py-8 sm:py-12 lg:py-[60px]">
-
-      <!-- MOBILE: колонка / DESKTOP: строка -->
-      <div class="flex flex-col sm:flex-row
-                  sm:items-center sm:justify-between
-                  gap-6 sm:gap-8">
+    <div
+      class="relative z-10
+             px-4 sm:px-6 lg:px-[60px]
+             py-8 sm:py-12 lg:py-[60px]"
+    >
+      <div
+        class="flex flex-col sm:flex-row
+               sm:items-center sm:justify-between
+               gap-6 sm:gap-8"
+      >
 
         <!-- ЗАГОЛОВОК -->
-        <h2 class="font-[Racama] font-normal
-                   text-[42px] sm:text-[72px] lg:text-[96px]
-                   leading-[0.95]
-                   tracking-[-0.02em]">
+        <h2
+          class="font-[Racama] font-normal
+                 text-[42px] sm:text-[72px] lg:text-[96px]
+                 leading-[0.95]
+                 tracking-[-0.02em]"
+        >
           Купить<br>билет
         </h2>
 
@@ -45,19 +52,33 @@
                  text-base sm:text-lg font-semibold leading-[160%]
                  border border-white
                  transition-all
-                 sm:hover:bg-transparent sm:hover:text-white"
+                 hover:bg-transparent hover:text-white"
         >
           Купить билет
 
           <img
             src="/assets/svg/ticket.svg"
             alt=""
-            class="w-6 h-6 transition
-                   sm:group-hover:brightness-0 sm:group-hover:invert"
+            class="w-6 h-6 buy-ticket-icon"
           >
         </a>
 
       </div>
     </div>
   </div>
+
+  <style>
+    /* иконка билета — ЗЕЛЁНАЯ по умолчанию */
+    .buy-ticket-icon {
+      filter: brightness(0) saturate(100%)
+              invert(55%) sepia(18%) saturate(747%)
+              hue-rotate(92deg) brightness(92%) contrast(88%);
+      transition: filter .2s ease;
+    }
+
+    /* hover — БЕЛАЯ */
+    .group:hover .buy-ticket-icon {
+      filter: brightness(0) invert(1);
+    }
+  </style>
 </section>

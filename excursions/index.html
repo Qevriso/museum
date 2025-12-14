@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Экскурсии — Сергиево-Посадский музей</title>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind 4.1 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+
+<body class="bg-white text-[#24272A] font-['Wix Madefor Display']">
+
+<!-- GLOBAL -->
+<div data-include="/tpl/header.html"></div>
+<div data-include="/tpl/menu.html"></div>
+<div data-include="/tpl/menu-mobile.html"></div>
+
+<!-- ================= MAIN ================= -->
+<main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] pt-10 lg:pt-20 pb-20">
+
+  <!-- TITLE -->
+  <h1 class="font-['Racama'] text-[40px] sm:text-[56px] lg:text-[72px] leading-[95%] tracking-[-0.02em] mb-10">
+    Экскурсии
+  </h1>
+
+  <!-- FILTERS -->
+  <section class="flex flex-col gap-6 mb-12">
+
+    <!-- OBJECT FILTER -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+      <button class="flex items-center gap-4 bg-[#C92E32]/10 px-5 py-4 font-semibold">
+        <img src="/assets/img/1.png" class="w-10 h-10 object-cover" alt="">
+        Главный корпус
+      </button>
+
+      <button class="flex items-center gap-4 bg-[#7474C2]/10 px-5 py-4 font-semibold">
+        <img src="/assets/img/2.png" class="w-10 h-10 object-cover" alt="">
+        Ризница Троице-Сергиевской Лавры
+      </button>
+
+      <button class="flex items-center gap-4 bg-[#A38641]/10 px-5 py-4 font-semibold">
+        <img src="/assets/img/3.png" class="w-10 h-10 object-cover" alt="">
+        Музейный комплекс «Конный двор»
+      </button>
+
+      <button class="flex items-center gap-4 bg-[#62A37D]/10 px-5 py-4 font-semibold">
+        <img src="/assets/img/4.png" class="w-10 h-10 object-cover" alt="">
+        Краеведческий корпус
+      </button>
+
+    </div>
+
+    <!-- TYPE FILTER -->
+    <div class="flex flex-wrap gap-4">
+
+      <button class="flex items-center gap-3 border border-[#24272A] px-5 py-3 font-semibold">
+        Пенсионеры
+      </button>
+
+      <button class="flex items-center gap-3 border border-[#24272A] px-5 py-3 font-semibold">
+        Пешеходная
+      </button>
+
+      <button class="flex items-center gap-3 border border-[#24272A] px-5 py-3 font-semibold">
+        Автобусная
+      </button>
+
+    </div>
+  </section>
+
+  <!-- CARDS GRID -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+    <!-- CARD -->
+    <a href="/excursions/excursions-details.html" class="flex flex-col gap-4 group">
+
+      <img src="/assets/img/1.png" alt="" class="w-full h-[240px] object-cover">
+
+      <div class="flex flex-col gap-3">
+
+        <div class="text-right font-semibold">
+          От 550 ₽ / чел
+        </div>
+
+        <div class="flex items-center gap-3">
+          <span class="px-3 py-1 rounded-full bg-[#C92E32]/10 text-[#C92E32] text-sm font-semibold">
+            Главный корпус
+          </span>
+        </div>
+
+        <h3 class="font-semibold leading-[140%] group-hover:underline">
+          Экскурсия по выставке «Любовью и единением спасемся»
+        </h3>
+
+        <p class="text-[16px] leading-[160%] text-[#24272A]/80">
+          Тематическая экскурсия, знакомящая с земной жизнью великого Святого и традициями его посмертного почитания.
+        </p>
+
+      </div>
+    </a>
+
+    <!-- CARD -->
+    <a href="/excursions/excursions-details.html" class="flex flex-col gap-4">
+
+      <img src="/assets/img/2.png" alt="" class="w-full h-[240px] object-cover">
+
+      <div class="flex flex-col gap-3">
+
+        <div class="text-right font-semibold">
+          От 550 ₽ / чел
+        </div>
+
+        <span class="px-3 py-1 rounded-full bg-[#7474C2]/10 text-[#7474C2] text-sm font-semibold w-fit">
+          Ризница Троице-Сергиевской Лавры
+        </span>
+
+        <h3 class="font-semibold leading-[140%]">
+          Экскурсия по выставке «Любовью и единением спасемся»
+        </h3>
+
+        <p class="text-[16px] leading-[160%] text-[#24272A]/80">
+          Тематическая экскурсия, знакомящая с земной жизнью великого Святого и традициями его посмертного почитания.
+        </p>
+
+      </div>
+    </a>
+
+    <!-- CARD -->
+    <a href="/excursions/excursions-details.html" class="flex flex-col gap-4">
+
+      <img src="/assets/img/3.png" alt="" class="w-full h-[240px] object-cover">
+
+      <div class="flex flex-col gap-3">
+
+        <div class="text-right font-semibold">
+          От 550 ₽ / чел
+        </div>
+
+        <span class="px-3 py-1 rounded-full bg-[#A38641]/10 text-[#A38641] text-sm font-semibold w-fit">
+          Музейный комплекс «Конный двор»
+        </span>
+
+        <h3 class="font-semibold leading-[140%]">
+          Экскурсия по выставке «Любовью и единением спасемся»
+        </h3>
+
+        <p class="text-[16px] leading-[160%] text-[#24272A]/80">
+          Тематическая экскурсия, знакомящая с земной жизнью великого Святого и традициями его посмертного почитания.
+        </p>
+
+      </div>
+    </a>
+
+    <!-- CARD -->
+    <a href="/excursions/excursions-details.html" class="flex flex-col gap-4">
+
+      <img src="/assets/img/4.png" alt="" class="w-full h-[240px] object-cover">
+
+      <div class="flex flex-col gap-3">
+
+        <div class="text-right font-semibold">
+          От 550 ₽ / чел
+        </div>
+
+        <span class="px-3 py-1 rounded-full bg-[#62A37D]/10 text-[#358556] text-sm font-semibold w-fit">
+          Краеведческий корпус
+        </span>
+
+        <h3 class="font-semibold leading-[140%]">
+          Экскурсия по выставке «Любовью и единением спасемся»
+        </h3>
+
+        <p class="text-[16px] leading-[160%] text-[#24272A]/80">
+          Тематическая экскурсия, знакомящая с земной жизнью великого Святого и традициями его посмертного почитания.
+        </p>
+
+      </div>
+    </a>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<div data-include="/tpl/footer.html"></div>
+
+<script src="/include.js"></script>
+</body>
+</html>

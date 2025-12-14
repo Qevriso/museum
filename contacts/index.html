@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Контакты — Сергиево-Посадский музей-заповедник</title>
-  <meta name="description" content="Контакты Сергиево-Посадского музея-заповедника">
+  <title>Контакты — Сергиево-Посадский музей</title>
 
   <!-- Fonts -->
   <link rel="stylesheet" href="/assets/css/fonts.css">
@@ -13,230 +12,237 @@
   <!-- Tailwind 4 -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <!-- скрываю Alpine-блоки до инициализации -->
   <style>
     [x-cloak] { display: none !important; }
   </style>
-
-  <!-- Alpine (гружу в head с defer, чтобы dropdown’ы не мигали на старте) -->
-  <script src="/assets/js/alpine.min.js" defer></script>
 </head>
 
-<body class="bg-white text-[#24272A] relative">
+<body
+  class="bg-white text-[#24272A] font-['Wix Madefor Display']"
+  x-data="{
+    openReview:false,
+    reviewSuccess:false,
+    form:{ name:'', email:'', text:'' },
+    errors:{},
+    validate(){
+      this.errors = {};
 
-  <!-- GLOBAL -->
-  <div data-include="/tpl/header.html"></div>
-  <div data-include="/tpl/menu.html"></div>
+      if(!this.form.name.trim()){
+        this.errors.name = 'Введите ФИО';
+      }
 
-  <!-- MOBILE MENU -->
-  <div data-include="/tpl/menu-mobile.html"></div>
+      if(!this.form.email.trim()){
+        this.errors.email = 'Введите email';
+      } else if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(this.form.email)){
+        this.errors.email = 'Введите корректный email';
+      }
 
-  <!-- ================= MAIN ================= -->
-  <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] py-[40px] lg:py-[80px]">
+      if(!this.form.text.trim()){
+        this.errors.text = 'Введите отзыв';
+      }
 
-    <!-- TITLE -->
-    <h1
-      class="font-['Racama']
-             text-[48px] sm:text-[72px] lg:text-[140px]
-             leading-[0.95]
-             tracking-[-0.02em]
-             mb-[24px] lg:mb-[60px]">
-      Контакты
-    </h1>
+      if(Object.keys(this.errors).length === 0){
+        this.reviewSuccess = true;
+      }
+    }
+  }"
+>
 
-    <!-- ================= TOP ================= -->
-    <section class="grid grid-cols-1 lg:grid-cols-[1fr_520px] gap-[40px] lg:gap-[145px]">
+<!-- GLOBAL -->
+<div data-include="/tpl/header.html"></div>
+<div data-include="/tpl/menu.html"></div>
+<div data-include="/tpl/menu-mobile.html"></div>
 
-      <!-- LEFT -->
-      <div class="flex flex-col gap-[40px] lg:gap-[60px]">
+<!-- ================= MAIN ================= -->
+<main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] pt-10 lg:pt-20">
 
-        <!-- EMAIL -->
-        <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
+  <section class="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-10 lg:gap-[145px] items-start">
+
+    <!-- LEFT -->
+    <div class="flex flex-col gap-[60px]">
+
+      <!-- TITLE -->
+      <div>
+        <h1 class="font-['Racama'] text-[64px] sm:text-[96px] lg:text-[140px] leading-[95%] tracking-[-0.02em]">
+          Контакты
+        </h1>
+        <div class="font-['Racama'] text-[24px] mt-4">
           sergiev-mus@mail.ru
         </div>
+      </div>
 
-        <!-- CONTACTS -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-10">
+      <!-- CONTACTS -->
+      <div class="grid sm:grid-cols-2 gap-5">
 
-          <!-- Заказ экскурсий -->
-          <div>
-            <div class="text-[16px] leading-[1.6] text-[#24272A]/70 mb-3">
-              Заказ экскурсий
-            </div>
-
-            <div class="border-b border-[#DCDEE0] pb-4">
-              <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
-                8 496 540-53-56
-              </div>
-            </div>
-
-            <div class="border-b border-[#DCDEE0] pt-6 pb-4">
-              <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
-                8 985 040-45-17
-              </div>
-            </div>
+        <div>
+          <div class="text-sm mb-3">Заказ экскурсий</div>
+          <div class="border-b border-[#DCDEE0]/60 py-6 font-['Racama'] text-[28px]">
+            8 496 540-53-56
           </div>
-
-          <!-- Вопросы и сотрудничество -->
-          <div>
-            <div class="text-[16px] leading-[1.6] text-[#24272A]/70 mb-3">
-              Вопросы и сотрудничество
-            </div>
-
-            <div class="border-b border-[#DCDEE0] pb-4">
-              <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
-                8 496 540-63-58
-              </div>
-            </div>
+          <div class="border-b border-[#DCDEE0]/60 py-6 font-['Racama'] text-[28px]">
+            8 985 040-45-17
           </div>
-
-          <!-- Директор -->
-          <div>
-            <div class="text-[16px] font-semibold mb-1">
-              Директор
-            </div>
-            <div class="text-[16px] leading-[1.6] text-[#24272A]/70 mb-4">
-              Гузиков Феогност Михайлович
-            </div>
-
-            <div class="border-b border-[#DCDEE0] pb-4">
-              <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
-                496 541-35-63
-              </div>
-            </div>
-          </div>
-
-          <!-- Секретарь -->
-          <div>
-            <div class="text-[16px] font-semibold mb-1">
-              Секретарь
-            </div>
-            <div class="text-[16px] leading-[1.6] text-[#24272A]/70 mb-4">
-              Ротерман Татьяна Андреевна
-            </div>
-
-            <div class="border-b border-[#DCDEE0] pb-4">
-              <div class="font-['Racama'] text-[22px] lg:text-[28px] leading-[0.95] tracking-[-0.02em]">
-                496 540-63-58
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        <!-- BUTTONS -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[760px]">
-
-          <button
-            class="h-[56px] bg-[#C92E32] text-white
-                   font-['Wix_Madefor_Display']
-                   text-[16px] leading-[1.6] font-semibold">
-            Обратный звонок
-          </button>
-
-          <button
-            class="h-[56px] border border-[#24272A]
-                   font-['Wix_Madefor_Display']
-                   text-[16px] leading-[1.6] font-semibold"
-            x-data
-            @click="$dispatch('review-open')">
-            Оставить отзыв
-          </button>
-
-          <a
-            href="/contacts/other-contacts.html"
-            class="lg:col-span-2
-                   h-[56px]
-                   border border-[#24272A]
-                   flex items-center justify-center gap-3
-                   font-['Wix_Madefor_Display']
-                   text-[16px] leading-[1.6] font-semibold">
-            Прочие контакты →
-          </a>
-
+        <div>
+          <div class="text-sm mb-3">Вопросы и сотрудничество</div>
+          <div class="border-b border-[#DCDEE0]/60 py-6 font-['Racama'] text-[28px]">
+            8 496 540-63-58
+          </div>
         </div>
 
       </div>
 
-      <!-- RIGHT IMAGE -->
-      <div class="hidden lg:block">
-        <img
-          src="/assets/img/placeholder.jpg"
-          alt=""
-          class="w-full h-[520px] object-cover rounded-full">
+      <div class="grid sm:grid-cols-2 gap-5">
+
+        <div>
+          <div class="text-sm">Директор</div>
+          <div class="font-semibold">Гузиков Феогност Михайлович</div>
+          <div class="border-b border-[#DCDEE0]/60 py-6 font-['Racama'] text-[28px]">
+            496 541-35-63
+          </div>
+        </div>
+
+        <div>
+          <div class="text-sm">Секретарь</div>
+          <div class="font-semibold">Ротерман Татьяна Андреевна</div>
+          <div class="border-b border-[#DCDEE0]/60 py-6 font-['Racama'] text-[28px]">
+            496 540-63-58
+          </div>
+        </div>
+
       </div>
 
-    </section>
+      <!-- BUTTONS -->
+      <div class="grid sm:grid-cols-2 gap-5">
+        <button
+          class="h-[72px] bg-[#C92E32] text-white text-[20px] font-semibold
+                 hover:bg-[#A92428] transition"
+        >
+          Обратный звонок
+        </button>
 
-    <!-- ================= ADDRESS ================= -->
-    <section class="mt-[60px] lg:mt-[100px]">
-
-      <h2 class="font-['Racama'] text-[28px] lg:text-[40px] leading-[0.95] mb-4">
-        Адрес
-      </h2>
-
-      <p class="font-['Wix_Madefor_Display'] text-[16px] lg:text-[20px] leading-[1.6] max-w-[520px] mb-6">
-        141300, Московская обл., г. Сергиев Посад, ул. 1-ой Ударной Армии, д. 2
-      </p>
+        <button
+          class="h-[72px] border border-[#24272A] text-[20px] font-semibold
+                 hover:bg-[#24272A] hover:text-white transition"
+          @click="openReview=true; reviewSuccess=false"
+        >
+          Оставить отзыв
+        </button>
+      </div>
 
       <a
-        href="#map"
-        class="inline-flex items-center justify-center
-               border border-[#24272A]
-               w-full sm:w-auto
-               px-6 lg:px-10 h-[48px] lg:h-[56px]
-               font-['Wix_Madefor_Display']
-               text-[16px] lg:text-[20px]
-               hover:bg-[#24272A] hover:text-white transition-colors mb-6">
-        Интерактивная карта →
+        href="/contacts/other-contacts.html"
+        class="w-full h-[64px] border border-[#24272A] text-[20px] font-semibold
+               flex items-center justify-center gap-3
+               hover:bg-[#24272A] hover:text-white transition"
+      >
+        Прочие контакты →
       </a>
 
-      <div id="map" class="w-full h-[320px] lg:h-[420px]"></div>
+    </div>
 
-    </section>
+    <!-- RIGHT IMAGE -->
+    <aside class="hidden lg:block">
+      <img
+        src="/assets/img/contacts/1.png"
+        class="w-full h-[520px] object-cover"
+        alt=""
+      >
+    </aside>
 
-  </main>
+  </section>
 
-  <!-- FOOTER -->
-  <footer class="relative z-0">
-    <div data-include="/tpl/footer.html"></div>
-  </footer>
+  <!-- ADDRESS -->
+  <section class="pt-20 pb-20">
+    <div class="flex flex-col lg:flex-row justify-between gap-6 mb-6">
+      <div>
+        <h2 class="font-['Racama'] text-[40px] mb-4">Адрес</h2>
+        <p class="text-[20px]">
+          141300, Московская обл., г. Сергиев Посад, ул. 1-ой Ударной Армии, д. 2
+        </p>
+      </div>
 
-  <!-- INCLUDE -->
-  <script src="/include.js"></script>
+      <a
+        href="https://yandex.ru/maps"
+        target="_blank"
+        class="border border-[#24272A] px-8 h-[56px] flex items-center text-[20px]
+               hover:bg-[#24272A] hover:text-white transition"
+      >
+        Интерактивная карта →
+      </a>
+    </div>
 
-  <!-- закрываю открытые details после подгрузки include (иначе язык/уведомления открываются при старте) -->
-  <script>
-    function closeAllDetails() {
-      document.querySelectorAll('details[open]').forEach(d => d.removeAttribute('open'));
-    }
+    <div class="w-full h-[600px] border border-[#DCDEE0]/60">
+      <iframe
+        src="https://yandex.ru/map-widget/v1/?ll=38.131758%2C56.300995&z=15&pt=38.131758,56.300995,pm2rdm"
+        class="w-full h-full border-0"
+      ></iframe>
+    </div>
+  </section>
 
-    window.addEventListener('load', () => {
-      // 1) сразу после полной загрузки
-      closeAllDetails();
+</main>
 
-      // 2) и на всякий — если include дорисовал что-то после load
-      const obs = new MutationObserver(() => closeAllDetails());
-      obs.observe(document.body, { childList: true, subtree: true });
+<!-- FOOTER -->
+<div data-include="/tpl/footer.html"></div>
 
-      // 3) можно отключить наблюдение через короткое время, чтобы не держать лишнее
-      setTimeout(() => obs.disconnect(), 1500);
-    });
-  </script>
+<!-- REVIEW MODAL -->
+<div
+  x-cloak
+  x-show="openReview"
+  class="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 px-4"
+>
+  <div class="bg-white w-full max-w-[720px] p-12 relative">
 
-  <!-- YANDEX MAP -->
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-  <script>
-    ymaps.ready(() => {
-      const map = new ymaps.Map('map', {
-        center: [56.3000, 38.1333],
-        zoom: 15,
-        controls: ['zoomControl']
-      });
+    <button
+      class="absolute -top-10 right-0 text-white text-[48px]"
+      @click="openReview=false"
+    >×</button>
 
-      map.geoObjects.add(new ymaps.Placemark([56.3000, 38.1333]));
-    });
-  </script>
+    <template x-if="!reviewSuccess">
+      <form class="space-y-4" @submit.prevent="validate()">
+        <h3 class="font-['Racama'] text-[44px] text-center mb-6">Отзыв</h3>
+
+        <div>
+          <input x-model="form.name" class="w-full h-[64px] bg-[#F2F3F4] px-6" placeholder="ФИО">
+          <p x-show="errors.name" class="text-red-600 text-sm mt-1" x-text="errors.name"></p>
+        </div>
+
+        <div>
+          <input x-model="form.email" class="w-full h-[64px] bg-[#F2F3F4] px-6" placeholder="Ваш email">
+          <p x-show="errors.email" class="text-red-600 text-sm mt-1" x-text="errors.email"></p>
+        </div>
+
+        <div>
+          <textarea x-model="form.text" class="w-full bg-[#F2F3F4] px-6 py-5" rows="4" placeholder="Отзыв"></textarea>
+          <p x-show="errors.text" class="text-red-600 text-sm mt-1" x-text="errors.text"></p>
+        </div>
+
+        <button class="w-full h-[64px] bg-[#C92E32] text-white text-[20px] font-semibold">
+          Отправить отзыв
+        </button>
+      </form>
+    </template>
+
+    <template x-if="reviewSuccess">
+      <div class="text-center space-y-6 bg-[#6AAE8C] text-white p-10">
+        <h3 class="font-['Racama'] text-[32px]">Спасибо за ваше обращение!</h3>
+        <p>Мы свяжемся с вами в ближайшее время</p>
+        <button
+          class="bg-white text-[#6AAE8C] px-8 py-3"
+          @click="openReview=false"
+        >
+          Закрыть
+        </button>
+      </div>
+    </template>
+
+  </div>
+</div>
+
+<!-- INCLUDE -->
+<script src="/include.js"></script>
+<script src="https://unpkg.com/alpinejs" defer></script>
 
 </body>
 </html>

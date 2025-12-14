@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Выходные в Сергиевом Посаде</title>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind 4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body
+  x-data
+  class="bg-white text-[#24272A] font-['Wix Madefor Display'] overflow-x-hidden"
+>
+
+  <!-- GLOBAL -->
+  <div data-include="/tpl/header.html"></div>
+  <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
+
+  <!-- MAIN -->
+  <main
+    class="max-w-[1600px] mx-auto
+           px-4 lg:px-[60px]
+           pt-8 sm:pt-12 lg:pt-20
+           pb-24"
+  >
+
+    <!-- BREADCRUMBS -->
+    <nav class="text-[16px] text-[#8D9399] mb-8">
+      <a
+        href="/events/index.html"
+        class="hover:text-[#24272A] transition"
+      >
+        Мероприятия
+      </a>
+
+      <span class="mx-2 text-[#DCDEE0]">/</span>
+
+      <span class="text-[#24272A]">
+        Выходные в Сергиевом Посаде
+      </span>
+    </nav>
+
+    <!-- TITLE -->
+    <h1
+      class="font-['Racama']
+             font-normal
+             text-[40px] sm:text-[56px] lg:text-[72px]
+             leading-[0.95]
+             tracking-[-0.02em]
+             mb-12"
+    >
+      Выходные в Сергиевом Посаде
+    </h1>
+
+    <!-- EVENTS GRID -->
+    <section
+      class="grid grid-cols-1
+             sm:grid-cols-2
+             lg:grid-cols-4
+             gap-8"
+    >
+
+      <!-- CARD 1 -->
+      <article class="flex flex-col gap-3">
+        <img src="/assets/img/afisha/a5.png" alt="" class="w-full h-[180px] object-cover">
+        <div class="text-[14px] text-[#8D9399]">28.11.2025 – 03.01.2026</div>
+        <div class="text-[16px] font-semibold">Ёлка в Музее</div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="flex flex-col gap-3">
+        <img src="/assets/img/afisha/ny2026.png" alt="" class="w-full h-[180px] object-cover">
+        <div class="text-[14px] text-[#8D9399]">28.11.2025 – 26.12.2025</div>
+        <div class="text-[16px] font-semibold">Новый год с Музеем</div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="flex flex-col gap-3">
+        <img src="/assets/img/afisha/a3.png" alt="" class="w-full h-[180px] object-cover">
+        <div class="text-[14px] text-[#8D9399]">03.12.2025 – 10.12.2025</div>
+        <div class="text-[16px] font-semibold">
+          Лекция «Троицкий собор и рака прп. Сергия Радонежского.
+          История и современность» Татьяны Токаревой
+        </div>
+      </article>
+
+      <!-- CARD 4 -->
+      <article class="flex flex-col gap-3">
+        <img src="/assets/img/afisha/a8.png" alt="" class="w-full h-[180px] object-cover">
+        <div class="text-[14px] text-[#8D9399]">04.12.2025 – 18.12.2025</div>
+        <div class="text-[16px] font-semibold">
+          Лекция «Секреты древнего стекла
+          (бусы из древнерусских курганов)»
+          Дарьи Лахтиной
+        </div>
+      </article>
+
+      <!-- CARD 5 -->
+      <article class="flex flex-col gap-3">
+        <img src="/assets/img/afisha/a2.png" alt="" class="w-full h-[180px] object-cover">
+        <div class="text-[14px] text-[#8D9399]">04.12.2025 – 30.12.2025</div>
+        <div class="text-[16px] font-semibold">
+          Лекция «Традиционная игрушка
+          Сергиева Посада» Ольги Юровой
+        </div>
+      </article>
+
+      <!-- CARD 6 -->
+      <article class="flex flex-col gap-3">
+        <img src="/assets/img/afisha/a5.png" alt="" class="w-full h-[180px] object-cover">
+        <div class="text-[14px] text-[#8D9399]">04.12.2025 – 30.12.2025</div>
+        <div class="text-[16px] font-semibold">Музыкальные концерты</div>
+      </article>
+
+      <!-- CARD 7 -->
+      <article class="flex flex-col gap-3">
+        <img src="/assets/img/afisha/a9.png" alt="" class="w-full h-[180px] object-cover">
+        <div class="text-[14px] text-[#8D9399]">28.10.2025 – 17.05.2026</div>
+        <div class="text-[16px] font-semibold">
+          Клуб «Юный археолог». 2025–2026
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div data-include="/tpl/footer.html"></div>
+
+  <!-- include engine -->
+  <script src="/include.js"></script>
+
+  <!-- Alpine.js -->
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+</body>
+</html>

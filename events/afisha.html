@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Афиша</title>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind 4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-[#24272A] font-['Wix Madefor Display'] overflow-x-hidden">
+
+  <!-- GLOBAL -->
+  <div data-include="/tpl/header.html"></div>
+  <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
+
+  <!-- MAIN -->
+  <main
+    x-data="afishaCalendar()"
+    class="max-w-[1600px] mx-auto
+           px-4 lg:px-[60px]
+           pt-8 sm:pt-12 lg:pt-20
+           pb-24"
+  >
+
+    <!-- BREADCRUMBS + TITLE -->
+    <div class="flex flex-col gap-8 mb-12">
+
+      <!-- BREADCRUMBS -->
+      <nav class="text-[16px] text-[#8D9399]">
+        <a
+          href="/events/index.html"
+          class="hover:text-[#24272A] transition"
+        >
+          Мероприятия
+        </a>
+
+        <span class="mx-2 text-[#DCDEE0]">/</span>
+
+        <span class="text-[#24272A]">
+          Афиша
+        </span>
+      </nav>
+
+      <!-- TITLE -->
+      <h1
+        class="font-['Racama']
+               text-[40px] sm:text-[56px] lg:text-[72px]
+               leading-[0.95]
+               tracking-[-0.02em]"
+      >
+        Афиша
+      </h1>
+
+    </div>
+
+    <!-- CALENDAR -->
+    <section class="mb-14">
+      <div class="font-semibold mb-6">Декабрь 2025</div>
+
+      <div class="relative flex items-center gap-4">
+
+        <!-- LEFT -->
+        <button
+          @click="scrollLeft"
+          class="shrink-0 w-10 h-10 flex items-center justify-center
+                 rounded-full border border-[#DCDEE0]
+                 hover:bg-[#F0F1F2] transition"
+        >
+          ←
+        </button>
+
+        <!-- DAYS -->
+        <div x-ref="days" class="flex gap-3 overflow-x-hidden scroll-smooth w-full">
+          <template x-for="day in days" :key="day.d">
+            <button
+              @click="activeDay = day.d"
+              class="w-[64px] h-[80px]
+                     rounded-t-full
+                     flex flex-col items-center justify-center
+                     border transition shrink-0"
+              :class="activeDay === day.d
+                ? 'bg-[#C92E32] text-white border-[#C92E32]'
+                : 'bg-[#F0F1F2] text-[#24272A] border-transparent hover:bg-[#E6E7E9]'"
+            >
+              <div class="text-xl font-semibold" x-text="day.d"></div>
+              <div class="text-xs opacity-80" x-text="day.w"></div>
+            </button>
+          </template>
+        </div>
+
+        <!-- RIGHT -->
+        <button
+          @click="scrollRight"
+          class="shrink-0 w-10 h-10 flex items-center justify-center
+                 rounded-full border border-[#DCDEE0]
+                 hover:bg-[#F0F1F2] transition"
+        >
+          →
+        </button>
+
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="relative">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8
+               max-sm:flex max-sm:overflow-x-auto max-sm:gap-4 max-sm:pb-4"
+      >
+
+        <template x-for="item in items.filter(i => i.day === activeDay)" :key="item.id">
+          <a
+            href="event-detail.html"
+            class="min-w-[260px] sm:min-w-0 group block"
+          >
+            <article class="cursor-pointer">
+
+              <div class="w-full h-[200px] overflow-hidden bg-[#F0F1F2]">
+                <img
+                  :src="item.img"
+                  alt=""
+                  class="w-full h-full object-cover
+                         transition-transform duration-500
+                         group-hover:scale-105"
+                />
+              </div>
+
+              <div class="text-sm text-[#8B8E91] mt-4 mb-2" x-text="item.date"></div>
+              <h3
+                class="text-base font-semibold leading-snug
+                       group-hover:text-[#C92E32] transition-colors"
+                x-text="item.title"
+              ></h3>
+
+            </article>
+          </a>
+        </template>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div data-include="/tpl/footer.html"></div>
+
+  <script src="/include.js"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+  <!-- Alpine logic -->
+  <script>
+    function afishaCalendar() {
+      return {
+        activeDay: 5,
+
+        days: Array.from({ length: 31 }, (_, i) => {
+          const d = i + 1
+          const week = ['вс','пн','вт','ср','чт','пт','сб']
+          return { d, w: week[new Date(2025, 11, d).getDay()] }
+        }),
+
+        items: [
+          { id:1, day:5, img:'/assets/img/afisha/a1.png', date:'01.09.2025 – 31.05.2026', title:'Музей: ученикам, учителям, родителям' },
+          { id:2, day:5, img:'/assets/img/afisha/a2.png', date:'27.10.2025 – 31.05.2026', title:'Детский музейный центр «Матрешка»' },
+          { id:3, day:6, img:'/assets/img/afisha/a3.png', date:'28.10.2025 – 17.05.2026', title:'Клуб «Юный археолог». 2025–2026' },
+          { id:4, day:7, img:'/assets/img/afisha/a4.png', date:'28.11.2025 – 31.12.2025', title:'Экскурсии в декабре 2025' }
+        ],
+
+        scrollLeft() {
+          this.$refs.days.scrollBy({ left: -300, behavior: 'smooth' })
+        },
+
+        scrollRight() {
+          this.$refs.days.scrollBy({ left: 300, behavior: 'smooth' })
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

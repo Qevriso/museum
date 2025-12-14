@@ -8,112 +8,80 @@
 >
 
   <!-- OVERLAY -->
-  <div
-    class="fixed inset-0 bg-white"
-    @click="open=false"
-  ></div>
+  <div class="fixed inset-0 bg-white" @click="open=false"></div>
 
   <!-- PANEL -->
   <div class="relative h-screen flex flex-col">
 
     <!-- HEADER -->
     <div class="h-[64px] px-4 flex items-center justify-between border-b border-[#DCDEE0] shrink-0">
-      <img
-        src="/assets/svg/logo.svg"
-        alt="Сергиево-Посадский музей-заповедник"
-        class="h-[36px]"
-      >
-
-      <div class="flex items-center gap-2">
-        <a href="/notifications.html" class="relative w-10 h-10 flex items-center justify-center">
-          <img src="/assets/svg/bell.svg" class="w-5 h-5" alt="">
-          <span class="absolute top-1 right-1 w-5 h-5 text-xs bg-[#C93635] text-white flex items-center justify-center">
-            3
-          </span>
-        </a>
-
-        <button
-          @click="open=false"
-          class="w-10 h-10 flex items-center justify-center text-2xl"
-          aria-label="Закрыть меню"
-        >
-          ×
-        </button>
-      </div>
+      <img src="/assets/svg/logo.svg" class="h-[36px]" alt="">
+      <button @click="open=false" class="w-10 h-10 text-2xl">×</button>
     </div>
 
-    <!-- SCROLLABLE CONTENT -->
+    <!-- CONTENT -->
     <div class="flex-1 overflow-y-auto">
-
       <nav class="divide-y divide-[#DCDEE0] text-[18px]">
 
-        <!-- О музее -->
-        <a href="/about/index.html" class="block px-4 py-5">
-          О музее
-        </a>
-
-        <!-- ОБЪЕКТЫ -->
-        <details class="group">
-          <summary class="px-4 py-5 flex items-center justify-between cursor-pointer list-none">
-            <span>Объекты</span>
-            <span class="transition group-open:rotate-180">⌄</span>
-          </summary>
-
+        <details>
+          <summary class="px-4 py-5 flex justify-between cursor-pointer">О музее <span>⌄</span></summary>
           <div class="px-6 pb-4 space-y-3 text-[16px]">
+            <a href="/about/science.html" class="block">Научная деятельность</a>
+            <a href="/about/documents.html" class="block">Документы</a>
+            <a href="/about/history.html" class="block">История музея</a>
+            <a href="/about/collections.html" class="block">Коллекции</a>
+            <a href="/about/order-images.html" class="block">Заказ изображений</a>
+            <a href="/about/jobs.html" class="block">Вакансии</a>
+          </div>
+        </details>
 
-            <a href="/map.html" class="block">
-              Интерактивная карта
-            </a>
-
-            <div class="h-px bg-[#DCDEE0] my-2"></div>
-
+        <details>
+          <summary class="px-4 py-5 flex justify-between cursor-pointer">Объекты <span>⌄</span></summary>
+          <div class="px-6 pb-4 space-y-3 text-[16px]">
+            <a href="/corps/index.html" class="block">Интерактивная карта</a>
             <a href="/corps/main.html" class="block">Главный корпус</a>
-            <a href="/corps/riznitsa.html" class="block">Ризница Троице-Сергиевой Лавры</a>
-            <a href="/corps/konny-dvor.html" class="block">Музейный комплекс «Конный двор»</a>
+            <a href="/corps/riznitsa.html" class="block">Ризница Троице-Сергиевской Лавры</a>
+            <a href="/corps/konny-dvor.html" class="block">Конный двор</a>
             <a href="/corps/local-history.html" class="block">Краеведческий корпус</a>
           </div>
         </details>
 
-        <!-- Посетителям -->
-        <details class="group">
-          <summary class="px-4 py-5 flex items-center justify-between cursor-pointer list-none">
-            <span>Посетителям</span>
-            <span class="transition group-open:rotate-180">⌄</span>
-          </summary>
+        <details>
+          <summary class="px-4 py-5 flex justify-between cursor-pointer">Посетителям <span>⌄</span></summary>
           <div class="px-6 pb-4 space-y-3 text-[16px]">
-            <a href="/faq.html" class="block">FAQ</a>
-            <a href="/tickets.html" class="block">Билеты</a>
-            <a href="/pushkin-card.html" class="block">Пушкинская карта</a>
-            <a href="/rules.html" class="block">Правила посещения</a>
+            <a href="/visitors/faq.html" class="block">FAQ</a>
+            <a href="/visitors/tickets.html" class="block">Билеты</a>
+            <a href="/visitors/pushkin-card.html" class="block">Пушкинская карта</a>
+            <a href="/visitors/rules.html" class="block">Правила посещения</a>
           </div>
         </details>
 
-        <!-- Мероприятия -->
-        <a href="/events.html" class="block px-4 py-5">
-          Мероприятия
-        </a>
+        <details>
+          <summary class="px-4 py-5 flex justify-between cursor-pointer">Мероприятия <span>⌄</span></summary>
+          <div class="px-6 pb-4 space-y-3 text-[16px]">
+            <a href="/events/afisha.html" class="block">Афиша</a>
+            <a href="/events/weekend.html" class="block">Выходные</a>
+          </div>
+        </details>
 
-        <!-- Выставки -->
-        <a href="/exposition/index.html" class="block px-4 py-5">
-          Выставки и экспозиции
-        </a>
+        <a href="/exposition/index.html" class="block px-4 py-5">Выставки и экспозиции</a>
+        <a href="/excursions/index.html" class="block px-4 py-5">Экскурсии</a>
 
-        <!-- Экскурсии -->
-        <a href="/excursions/index.html" class="block px-4 py-5">
-          Экскурсии
-        </a>
+        <details>
+          <summary class="px-4 py-5 flex justify-between cursor-pointer">Музей-онлайн <span>⌄</span></summary>
+          <div class="px-6 pb-4 space-y-3 text-[16px]">
+            <a href="/online/media.html" class="block">Медиа</a>
+            <a href="/online/tours.html" class="block">Виртуальные туры</a>
+            <a href="/online/exhibitions.html" class="block">Виртуальные выставки</a>
+            <a href="/online/gallery.html" class="block">Фотогалерея</a>
+          </div>
+        </details>
 
-        <!-- Музей онлайн -->
-        <a href="/museum-online.html" class="block px-4 py-5">
-          Музей-онлайн
-        </a>
-
-        <!-- Контакты -->
-        <a href="/contacts/index.html" class="block px-4 py-5">
-          Контакты
-        </a>
+        <a href="/contacts/index.html" class="block px-4 py-5">Контакты</a>
 
       </nav>
+    
+
 
       <!-- FOOT ACTIONS -->
       <div class="px-4 py-6 space-y-4 border-t border-[#DCDEE0]">

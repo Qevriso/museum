@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Мероприятия</title>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind 4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Prevent dropdown flash / default open before Alpine -->
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+
+<body class="bg-white text-[#24272A] font-['Wix Madefor Display'] overflow-x-hidden">
+
+  <!-- GLOBAL -->
+  <div data-include="/tpl/header.html"></div>
+  <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
+
+  <!-- MAIN -->
+  <main
+    class="max-w-[1600px] mx-auto
+           px-4 lg:px-[60px]
+           pt-8 sm:pt-12 lg:pt-20
+           pb-20 lg:pb-28
+           min-w-0"
+  >
+
+    <section
+      class="grid grid-cols-1
+             lg:grid-cols-[minmax(0,1fr)_480px]
+             gap-10 lg:gap-[140px]
+             items-start
+             min-w-0"
+    >
+
+      <!-- LEFT -->
+      <div class="flex flex-col gap-10 lg:gap-16 min-w-0">
+
+        <!-- TITLE -->
+        <h1
+          class="font-['Racama']
+                 text-[56px] sm:text-[88px] lg:text-[140px]
+                 leading-[0.95]
+                 tracking-[-0.02em]
+                 break-words
+                 lg:whitespace-nowrap"
+        >
+          Мероприятия
+        </h1>
+
+        <!-- LINKS -->
+        <div class="flex flex-col text-[20px] sm:text-[24px] lg:text-[28px] min-w-0">
+
+          <a
+            href="/events/afisha.html"
+            class="flex items-center gap-6
+                   border-b border-[#DCDEE0]
+                   py-5 lg:py-6
+                   hover:text-[#C92E32]
+                   transition-colors
+                   min-w-0"
+          >
+            <span class="flex-1 min-w-0">Афиша</span>
+            <span class="text-xl lg:text-2xl shrink-0">→</span>
+          </a>
+
+          <a
+            href="/events/weekend.html"
+            class="flex items-center gap-6
+                   border-b border-[#DCDEE0]
+                   py-5 lg:py-6
+                   hover:text-[#C92E32]
+                   transition-colors
+                   min-w-0"
+          >
+            <span class="flex-1 min-w-0">Выходные в Сергиевом Посаде</span>
+            <span class="text-xl lg:text-2xl shrink-0">→</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="flex justify-start lg:justify-end order-last lg:order-none min-w-0">
+        <img
+          src="/assets/img/events/matreshka.png"
+          alt=""
+          width="480"
+          height="520"
+          class="block w-full max-w-[480px] h-auto lg:h-[520px] object-contain"
+        >
+      </div>
+
+    </section>
+
+  </main>
+
+  <div data-include="/tpl/footer.html"></div>
+
+  <!-- include engine -->
+  <script src="/include.js"></script>
+
+  <!-- Alpine is REQUIRED for header/menu dropdown logic -->
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+</body>
+</html>

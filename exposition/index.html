@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Выставки и экспозиции</title>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind 4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-[#24272A] font-['Wix Madefor Display']">
+
+<!-- GLOBAL -->
+<div data-include="/tpl/header.html"></div>
+<div data-include="/tpl/menu.html"></div>
+<div data-include="/tpl/menu-mobile.html"></div>
+
+<main
+  x-data="{
+    activeCorps: null,
+    setCorps(id) {
+      this.activeCorps = this.activeCorps === id ? null : id
+    }
+  }"
+  class="max-w-[1600px] mx-auto px-4 lg:px-[60px] pt-10 lg:pt-20 pb-20"
+>
+
+  <!-- HEADER -->
+  <div class="flex items-start justify-between gap-6 mb-10">
+    <h1 class="font-['Racama]
+               text-[40px] sm:text-[56px] lg:text-[72px]
+               leading-[0.95] tracking-[-0.02em]">
+      Выставки и экспозиции
+    </h1>
+
+    <!-- CLEAR -->
+    <button
+      x-show="activeCorps !== null"
+      @click="activeCorps = null"
+      class="hidden sm:flex items-center gap-3
+             border border-[#24272A]
+             px-5 py-3 font-semibold"
+    >
+      Очистить фильтры ✕
+    </button>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+    <!-- CORPS 1 -->
+    <button
+      @click="setCorps(1)"
+      :class="activeCorps === 1
+        ? 'bg-[#F2C6C6] ring-2 ring-[#C92E32]'
+        : 'bg-[#FBEAEA]'"
+      class="flex items-center gap-4 px-5 py-4 transition"
+    >
+      <img src="/assets/img/exposition/corps-1.png" class="w-10 h-10" alt="">
+      <span class="font-semibold">Главный корпус</span>
+    </button>
+
+    <!-- CORPS 2 -->
+    <button
+      @click="setCorps(2)"
+      :class="activeCorps === 2
+        ? 'bg-[#EEF0FF] ring-2 ring-[#7474C2]'
+        : 'bg-[#EEF0FF]'"
+      class="flex items-center gap-4 px-5 py-4 transition"
+    >
+      <img src="/assets/img/exposition/corps-2.png" class="w-10 h-10" alt="">
+      <span class="font-semibold">
+        Ризница Троице-Сергиевской Лавры
+      </span>
+    </button>
+
+    <!-- CORPS 3 -->
+    <button
+      @click="setCorps(3)"
+      :class="activeCorps === 3
+        ? 'bg-[#F3E9D6] ring-2 ring-[#A38641]'
+        : 'bg-[#F7F2E9]'"
+      class="flex items-center gap-4 px-5 py-4 transition"
+    >
+      <img src="/assets/img/exposition/corps-3.png" class="w-10 h-10" alt="">
+      <span class="font-semibold">
+        Музейный комплекс «Конный двор»
+      </span>
+    </button>
+
+    <!-- CORPS 4 -->
+    <button
+      @click="setCorps(4)"
+      :class="activeCorps === 4
+        ? 'bg-[#E7EFEA] ring-2 ring-[#62A37D]'
+        : 'bg-[#E7EFEA]'"
+      class="flex items-center gap-4 px-5 py-4 transition"
+    >
+      <img src="/assets/img/exposition/corps-4.png" class="w-10 h-10" alt="">
+      <span class="font-semibold">Краеведческий корпус</span>
+    </button>
+
+  </div>
+
+  <!-- CARDS -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+    <!-- CARD 1 -->
+    <article
+      x-show="!activeCorps || activeCorps === 1"
+      class="space-y-4"
+    >
+      <img
+        src="/assets/img/exposition/1.png"
+        class="w-full h-[240px] object-cover"
+        alt=""
+      >
+      <div class="font-semibold">От 550 ₽ / чел</div>
+      <div class="inline-block px-3 py-1 text-sm bg-[#F2C6C6]">
+        Главный корпус
+      </div>
+      <h3 class="font-semibold leading-[1.4]">
+        Экскурсия по выставке «Любовью и единением спасемся»
+      </h3>
+      <p class="text-sm text-[#8D9399]">
+        Тематическая экскурсия, знакомящая с земной жизнью великого Святого.
+      </p>
+    </article>
+
+    <!-- CARD 2 -->
+    <article
+      x-show="!activeCorps || activeCorps === 3"
+      class="space-y-4"
+    >
+      <img
+        src="/assets/img/exposition/2.png"
+        class="w-full h-[240px] object-cover"
+        alt=""
+      >
+      <div class="font-semibold">От 550 ₽ / чел</div>
+      <div class="inline-block px-3 py-1 text-sm bg-[#F3E9D6]">
+        Конный двор
+      </div>
+      <h3 class="font-semibold leading-[1.4]">
+        Экскурсия по постоянной экспозиции
+      </h3>
+      <p class="text-sm text-[#8D9399]">
+        Уникальные предметы народного быта и ремесла.
+      </p>
+    </article>
+
+    <!-- CARD 3 -->
+    <article
+      x-show="!activeCorps || activeCorps === 2"
+      class="space-y-4"
+    >
+      <img
+        src="/assets/img/exposition/3.png"
+        class="w-full h-[240px] object-cover"
+        alt=""
+      >
+      <div class="font-semibold">От 550 ₽ / чел</div>
+      <div class="inline-block px-3 py-1 text-sm bg-[#EEF0FF]">
+        Ризница ТСЛ
+      </div>
+      <h3 class="font-semibold leading-[1.4]">
+        Экскурсия по сокровищнице Лавры
+      </h3>
+      <p class="text-sm text-[#8D9399]">
+        Духовное и художественное наследие России.
+      </p>
+    </article>
+
+    <!-- остальные карточки по той же схеме -->
+    <!-- просто копируешь article и меняешь номер картинки -->
+
+  </div>
+
+</main>
+
+<div data-include="/tpl/footer.html"></div>
+
+<script src="/include.js"></script>
+<script src="https://unpkg.com/alpinejs" defer></script>
+
+</body>
+</html>

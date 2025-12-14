@@ -106,12 +106,11 @@
         <div
           x-show="open"
           x-transition
+          x-cloak
           class="absolute right-0 mt-2 w-[420px]
                  bg-white border border-[#DCDEE0]
                  shadow-xl z-50"
         >
-
-          <!-- ITEM -->
           <a
             href="/tpl/notifications.html"
             class="block px-6 py-4 border-b border-[#DCDEE0] hover:bg-[#F0F1F2]"
@@ -126,7 +125,6 @@
             </div>
           </a>
 
-          <!-- FOOTER -->
           <a
             href="/tpl/notifications.html"
             class="flex items-center justify-center gap-3 px-6 py-4
@@ -134,7 +132,6 @@
           >
             Все уведомления →
           </a>
-
         </div>
       </div>
 
@@ -156,6 +153,7 @@
 
         <div
           x-show="open"
+          x-cloak
           @click.outside="open=false"
           class="absolute right-0 mt-2 w-16 bg-white border border-[#DCDEE0] shadow-lg"
         >
@@ -184,7 +182,6 @@
   </div>
 </header>
 
-<!-- иконки: чёрные по умолчанию, белые при hover родителя -->
 <style>
   .icon-invert-hover {
     filter: invert(0);

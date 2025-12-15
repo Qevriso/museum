@@ -194,10 +194,18 @@
 >
   <div class="bg-white w-full max-w-[720px] p-12 relative">
 
+    <!-- FIXED CLOSE BUTTON -->
     <button
-      class="absolute -top-10 right-0 text-white text-[48px]"
+      class="absolute top-6 right-6
+             w-10 h-10
+             flex items-center justify-center
+             text-[28px] leading-none
+             text-[#24272A]
+             hover:opacity-60 transition"
       @click="openReview=false"
-    >×</button>
+    >
+      ×
+    </button>
 
     <template x-if="!reviewSuccess">
       <form class="space-y-4" @submit.prevent="validate()">

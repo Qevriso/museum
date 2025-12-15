@@ -57,27 +57,27 @@
           <div class="flex flex-col gap-8 text-[20px] leading-[160%] font-['Wix Madefor Display']">
 
             <div class="flex gap-6">
-              <img src="/assets/img/corps/kraeved/v1.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <img src="/assets/img/corps/kraeved/v1.png" class="w-[230px] h-[120px] object-cover shrink-0">
               <p>Экспозиция «Сергиев Посад в XX веке»</p>
             </div>
 
             <div class="flex gap-6">
-              <img src="/assets/img/corps/kraeved/v2.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <img src="/assets/img/corps/kraeved/v2.png" class="w-[230px] h-[120px] object-cover shrink-0">
               <p>Выставка «Археология Сергиево-Посадской земли»</p>
             </div>
 
             <div class="flex gap-6">
-              <img src="/assets/img/corps/kraeved/v3.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <img src="/assets/img/corps/kraeved/v3.png" class="w-[230px] h-[120px] object-cover shrink-0">
               <p>Выставка «Искусство. Война. Ополчение». К 80-летию Победы</p>
             </div>
 
             <div class="flex gap-6">
-              <img src="/assets/img/corps/kraeved/v4.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <img src="/assets/img/corps/kraeved/v4.png" class="w-[230px] h-[120px] object-cover shrink-0">
               <p>Выставка «России верные сыны»</p>
             </div>
 
             <div class="flex gap-6">
-              <img src="/assets/img/corps/kraeved/v5.png" class="w-[230px] h-[120px] object-cover shrink-0" alt="">
+              <img src="/assets/img/corps/kraeved/v5.png" class="w-[230px] h-[120px] object-cover shrink-0">
               <p>Выставка «Рождественские и новогодние праздники в Старом городе»</p>
             </div>
 
@@ -101,15 +101,9 @@
           >
             <p>
               В 1935–1936 гг. был разработан и принят первый план реконструкции и развития
-              г. Загорска (ныне Сергиев Посад). Первым строительным объектом стал детский сад,
-              заложенный в июле 1937 года…
-              <br><br>
-              Двухэтажный кирпичный дом хорошо вписывался в городскую застройку и стал
-              одной из архитектурных доминант довоенного Загорска.
+              г. Загорска (ныне Сергиев Посад).
               <br><br>
               В 1997 году здание было передано Сергиево-Посадскому музею-заповеднику.
-              Сегодня здесь располагаются экспозиции и выставки,
-              посвящённые истории города XX–XXI веков.
             </p>
 
             <div
@@ -152,31 +146,52 @@
 
     </section>
 
-    <!-- ADDRESS -->
+    <!-- ================= ADDRESS ================= -->
     <section class="mt-[100px]">
 
-      <h2 class="font-['Racama'] text-[32px] leading-[95%] tracking-[-0.02em] mb-4">
-        Адрес
-      </h2>
+      <!-- HEADER ROW -->
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-10">
 
-      <div class="flex items-start justify-between gap-10 mb-10">
-        <p class="text-[20px] leading-[160%] max-w-[520px] font-['Wix Madefor Display']">
-          141300, Московская обл., г. Сергиев Посад, Овражный переулок, 9А
-        </p>
+        <div>
+          <h2 class="font-['Racama'] text-[32px] leading-[95%] tracking-[-0.02em] mb-2">
+            Адрес
+          </h2>
+
+          <p class="text-[20px] leading-[160%] font-['Wix Madefor Display'] max-w-[980px]">
+            141300, Московская обл., г. Сергиев Посад, Овражный переулок, 9А
+          </p>
+        </div>
 
         <a
           href="#"
-          class="inline-flex items-center gap-4 border border-[#24272A]
+          class="w-full lg:w-[360px]
+                 inline-flex items-center justify-center gap-4
+                 border border-[#24272A]
                  px-8 h-[56px] text-[20px]
-                 hover:bg-[#24272A] hover:text-white transition-colors"
+                 hover:bg-[#24272A] hover:text-white transition-colors shrink-0"
         >
           Интерактивная карта →
         </a>
+
       </div>
 
-      <div class="flex flex-col lg:flex-row gap-6">
-        <img src="/assets/img/corps/kraeved/map-city.png" class="w-full lg:flex-1 h-[360px] object-cover" alt="">
-        <img src="/assets/img/corps/kraeved/map-local.png" class="w-full lg:w-[360px] h-[360px] object-cover" alt="">
+      <!-- MAPS -->
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6">
+
+        <!-- YANDEX MAP -->
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=38.1413%2C56.3077&z=16&pt=38.1413,56.3077,pm2rdm"
+          class="w-full h-[360px] border"
+          loading="lazy">
+        </iframe>
+
+        <!-- STATIC MAP -->
+        <img
+          src="/assets/img/corps/kraeved/map-local.png"
+          class="w-full h-[360px] object-cover border"
+          alt=""
+        >
+
       </div>
 
     </section>

@@ -13,7 +13,6 @@
   <!-- Tailwind 4 -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <!-- 🔒 FIX: скрываем Alpine-блоки до инициализации -->
   <style>
     [x-cloak] { display: none !important; }
   </style>
@@ -24,8 +23,6 @@
   <!-- GLOBAL -->
   <div data-include="/tpl/header.html"></div>
   <div data-include="/tpl/menu.html"></div>
-
-  <!-- MOBILE MENU (ВАЖНО: x-cloak внутри tpl) -->
   <div data-include="/tpl/menu-mobile.html"></div>
 
   <!-- ================= MAIN ================= -->
@@ -33,30 +30,21 @@
 
     <!-- BREADCRUMBS -->
     <nav class="font-['Wix Madefor Display'] text-[14px] lg:text-[20px] leading-[1.6] mb-6 lg:mb-10">
-      <a href="/corps/index.html" class="text-[#8D9399] hover:text-[#24272A]">
-        Корпуса
-      </a>
+      <a href="/corps/index.html" class="text-[#8D9399] hover:text-[#24272A]">Корпуса</a>
       <span class="mx-2 text-[#DCDEE0]">/</span>
-      <span class="text-[#24272A]">
-        Главный корпус
-      </span>
+      <span class="text-[#24272A]">Главный корпус</span>
     </nav>
 
     <!-- TITLE -->
-    <h1 class="font-['Racama']
-               text-[36px] sm:text-[48px] lg:text-[72px]
-               leading-[0.95]
-               tracking-[-0.02em]
-               mb-[24px] lg:mb-[60px]">
+    <h1 class="font-['Racama] text-[36px] sm:text-[48px] lg:text-[72px] leading-[0.95] tracking-[-0.02em] mb-[24px] lg:mb-[60px]">
       Главный корпус
     </h1>
 
-    <!-- MAIN IMAGE (MOBILE) -->
+    <!-- IMAGE MOBILE -->
     <img
       src="/assets/img/corps/main.png"
       alt="Главный корпус музея"
-      class="w-full h-[220px] sm:h-[320px] lg:h-[480px]
-             object-cover mb-[32px] lg:hidden"
+      class="w-full h-[220px] sm:h-[320px] object-cover mb-[32px] lg:hidden"
     >
 
     <!-- MOBILE WORKTIME -->
@@ -64,13 +52,11 @@
       <div data-include="/tpl/worktime.html"></div>
     </div>
 
-    <!-- ================= TOP SECTION ================= -->
+    <!-- ================= TOP ================= -->
     <section class="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-[40px] lg:gap-[145px]">
 
-      <!-- LEFT CONTENT -->
       <div class="flex flex-col gap-[40px] lg:gap-[60px]">
 
-        <!-- DESKTOP IMAGE -->
         <img
           src="/assets/img/corps/main.png"
           alt="Главный корпус музея"
@@ -79,36 +65,31 @@
 
         <!-- EXHIBITIONS -->
         <section>
-          <h2 class="font-['Racama'] text-[28px] lg:text-[40px] leading-[0.95] mb-6 lg:mb-8">
+          <h2 class="font-['Racama'] text-[28px] lg:text-[40px] leading-[0.95] mb-6">
             Экспозиции и выставки
           </h2>
 
           <div class="flex flex-col gap-6 font-['Wix Madefor Display'] text-[16px] lg:text-[20px] leading-[1.6]">
-
             <div class="flex gap-4">
-              <img src="/assets/img/corps/v3.png" class="w-[120px] h-[80px] lg:w-[230px] lg:h-[120px] object-cover shrink-0" alt="">
+              <img src="/assets/img/corps/v3.png" class="w-[120px] h-[80px] lg:w-[230px] lg:h-[120px] object-cover shrink-0">
               <p>Выставка «Свидетели осады Троице-Сергиева монастыря»</p>
             </div>
-
             <div class="flex gap-4">
-              <img src="/assets/img/corps/v2.png" class="w-[120px] h-[80px] lg:w-[230px] lg:h-[120px] object-cover shrink-0" alt="">
+              <img src="/assets/img/corps/v2.png" class="w-[120px] h-[80px] lg:w-[230px] lg:h-[120px] object-cover shrink-0">
               <p>Выставка «Осенний салон — 2025»</p>
             </div>
-
             <div class="flex gap-4">
-              <img src="/assets/img/corps/v1.png" class="w-[120px] h-[80px] lg:w-[230px] lg:h-[120px] object-cover shrink-0" alt="">
+              <img src="/assets/img/corps/v1.png" class="w-[120px] h-[80px] lg:w-[230px] lg:h-[120px] object-cover shrink-0">
               <p>Выставка «Рафаэль. Версии»</p>
             </div>
-
           </div>
         </section>
 
         <!-- DESCRIPTION -->
         <section>
-          <h2 class="font-['Racama'] text-[28px] lg:text-[40px] leading-[0.95] mb-4 lg:mb-6">
+          <h2 class="font-['Racama'] text-[28px] lg:text-[40px] leading-[0.95] mb-4">
             Описание
           </h2>
-
           <p class="font-['Wix Madefor Display'] text-[16px] lg:text-[20px] leading-[1.6] max-w-[855px]">
             В Главном корпусе музея расположен центральный выставочный зал...
           </p>
@@ -119,8 +100,7 @@
           <h2 class="font-['Racama'] text-[28px] lg:text-[40px] leading-[0.95] mb-4">
             Заказ экскурсий
           </h2>
-
-          <div class="font-['Wix Madefor Display'] text-[16px] lg:text-[20px] leading-[1.6] flex flex-col sm:flex-row gap-3 sm:gap-8">
+          <div class="font-['Wix Madefor Display'] text-[16px] lg:text-[20px] flex gap-6 flex-wrap">
             <a href="tel:+74965405356">8 496 540-53-56</a>
             <a href="tel:+79850404517">8 985 040-45-17</a>
           </div>
@@ -128,7 +108,6 @@
 
       </div>
 
-      <!-- RIGHT SIDEBAR (DESKTOP) -->
       <aside class="hidden lg:block self-start">
         <div data-include="/tpl/worktime.html"></div>
       </aside>
@@ -138,45 +117,60 @@
     <!-- ================= ADDRESS ================= -->
     <section class="mt-[60px] lg:mt-[100px]">
 
-      <h2 class="font-['Racama'] text-[28px] lg:text-[40px] leading-[0.95] mb-4">
-        Адрес
-      </h2>
+      <!-- HEADER ROW -->
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-10">
 
-      <p class="font-['Wix Madefor Display'] text-[16px] lg:text-[20px] leading-[1.6] max-w-[520px] mb-6">
-        141310, Московская обл., г. Сергиев Посад, пр-т Красной Армии, д. 144
-      </p>
+        <div>
+          <h2 class="font-['Racama'] text-[28px] lg:text-[40px] leading-[0.95] mb-2">
+            Адрес
+          </h2>
+          <p class="font-['Wix Madefor Display'] text-[16px] lg:text-[20px] leading-[1.6] max-w-[980px]">
+            141310, Московская обл., г. Сергиев Посад, пр-т Красной Армии, д. 144
+          </p>
+        </div>
 
-      <a
-        href="#"
-        class="inline-flex items-center justify-center
-               border border-[#24272A]
-               w-full sm:w-auto
-               px-6 lg:px-10 h-[48px] lg:h-[56px]
-               font-['Wix Madefor Display']
-               text-[16px] lg:text-[20px]
-               hover:bg-[#24272A] hover:text-white transition-colors mb-6"
-      >
-        Интерактивная карта →
-      </a>
+        <a
+          href="#"
+          class="w-full lg:w-[360px]
+                 inline-flex items-center justify-center gap-4
+                 border border-[#24272A]
+                 px-8 h-[56px] text-[16px] lg:text-[20px]
+                 hover:bg-[#24272A] hover:text-white transition-colors shrink-0"
+        >
+          Интерактивная карта →
+        </a>
 
-      <div class="flex flex-col lg:flex-row gap-6">
-        <img src="/assets/img/corps/map-city.png" class="w-full lg:flex-1 h-[220px] lg:h-[360px] object-cover">
-        <img src="/assets/img/corps/map-local.png" class="w-full lg:w-[360px] h-[220px] lg:h-[360px] object-cover">
+      </div>
+
+      <!-- MAPS -->
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6">
+
+        <!-- YANDEX MAP -->
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=38.1316%2C56.3104&z=16&pt=38.1316,56.3104,pm2rdm"
+          class="w-full h-[220px] lg:h-[360px] border"
+          loading="lazy">
+        </iframe>
+
+        <!-- STATIC MAP -->
+        <img
+          src="/assets/img/corps/map-local.png"
+          class="w-full h-[220px] lg:h-[360px] object-cover border"
+          alt=""
+        >
+
       </div>
 
     </section>
 
   </main>
 
-  <!-- FOOTER (теперь ВСЕГДА виден) -->
-  <footer class="relative z-0">
+  <!-- FOOTER -->
+  <footer>
     <div data-include="/tpl/footer.html"></div>
   </footer>
 
-  <!-- INCLUDE -->
   <script src="/include.js"></script>
-
-  <!-- ALPINE -->
   <script src="https://unpkg.com/alpinejs" defer></script>
 
 </body>

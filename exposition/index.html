@@ -32,9 +32,11 @@
 
   <!-- HEADER -->
   <div class="flex items-start justify-between gap-6 mb-10">
-    <h1 class="font-['Racama]
-               text-[40px] sm:text-[56px] lg:text-[72px]
-               leading-[0.95] tracking-[-0.02em]">
+    <h1
+      class="font-['Racama']
+             text-[40px] sm:text-[56px] lg:text-[72px]
+             leading-[0.95] tracking-[-0.02em]"
+    >
       Выставки и экспозиции
     </h1>
 
@@ -44,7 +46,9 @@
       @click="activeCorps = null"
       class="hidden sm:flex items-center gap-3
              border border-[#24272A]
-             px-5 py-3 font-semibold"
+             px-5 py-3 font-semibold
+             transition
+             hover:bg-[#24272A] hover:text-white"
     >
       Очистить фильтры ✕
     </button>
@@ -57,9 +61,10 @@
     <button
       @click="setCorps(1)"
       :class="activeCorps === 1
-        ? 'bg-[#F2C6C6] ring-2 ring-[#C92E32]'
-        : 'bg-[#FBEAEA]'"
-      class="flex items-center gap-4 px-5 py-4 transition"
+        ? 'bg-[#F2C6C6]'
+        : 'bg-[#FBEAEA] hover:bg-[#F2C6C6]'"
+      class="flex items-center gap-4 px-5 py-4
+             transition-colors duration-300"
     >
       <img src="/assets/img/exposition/corps-1.png" class="w-10 h-10" alt="">
       <span class="font-semibold">Главный корпус</span>
@@ -69,9 +74,10 @@
     <button
       @click="setCorps(2)"
       :class="activeCorps === 2
-        ? 'bg-[#EEF0FF] ring-2 ring-[#7474C2]'
-        : 'bg-[#EEF0FF]'"
-      class="flex items-center gap-4 px-5 py-4 transition"
+        ? 'bg-[#7A7CCB] text-white'
+        : 'bg-[#EEF0FF] hover:bg-[#7A7CCB] hover:text-white'"
+      class="flex items-center gap-4 px-5 py-4
+             transition-colors duration-300"
     >
       <img src="/assets/img/exposition/corps-2.png" class="w-10 h-10" alt="">
       <span class="font-semibold">
@@ -83,9 +89,10 @@
     <button
       @click="setCorps(3)"
       :class="activeCorps === 3
-        ? 'bg-[#F3E9D6] ring-2 ring-[#A38641]'
-        : 'bg-[#F7F2E9]'"
-      class="flex items-center gap-4 px-5 py-4 transition"
+        ? 'bg-[#E7D7B8]'
+        : 'bg-[#F7F2E9] hover:bg-[#E7D7B8]'"
+      class="flex items-center gap-4 px-5 py-4
+             transition-colors duration-300"
     >
       <img src="/assets/img/exposition/corps-3.png" class="w-10 h-10" alt="">
       <span class="font-semibold">
@@ -97,9 +104,10 @@
     <button
       @click="setCorps(4)"
       :class="activeCorps === 4
-        ? 'bg-[#E7EFEA] ring-2 ring-[#62A37D]'
-        : 'bg-[#E7EFEA]'"
-      class="flex items-center gap-4 px-5 py-4 transition"
+        ? 'bg-[#CFE3D4]'
+        : 'bg-[#E7EFEA] hover:bg-[#CFE3D4]'"
+      class="flex items-center gap-4 px-5 py-4
+             transition-colors duration-300"
     >
       <img src="/assets/img/exposition/corps-4.png" class="w-10 h-10" alt="">
       <span class="font-semibold">Краеведческий корпус</span>
@@ -175,9 +183,6 @@
         Духовное и художественное наследие России.
       </p>
     </article>
-
-    <!-- остальные карточки по той же схеме -->
-    <!-- просто копируешь article и меняешь номер картинки -->
 
   </div>
 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Концерты — Сергиево-Посадский музей-заповедник</title>
+
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-[#24272A] font-['Wix Madefor Display']">
+
+<div data-include="/tpl/header.html"></div>
+<div data-include="/tpl/menu.html"></div>
+<div data-include="/tpl/menu-mobile.html"></div>
+
+<main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] pt-[40px] lg:pt-[60px] pb-[100px]">
+
+  <!-- BREADCRUMBS -->
+  <nav class="text-[18px] sm:text-[20px] text-[#8D9399] mb-[32px] flex gap-2 flex-wrap">
+    <a href="/visitors/index.html">Посетителям</a>
+    <span>/</span>
+    <span class="text-[#24272A]">Концерты</span>
+  </nav>
+
+  <!-- TITLE -->
+  <h1 class="font-['Racama'] text-[48px] sm:text-[64px] lg:text-[72px] leading-[95%] tracking-[-0.02em] mb-[60px]">
+    Концерты
+  </h1>
+
+  <!-- GRID -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-[40px]">
+
+    <!-- CARD -->
+    <a href="/visitors/concerts-detail.html" class="group">
+      <img
+        src="/assets/img/concerts/1.jpg"
+        alt=""
+        class="w-full h-[260px] sm:h-[320px] object-cover mb-[16px]"
+      >
+      <h3 class="text-[20px] sm:text-[22px] font-semibold leading-[140%] group-hover:underline">
+        Проект «Музыкальные вечера в Парадном зале Ризницы»
+      </h3>
+    </a>
+
+    <a href="/visitors/concerts-detail.html" class="group">
+      <img
+        src="/assets/img/concerts/2.jpg"
+        alt=""
+        class="w-full h-[260px] sm:h-[320px] object-cover mb-[16px]"
+      >
+      <h3 class="text-[20px] sm:text-[22px] font-semibold leading-[140%] group-hover:underline">
+        Проект «Музыка и музей»
+      </h3>
+    </a>
+
+  </section>
+
+</main>
+
+<div data-include="/tpl/footer.html"></div>
+
+<script src="/include.js"></script>
+<script src="https://unpkg.com/alpinejs" defer></script>
+
+</body>
+</html>

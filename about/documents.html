@@ -19,7 +19,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-white text-[#24272A]">
+<body class="bg-white text-[#24272A] font-['Wix Madefor Display']">
 
   <!-- HEADER -->
   <div data-include="/tpl/header.html"></div>
@@ -111,6 +111,7 @@
       x-cloak
       x-show="open"
       @keydown.escape.window="open=false"
+      @click.self="open=false"
       class="fixed inset-0 z-[100] bg-black/70 flex items-center justify-center p-4"
     >
 
@@ -124,14 +125,12 @@
 
       <!-- CONTENT -->
       <div class="bg-white max-w-[900px] w-full max-h-[90vh] overflow-auto">
-
         <img :src="img" alt="" class="w-full object-contain">
-
         <div class="p-6 text-sm text-[#24272A]">
           <p x-text="title"></p>
         </div>
-
       </div>
+
     </div>
 
   </main>
@@ -144,13 +143,6 @@
 
   <!-- ALPINE -->
   <script src="https://unpkg.com/alpinejs" defer></script>
-
-  <!-- FIX DETAILS -->
-  <script>
-    window.addEventListener('load', () => {
-      document.querySelectorAll('details[open]').forEach(d => d.removeAttribute('open'));
-    });
-  </script>
 
   <!-- LAZY LOAD IMAGES -->
   <script>

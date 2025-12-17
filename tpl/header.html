@@ -14,7 +14,11 @@
     </a>
 
     <!-- SEARCH (DESKTOP) -->
-    <div class="hidden lg:flex relative ml-6 flex-1 max-w-[520px]">
+    <div
+      class="hidden lg:flex relative ml-6 flex-1 max-w-[520px]"
+      @click.outside="searchOpen = false"
+    >
+      <!-- поле поиска показывается только в активном состоянии -->
       <input
         x-show="searchOpen"
         x-transition
@@ -22,11 +26,14 @@
         placeholder="Поиск"
         class="w-full h-[44px] bg-[#F0F1F2] pl-4 pr-10 outline-none"
       />
+
+      <!-- иконка поиска всегда на месте -->
       <button
         @click="searchOpen = !searchOpen"
         type="button"
         aria-label="Поиск"
-        class="absolute right-3 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 transition-opacity"
+        class="absolute right-3 top-1/2 -translate-y-1/2
+               opacity-70 hover:opacity-100 transition-opacity"
       >
         <img src="/assets/svg/search.svg" class="w-5 h-5" alt="">
       </button>
@@ -86,7 +93,6 @@
         @mouseenter="open = true"
         @mouseleave="open = false"
       >
-        <!-- ICON -->
         <a
           href="/tpl/notifications.html"
           aria-label="Уведомления"
@@ -102,7 +108,6 @@
           </span>
         </a>
 
-        <!-- DROPDOWN -->
         <div
           x-show="open"
           x-transition
@@ -183,6 +188,7 @@
 </header>
 
 <style>
+  /* иконки инвертируются только при наведении на кнопку */
   .icon-invert-hover {
     filter: invert(0);
     transition: filter .2s ease;

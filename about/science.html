@@ -11,6 +11,11 @@
 
   <style>
     [x-cloak] { display: none !important; }
+
+    /* FIX: кастомные радио — точка и красная обводка как в макете */
+    .radio-input { position: absolute; opacity: 0; pointer-events: none; }
+    .radio-input:checked + .radio-btn .radio-dot { opacity: 1; }
+    .radio-input:checked + .radio-btn .radio-ring { border-color: #C93635; }
   </style>
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -18,12 +23,11 @@
 
 <body class="bg-white text-[#24272A] font-['Wix Madefor Display']">
 
-  <!-- HEADER / MENUS -->
+  <!-- HEADER -->
   <div data-include="/tpl/header.html"></div>
   <div data-include="/tpl/menu.html"></div>
   <div data-include="/tpl/menu-mobile.html"></div>
 
-  <!-- MAIN -->
   <main class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-[60px]">
 
     <!-- BREADCRUMBS -->
@@ -48,7 +52,7 @@
       </button>
     </div>
 
-    <!-- FILTERS (ONE LINE) -->
+    <!-- FILTERS -->
     <div class="mt-10 flex flex-wrap items-end gap-x-8 gap-y-4">
 
       <!-- YEARS -->
@@ -58,35 +62,89 @@
           <input
             type="number"
             placeholder="2008"
-            class="filter-input w-[120px] border border-[#DCDEE0] px-4 py-3"
+            class="filter-input w-[120px] bg-[#F3F4F6] border border-[#F3F4F6] px-4 py-3"
           >
           <input
             type="number"
             placeholder="2025"
-            class="filter-input w-[120px] border border-[#DCDEE0] px-4 py-3"
+            class="filter-input w-[120px] bg-[#F3F4F6] border border-[#F3F4F6] px-4 py-3"
           >
         </div>
       </div>
 
       <!-- PLACE -->
-      <div class="flex items-center gap-6 pt-[26px]">
-        <label class="flex items-center gap-3 cursor-pointer">
-          <input type="radio" name="place" value="all"
-                 class="filter-input accent-[#C93635]" checked>
-          <span>Все</span>
+      <div class="flex gap-4 pt-[26px]">
+
+        <!-- ALL -->
+        <label class="cursor-pointer select-none relative">
+          <input
+            type="radio"
+            name="place"
+            value="all"
+            class="radio-input filter-input"
+            checked
+          >
+
+          <div
+            class="radio-btn flex items-center gap-3 px-6 py-3 border border-[#DCDEE0]
+                   hover:bg-[#F3F4F6] transition"
+          >
+            <span
+              class="radio-ring w-4 h-4 rounded-full border border-[#DCDEE0]
+                     flex items-center justify-center"
+            >
+              <span class="radio-dot w-2.5 h-2.5 rounded-full bg-[#C93635] opacity-0 transition"></span>
+            </span>
+            <span class="text-sm font-medium">Все</span>
+          </div>
         </label>
 
-        <label class="flex items-center gap-3 cursor-pointer">
-          <input type="radio" name="place" value="inside"
-                 class="filter-input accent-[#C93635]">
-          <span>В музее</span>
+        <!-- INSIDE -->
+        <label class="cursor-pointer select-none relative">
+          <input
+            type="radio"
+            name="place"
+            value="inside"
+            class="radio-input filter-input"
+          >
+
+          <div
+            class="radio-btn flex items-center gap-3 px-6 py-3 border border-[#DCDEE0]
+                   hover:bg-[#F3F4F6] transition"
+          >
+            <span
+              class="radio-ring w-4 h-4 rounded-full border border-[#DCDEE0]
+                     flex items-center justify-center"
+            >
+              <span class="radio-dot w-2.5 h-2.5 rounded-full bg-[#C93635] opacity-0 transition"></span>
+            </span>
+            <span class="text-sm font-medium">В музее</span>
+          </div>
         </label>
 
-        <label class="flex items-center gap-3 cursor-pointer">
-          <input type="radio" name="place" value="outside"
-                 class="filter-input accent-[#C93635]">
-          <span>Вне музея</span>
+        <!-- OUTSIDE -->
+        <label class="cursor-pointer select-none relative">
+          <input
+            type="radio"
+            name="place"
+            value="outside"
+            class="radio-input filter-input"
+          >
+
+          <div
+            class="radio-btn flex items-center gap-3 px-6 py-3 border border-[#DCDEE0]
+                   hover:bg-[#F3F4F6] transition"
+          >
+            <span
+              class="radio-ring w-4 h-4 rounded-full border border-[#DCDEE0]
+                     flex items-center justify-center"
+            >
+              <span class="radio-dot w-2.5 h-2.5 rounded-full bg-[#C93635] opacity-0 transition"></span>
+            </span>
+            <span class="text-sm font-medium">Вне музея</span>
+          </div>
         </label>
+
       </div>
 
     </div>
@@ -95,11 +153,8 @@
     <section class="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
 
       <article>
-        <img
-          data-src="/assets/img/about/science/1.png"
-          alt=""
-          class="lazy-img w-full aspect-[4/3] object-cover mb-4 bg-[#F3F4F6]"
-        >
+        <img data-src="/assets/img/about/science/1.png"
+             class="lazy-img w-full aspect-[4/3] object-cover mb-4 bg-[#F3F4F6]">
         <div class="text-sm text-[#8D9399] mb-2">
           16 ноября 2023 — 17 ноября 2023
         </div>
@@ -145,20 +200,10 @@
 
   </main>
 
-  <!-- FOOTER -->
   <div data-include="/tpl/footer.html"></div>
 
   <script src="/include.js"></script>
   <script src="https://unpkg.com/alpinejs" defer></script>
-
-  <!-- FIX HEADER DROPDOWNS -->
-  <script>
-    window.addEventListener('load', () => {
-      document.querySelectorAll('details[open]').forEach(d => {
-        d.removeAttribute('open');
-      });
-    });
-  </script>
 
   <!-- FILTER LOGIC -->
   <script>
@@ -191,22 +236,18 @@
     checkFilters();
   </script>
 
-  <!-- LAZY LOAD IMAGES -->
+  <!-- LAZY -->
   <script>
     const lazyImages = document.querySelectorAll('.lazy-img');
-
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const img = entry.target;
           img.src = img.dataset.src;
-          img.removeAttribute('data-src');
           obs.unobserve(img);
         }
       });
-    }, {
-      rootMargin: '200px'
-    });
+    }, { rootMargin: '200px' });
 
     lazyImages.forEach(img => observer.observe(img));
   </script>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интерактивная карта — Сергиево-Посадский музей-заповедник</title>
+
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+
+<body class="bg-white text-[#24272A] font-['Wix Madefor Display'] overflow-x-hidden">
+
+<!-- INCLUDE -->
+<div data-include="/tpl/header.html"></div>
+<div data-include="/tpl/menu.html"></div>
+<div data-include="/tpl/menu-mobile.html"></div>
+
+<main class="w-full">
+
+  <!-- FILTERS / CORPS SWITCH -->
+  <section class="max-w-[1600px] mx-auto px-4 lg:px-[60px] pt-[32px] pb-[24px]">
+    <div class="flex flex-wrap gap-4">
+
+      <button class="px-6 py-3 bg-white border border-[#DCDEE0] font-semibold hover:border-[#C93635]">
+        Главный корпус
+      </button>
+
+      <button class="px-6 py-3 bg-white border border-[#DCDEE0] font-semibold hover:border-[#C93635]">
+        Ризница Троице-Сергиевской Лавры
+      </button>
+
+      <button class="px-6 py-3 bg-white border border-[#DCDEE0] font-semibold hover:border-[#C93635]">
+        Музейный комплекс «Конный двор»
+      </button>
+
+      <button class="px-6 py-3 bg-white border border-[#DCDEE0] font-semibold hover:border-[#C93635]">
+        Краеведческий корпус
+      </button>
+
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section
+    class="relative w-full overflow-hidden"
+    x-data="{ active:null }"
+  >
+
+    <!-- MAP IMAGE -->
+    <img
+      src="/assets/img/corps/map-bg.jpg"
+      alt="Интерактивная карта музея"
+      class="w-full h-auto object-cover"
+    >
+
+    <!-- MAP POINTS (пример) -->
+    <button
+      class="absolute top-[42%] left-[48%]
+             w-10 h-10 rounded-full bg-[#C93635]
+             flex items-center justify-center
+             text-white font-bold
+             hover:scale-110 transition"
+      @click="active = 'main'"
+      aria-label="Главный корпус"
+    >
+      +
+    </button>
+
+    <button
+      class="absolute top-[38%] left-[55%]
+             w-10 h-10 rounded-full bg-[#24272A]
+             flex items-center justify-center
+             text-white font-bold
+             hover:scale-110 transition"
+      @click="active = 'konny'"
+      aria-label="Конный двор"
+    >
+      +
+    </button>
+
+    <!-- INFO PANEL -->
+    <div
+      x-show="active"
+      x-cloak
+      class="absolute bottom-0 left-0 right-0
+             bg-white border-t border-[#DCDEE0]
+             p-6 lg:p-10"
+    >
+      <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
+        <div class="text-[24px] font-semibold mb-2">
+          Информация об объекте
+        </div>
+        <p class="text-[18px] leading-[160%]">
+          Здесь будет описание выбранного корпуса или точки на карте.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<div data-include="/tpl/footer.html"></div>
+
+<script src="/include.js"></script>
+<script src="https://unpkg.com/alpinejs" defer></script>
+</body>
+</html>

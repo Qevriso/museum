@@ -1,18 +1,20 @@
 <section
   x-data="heroSlider()"
-  class="relative overflow-hidden bg-[#C93635]"
+  class="relative overflow-hidden bg-[#C93635]
+         lg:h-[680px]"
 >
   <div
     class="relative z-10
            max-w-[1600px] mx-auto
            px-4 lg:px-[60px]
-           pt-6 lg:pt-12
-           pb-12 lg:pb-16"
+           pt-6 lg:pt-[60px]
+           pb-12 lg:pb-[68px]
+           h-full"
   >
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[32px] h-full items-stretch">
 
       <!-- LEFT -->
-      <div class="text-white w-full flex flex-col justify-between">
+      <div class="text-white w-full flex flex-col justify-between min-w-0">
 
         <!-- DATE -->
         <div
@@ -20,8 +22,7 @@
                  font-['Wix Madefor Display']
                  font-semibold
                  text-[16px] leading-[160%]
-                 opacity-90
-                 mb-4 lg:mb-6"
+                 opacity-90"
         >
           <span x-text="slides[current].date.split('—')[0]"></span>
           <span class="w-10 h-px bg-white/70"></span>
@@ -30,13 +31,12 @@
 
         <!-- TITLE -->
         <h1
-          class="font-['Racama]
+          class="font-['Racama']
                  font-normal
                  tracking-[-0.02em]
                  text-[52px] leading-[1.1]
                  sm:text-[60px]
-                 lg:text-[140px] lg:leading-[0.9]
-                 mb-4 lg:mb-6"
+                 lg:text-[140px] lg:leading-[0.9]"
         >
           <span x-text="slides[current].titleLine1"></span><br>
           <span x-text="slides[current].titleLine2"></span>
@@ -47,17 +47,16 @@
           class="font-['Wix Madefor Display']
                  text-[20px]
                  leading-[160%]
-                 max-w-[520px]
-                 mb-6 lg:mb-10"
+                 max-w-[520px]"
           x-text="slides[current].subtitle"
         ></p>
 
         <!-- BUTTONS -->
-        <div class="flex flex-col lg:flex-row gap-4 mb-8 lg:mb-12">
+        <div class="flex flex-col lg:flex-row gap-4">
           <a
             href="#"
             class="group inline-flex items-center justify-center gap-3
-                   h-[52px] px-6
+                   h-[64px] px-6
                    bg-white text-[#C92E32]
                    font-semibold
                    border border-white
@@ -75,7 +74,7 @@
           <a
             href="#"
             class="inline-flex items-center justify-center gap-3
-                   h-[52px] px-6
+                   h-[64px] px-6
                    border border-white
                    font-semibold
                    hover:bg-white/10
@@ -113,19 +112,17 @@
 
       </div>
 
-      <!-- RIGHT IMAGE (не режем, прижимаем низ) -->
-      <div class="relative hidden lg:block">
-        <!-- ВАЖНО: фиксируем высоту зоны изображения, чтобы низ всегда совпадал -->
-        <div class="relative w-[50vw] min-h-[520px] h-full ml-auto">
-          <img
-            :src="slides[current].img"
-            alt=""
-            class="absolute right-0 bottom-[-68px]
-                   w-full h-full
-                   object-contain object-bottom
-                   pointer-events-none select-none"
-          >
-        </div>
+      <!-- RIGHT IMAGE -->
+      <div class="relative hidden lg:block h-full">
+        <img
+          :src="slides[current].img"
+          alt=""
+          class="absolute right-0 bottom-[-74px]
+                 w-[520px] xl:w-[600px]
+                 max-h-[720px]
+                 object-contain
+                 pointer-events-none select-none"
+        >
       </div>
 
     </div>

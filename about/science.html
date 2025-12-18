@@ -7,26 +7,23 @@
   <title>Научная деятельность — Сергиево-Посадский музей-заповедник</title>
   <meta name="description" content="Научная деятельность Сергиево-Посадского музея-заповедника">
 
-  <!-- Fonts -->
   <link rel="stylesheet" href="/assets/css/fonts.css">
 
-  <!-- x-cloak FIX -->
   <style>
     [x-cloak] { display: none !important; }
   </style>
 
-  <!-- Tailwind 4 -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-white text-[#24272A]">
+<body class="bg-white text-[#24272A] font-['Wix Madefor Display']">
 
   <!-- HEADER / MENUS -->
   <div data-include="/tpl/header.html"></div>
   <div data-include="/tpl/menu.html"></div>
   <div data-include="/tpl/menu-mobile.html"></div>
 
-  <!-- ================= MAIN ================= -->
+  <!-- MAIN -->
   <main class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-[60px]">
 
     <!-- BREADCRUMBS -->
@@ -51,22 +48,28 @@
       </button>
     </div>
 
-    <!-- FILTERS -->
-    <div class="mt-10 space-y-6">
+    <!-- FILTERS (ONE LINE) -->
+    <div class="mt-10 flex flex-wrap items-end gap-x-8 gap-y-4">
 
       <!-- YEARS -->
       <div>
-        <div class="text-sm font-semibold mb-3">Годы</div>
-        <div class="flex flex-wrap gap-4">
-          <input type="number" placeholder="2020"
-                 class="filter-input w-[120px] border border-[#DCDEE0] px-4 py-3">
-          <input type="number" placeholder="2025"
-                 class="filter-input w-[120px] border border-[#DCDEE0] px-4 py-3">
+        <div class="text-sm font-semibold mb-2">Годы</div>
+        <div class="flex gap-4">
+          <input
+            type="number"
+            placeholder="2008"
+            class="filter-input w-[120px] border border-[#DCDEE0] px-4 py-3"
+          >
+          <input
+            type="number"
+            placeholder="2025"
+            class="filter-input w-[120px] border border-[#DCDEE0] px-4 py-3"
+          >
         </div>
       </div>
 
       <!-- PLACE -->
-      <div class="flex flex-wrap gap-6">
+      <div class="flex items-center gap-6 pt-[26px]">
         <label class="flex items-center gap-3 cursor-pointer">
           <input type="radio" name="place" value="all"
                  class="filter-input accent-[#C93635]" checked>
@@ -85,6 +88,7 @@
           <span>Вне музея</span>
         </label>
       </div>
+
     </div>
 
     <!-- CARDS -->
@@ -144,10 +148,7 @@
   <!-- FOOTER -->
   <div data-include="/tpl/footer.html"></div>
 
-  <!-- INCLUDE -->
   <script src="/include.js"></script>
-
-  <!-- Alpine -->
   <script src="https://unpkg.com/alpinejs" defer></script>
 
   <!-- FIX HEADER DROPDOWNS -->

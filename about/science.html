@@ -12,7 +12,7 @@
   <style>
     [x-cloak] { display: none !important; }
 
-    /* FIX: кастомные радио — точка и красная обводка как в макете */
+    /* кастомные радио */
     .radio-input { position: absolute; opacity: 0; pointer-events: none; }
     .radio-input:checked + .radio-btn .radio-dot { opacity: 1; }
     .radio-input:checked + .radio-btn .radio-ring { border-color: #C93635; }
@@ -37,7 +37,7 @@
       <span class="text-[#24272A]">Научная деятельность</span>
     </div>
 
-    <!-- TITLE + RESET -->
+    <!-- TITLE -->
     <div class="mt-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
       <h1 class="font-['Racama'] text-[40px] sm:text-[56px] lg:text-[72px] leading-[1.05]">
         Научная деятельность
@@ -59,86 +59,43 @@
       <div>
         <div class="text-sm font-semibold mb-2">Годы</div>
         <div class="flex gap-4">
-          <input
-            type="number"
-            placeholder="2008"
-            class="filter-input w-[120px] bg-[#F3F4F6] border border-[#F3F4F6] px-4 py-3"
-          >
-          <input
-            type="number"
-            placeholder="2025"
-            class="filter-input w-[120px] bg-[#F3F4F6] border border-[#F3F4F6] px-4 py-3"
-          >
+          <input type="number" placeholder="2008"
+                 class="filter-input w-[120px] bg-[#F3F4F6] border border-[#F3F4F6] px-4 py-3">
+          <input type="number" placeholder="2025"
+                 class="filter-input w-[120px] bg-[#F3F4F6] border border-[#F3F4F6] px-4 py-3">
         </div>
       </div>
 
       <!-- PLACE -->
       <div class="flex gap-4 pt-[26px]">
 
-        <!-- ALL -->
-        <label class="cursor-pointer select-none relative">
-          <input
-            type="radio"
-            name="place"
-            value="all"
-            class="radio-input filter-input"
-            checked
-          >
-
-          <div
-            class="radio-btn flex items-center gap-3 px-6 py-3 border border-[#DCDEE0]
-                   hover:bg-[#F3F4F6] transition"
-          >
-            <span
-              class="radio-ring w-4 h-4 rounded-full border border-[#DCDEE0]
-                     flex items-center justify-center"
-            >
+        <label class="cursor-pointer relative">
+          <input type="radio" name="place" value="all"
+                 class="radio-input filter-input" checked>
+          <div class="radio-btn flex items-center gap-3 px-6 py-3 border border-[#DCDEE0] hover:bg-[#F3F4F6] transition">
+            <span class="radio-ring w-4 h-4 rounded-full border border-[#DCDEE0] flex items-center justify-center">
               <span class="radio-dot w-2.5 h-2.5 rounded-full bg-[#C93635] opacity-0 transition"></span>
             </span>
             <span class="text-sm font-medium">Все</span>
           </div>
         </label>
 
-        <!-- INSIDE -->
-        <label class="cursor-pointer select-none relative">
-          <input
-            type="radio"
-            name="place"
-            value="inside"
-            class="radio-input filter-input"
-          >
-
-          <div
-            class="radio-btn flex items-center gap-3 px-6 py-3 border border-[#DCDEE0]
-                   hover:bg-[#F3F4F6] transition"
-          >
-            <span
-              class="radio-ring w-4 h-4 rounded-full border border-[#DCDEE0]
-                     flex items-center justify-center"
-            >
+        <label class="cursor-pointer relative">
+          <input type="radio" name="place" value="inside"
+                 class="radio-input filter-input">
+          <div class="radio-btn flex items-center gap-3 px-6 py-3 border border-[#DCDEE0] hover:bg-[#F3F4F6] transition">
+            <span class="radio-ring w-4 h-4 rounded-full border border-[#DCDEE0] flex items-center justify-center">
               <span class="radio-dot w-2.5 h-2.5 rounded-full bg-[#C93635] opacity-0 transition"></span>
             </span>
             <span class="text-sm font-medium">В музее</span>
           </div>
         </label>
 
-        <!-- OUTSIDE -->
-        <label class="cursor-pointer select-none relative">
-          <input
-            type="radio"
-            name="place"
-            value="outside"
-            class="radio-input filter-input"
-          >
-
-          <div
-            class="radio-btn flex items-center gap-3 px-6 py-3 border border-[#DCDEE0]
-                   hover:bg-[#F3F4F6] transition"
-          >
-            <span
-              class="radio-ring w-4 h-4 rounded-full border border-[#DCDEE0]
-                     flex items-center justify-center"
-            >
+        <label class="cursor-pointer relative">
+          <input type="radio" name="place" value="outside"
+                 class="radio-input filter-input">
+          <div class="radio-btn flex items-center gap-3 px-6 py-3 border border-[#DCDEE0] hover:bg-[#F3F4F6] transition">
+            <span class="radio-ring w-4 h-4 rounded-full border border-[#DCDEE0] flex items-center justify-center">
               <span class="radio-dot w-2.5 h-2.5 rounded-full bg-[#C93635] opacity-0 transition"></span>
             </span>
             <span class="text-sm font-medium">Вне музея</span>
@@ -146,55 +103,79 @@
         </label>
 
       </div>
-
     </div>
 
     <!-- CARDS -->
     <section class="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
 
-      <article>
-        <img data-src="/assets/img/about/science/1.png"
-             class="lazy-img w-full aspect-[4/3] object-cover mb-4 bg-[#F3F4F6]">
-        <div class="text-sm text-[#8D9399] mb-2">
-          16 ноября 2023 — 17 ноября 2023
-        </div>
-        <h3 class="text-base leading-[160%]">
-          «Проблемы изучения и экспонирования народного и декоративно-прикладного искусства»
-        </h3>
-      </article>
+      <!-- CARD -->
+      <a href="science-detail.html" class="block">
+        <article class="group cursor-pointer">
+          <div class="overflow-hidden mb-4 bg-[#F3F4F6]">
+            <img data-src="/assets/img/about/science/1.png"
+                 class="lazy-img w-full aspect-[4/3] object-cover
+                        transition-transform duration-500
+                        group-hover:scale-105">
+          </div>
+          <div class="text-sm text-[#8D9399] mb-2">
+            16 ноября 2023 — 17 ноября 2023
+          </div>
+          <h3 class="text-base leading-[160%] transition-colors group-hover:text-[#C93635]">
+            «Проблемы изучения и экспонирования народного и декоративно-прикладного искусства»
+          </h3>
+        </article>
+      </a>
 
-      <article>
-        <img data-src="/assets/img/about/science/2.png"
-             class="lazy-img w-full aspect-[4/3] object-cover mb-4 bg-[#F3F4F6]">
-        <div class="text-sm text-[#8D9399] mb-2">
-          29 февраля 2024 — 29 марта 2024
-        </div>
-        <h3 class="text-base leading-[160%]">
-          Научно-практическая конференция «XX век: время, события, люди»
-        </h3>
-      </article>
+      <a href="science-detail.html" class="block">
+        <article class="group cursor-pointer">
+          <div class="overflow-hidden mb-4 bg-[#F3F4F6]">
+            <img data-src="/assets/img/about/science/2.png"
+                 class="lazy-img w-full aspect-[4/3] object-cover
+                        transition-transform duration-500
+                        group-hover:scale-105">
+          </div>
+          <div class="text-sm text-[#8D9399] mb-2">
+            29 февраля 2024 — 29 марта 2024
+          </div>
+          <h3 class="text-base leading-[160%] transition-colors group-hover:text-[#C93635]">
+            Научно-практическая конференция «XX век: время, события, люди»
+          </h3>
+        </article>
+      </a>
 
-      <article>
-        <img data-src="/assets/img/about/science/3.png"
-             class="lazy-img w-full aspect-[4/3] object-cover mb-4 bg-[#F3F4F6]">
-        <div class="text-sm text-[#8D9399] mb-2">
-          21 ноября 2023 — 21 ноября 2023
-        </div>
-        <h3 class="text-base leading-[160%]">
-          X Международная научная конференция «Троице-Сергиева Лавра»
-        </h3>
-      </article>
+      <a href="science-detail.html" class="block">
+        <article class="group cursor-pointer">
+          <div class="overflow-hidden mb-4 bg-[#F3F4F6]">
+            <img data-src="/assets/img/about/science/3.png"
+                 class="lazy-img w-full aspect-[4/3] object-cover
+                        transition-transform duration-500
+                        group-hover:scale-105">
+          </div>
+          <div class="text-sm text-[#8D9399] mb-2">
+            21 ноября 2023 — 21 ноября 2023
+          </div>
+          <h3 class="text-base leading-[160%] transition-colors group-hover:text-[#C93635]">
+            X Международная научная конференция «Троице-Сергиева Лавра»
+          </h3>
+        </article>
+      </a>
 
-      <article>
-        <img data-src="/assets/img/about/science/4.png"
-             class="lazy-img w-full aspect-[4/3] object-cover mb-4 bg-[#F3F4F6]">
-        <div class="text-sm text-[#8D9399] mb-2">
-          31 мая 2023 — 31 мая 2023
-        </div>
-        <h3 class="text-base leading-[160%]">
-          Научная конференция «Любовью и единением спасемся»
-        </h3>
-      </article>
+      <a href="science-detail.html" class="block">
+        <article class="group cursor-pointer">
+          <div class="overflow-hidden mb-4 bg-[#F3F4F6]">
+            <img data-src="/assets/img/about/science/4.png"
+                 class="lazy-img w-full aspect-[4/3] object-cover
+                        transition-transform duration-500
+                        group-hover:scale-105">
+          </div>
+          <div class="text-sm text-[#8D9399] mb-2">
+            31 мая 2023 — 31 мая 2023
+          </div>
+          <h3 class="text-base leading-[160%] transition-colors group-hover:text-[#C93635]">
+            Научная конференция «Любовью и единением спасемся»
+          </h3>
+        </article>
+      </a>
 
     </section>
 

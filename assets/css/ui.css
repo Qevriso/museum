@@ -1,0 +1,34 @@
+/* ===============================
+   Breadcrumbs (единые по сайту)
+================================ */
+
+.ui-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+
+  font-family: "Wix Madefor Display";
+  font-size: 20px;
+  line-height: 160%;
+
+  color: #8D9399;
+}
+
+.ui-breadcrumbs a {
+  color: #8D9399;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.ui-breadcrumbs a:hover {
+  color: #24272A;
+}
+
+.ui-breadcrumbs-sep {
+  color: #DCDEE0;
+}
+
+.ui-breadcrumbs-current {
+  color: #24272A;
+}

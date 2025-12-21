@@ -9,6 +9,11 @@
 
   <link rel="stylesheet" href="/assets/css/fonts.css">
 
+    <!-- UI components (карточки, ховеры, и т.д.) -->
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+
+
   <style>
     [x-cloak] { display: none !important; }
   </style>
@@ -24,14 +29,31 @@
   <div data-include="/tpl/menu-mobile.html"></div>
 
   <!-- CONTENT -->
-  <main class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-[60px]">
+  <main class="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-[60px] pt-10 lg:pt-12">
+
 
     <!-- BREADCRUMBS -->
-    <div class="pt-10 text-sm text-[#8D9399] flex gap-2 flex-wrap">
-      <a href="/about/index.html" class="hover:text-[#24272A]">О музее</a>
-      <span>/</span>
-      <span class="text-[#24272A]">Коллекции</span>
-    </div>
+    <nav
+  class="flex flex-wrap items-center gap-2
+         text-[20px] leading-[160%]
+         font-['Wix Madefor Display']
+         mb-10"
+>
+  <a
+    href="/about/index.html"
+    class="text-[#8D9399] hover:text-[#24272A] transition-colors"
+  >
+    О музее
+  </a>
+
+  <span class="text-[#DCDEE0]">/</span>
+
+  <span class="text-[#24272A]">
+    Коллекции
+  </span>
+</nav>
+
+
 
     <!-- TITLE -->
     <h1 class="mt-8 font-['Racama'] text-[40px] sm:text-[56px] lg:text-[72px] leading-[1.05] tracking-[-0.02em]">
@@ -47,10 +69,25 @@
       <div class="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
 
         <!-- 1 -->
-        <article>
-          <img src="/assets/img/about/collections/1.png" class="w-full h-[180px] object-cover mb-3 bg-[#F3F4F6]" alt="">
-          <p class="text-sm">Иконы XIV–XVII вв.</p>
-        </article>
+      <a href="/about/collections-detail.html"
+   class="card-hover">
+
+  <article>
+    <div class="card-hover-img mb-3">
+      <img
+        src="/assets/img/about/collections/1.png"
+        class="w-full h-[180px] object-cover bg-[#F3F4F6]"
+        alt=""
+      >
+    </div>
+
+    <p class="card-hover-title text-sm">
+      Иконы XIV–XVII вв.
+    </p>
+  </article>
+
+</a>
+
 
         <!-- 2 -->
         <article>
@@ -177,7 +214,15 @@
 
       <div class="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
 
-        <article><img src="/assets/img/about/collections/21.png" class="w-full h-[180px] object-cover mb-3 bg-[#F3F4F6]" alt=""><p class="text-sm">Архитектурная резьба Поволжья</p></article>
+       <a href="/about/collections-detail.html" class="block hover:text-[#C93635] transition">
+  <article>
+    <img src="/assets/img/about/collections/1.png"
+         class="w-full h-[180px] object-cover mb-3 bg-[#F3F4F6]"
+         alt="">
+    <p class="text-sm">Иконы XIV–XVII вв.</p>
+  </article>
+</a>
+
         <article><img src="/assets/img/about/collections/22.png" class="w-full h-[180px] object-cover mb-3 bg-[#F3F4F6]" alt=""><p class="text-sm">Архитектурная резьба Сергиева Посада XIX – начала XX в.</p></article>
         <article><img src="/assets/img/about/collections/23.png" class="w-full h-[180px] object-cover mb-3 bg-[#F3F4F6]" alt=""><p class="text-sm">Хохломская и городецкая роспись</p></article>
         <article><img src="/assets/img/about/collections/24.png" class="w-full h-[180px] object-cover mb-3 bg-[#F3F4F6]" alt=""><p class="text-sm">Деревянная игрушка XX века</p></article>

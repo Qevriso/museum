@@ -1,162 +1,228 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Экскурсии — Сергиево-Посадский музей</title>
+  <title>Экскурсии — Сергиево-Посадский музей-заповедник</title>
+  <meta name="description" content="Экскурсии Сергиево-Посадского музея-заповедника">
 
-  <link rel="stylesheet" href="/assets/css/fonts.css" />
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <style>
     [x-cloak]{display:none!important}
-    input[type="checkbox"]{
-      accent-color:#C93635;
-    }
   </style>
 </head>
 
 <body class="bg-white text-[#24272A] font-['Wix Madefor Display']">
 
-<div data-include="/tpl/header.html"></div>
-<div data-include="/tpl/menu.html"></div>
-<div data-include="/tpl/menu-mobile.html"></div>
+  <!-- GLOBAL -->
+  <div data-include="/tpl/header.html"></div>
+  <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
 
-<main
-  x-data="{
-    corps: null,
-    filters: { pushkin:false, pensioner:false, walk:false, bus:false },
+  <main>
+    <section
+      class="w-full bg-white"
+      x-data="{
+        corps: null,
+        filters: { pushkin:false, pensioner:false, walk:false, bus:false },
 
-    cards: [
-      { id:1, img:'/assets/img/excursions/1.png', corps:1, price:550, pushkin:true,  pensioner:false, walk:true,  bus:false, title:'Экскурсия по выставке «Любовью и единением спасёмся»', desc:'Тематическая экскурсия, знакомящая с земной жизнью великого Святого.' },
-      { id:2, img:'/assets/img/excursions/2.png', corps:2, price:550, pushkin:false, pensioner:true,  walk:false, bus:true,  title:'Экскурсия по ризнице', desc:'Тематическая экскурсия музея.' },
-      { id:3, img:'/assets/img/excursions/3.png', corps:3, price:550, pushkin:true,  pensioner:false, walk:true,  bus:false, title:'Экскурсия по конному двору', desc:'Тематическая экскурсия музея.' }
-    ],
+        cards: [
+          {
+            id:1,
+            img:'/assets/img/excursions/1.png',
+            corps:1,
+            pushkin:true,
+            pensioner:false,
+            walk:true,
+            bus:false,
+            price:550,
+            title:'Экскурсия по выставке «Любовью и единением спасёмся»',
+            desc:'Тематическая экскурсия, знакомящая с земной жизнью великого Святого.',
+            href:'/excursions/excursions-details.html'
+          },
+          {
+            id:2,
+            img:'/assets/img/excursions/2.png',
+            corps:2,
+            pushkin:false,
+            pensioner:true,
+            walk:false,
+            bus:true,
+            price:550,
+            title:'Экскурсия по ризнице',
+            desc:'Тематическая экскурсия музея.',
+            href:'/excursions/excursions-details.html'
+          },
+          {
+            id:3,
+            img:'/assets/img/excursions/3.png',
+            corps:3,
+            pushkin:true,
+            pensioner:false,
+            walk:true,
+            bus:false,
+            price:550,
+            title:'Экскурсия по Конному двору',
+            desc:'Тематическая экскурсия музея.',
+            href:'/excursions/excursions-details.html'
+          }
+        ],
 
-    hasActiveFilters() {
-      return this.corps !== null || Object.values(this.filters).some(v=>v)
-    },
+        cardVisible(card){
+          if(this.corps!==null && card.corps!==this.corps) return false
+          if(this.filters.pushkin && !card.pushkin) return false
+          if(this.filters.pensioner && !card.pensioner) return false
+          if(this.filters.walk && !card.walk) return false
+          if(this.filters.bus && !card.bus) return false
+          return true
+        },
 
-    reset() {
-      this.corps=null
-      this.filters={ pushkin:false, pensioner:false, walk:false, bus:false }
-    },
+        hasFilters(){
+          return this.corps!==null || Object.values(this.filters).some(v=>v)
+        },
 
-    cardVisible(card) {
-      if (this.corps!==null && card.corps!==this.corps) return false
-      if (this.filters.pushkin && !card.pushkin) return false
-      if (this.filters.pensioner && !card.pensioner) return false
-      if (this.filters.walk && !card.walk) return false
-      if (this.filters.bus && !card.bus) return false
-      return true
-    },
+        reset(){
+          this.corps=null
+          this.filters={ pushkin:false, pensioner:false, walk:false, bus:false }
+        },
 
-    corpsLabel(c){
-      return c===1?'Главный корпус':
-             c===2?'Ризница Троице-Сергиевской Лавры':
-             c===3?'Музейный комплекс «Конный двор»':
-             'Краеведческий корпус'
-    },
+        corpsLabel(c){
+          return c===1?'Главный корпус':
+                 c===2?'Ризница Троице-Сергиевской Лавры':
+                 c===3?'Музейный комплекс «Конный двор»':
+                 'Краеведческий корпус'
+        },
 
-    corpsPillClass(c){
-      return c===1?'bg-[#FBEAEA] text-[#C92E32]':
-             c===2?'bg-[#EEF0FF] text-[#7474C2]':
-             c===3?'bg-[#F7F2E9] text-[#A38641]':
-             'bg-[#E7EFEA] text-[#3A6B4C]'
-    }
-  }"
-  class="max-w-[1600px] mx-auto px-4 lg:px-[60px] pt-10 lg:pt-20 pb-20"
->
-
-<!-- HEADER -->
-<div class="flex items-start justify-between gap-6 mb-10">
-  <h1 class="font-['Racama'] text-[40px] sm:text-[56px] lg:text-[72px] leading-[0.95] tracking-[-0.02em]">
-    Экскурсии
-  </h1>
-
-  <button
-    x-show="hasActiveFilters()"
-    @click="reset()"
-    class="hidden sm:flex items-center gap-3 border border-[#24272A] px-5 py-3 font-semibold transition hover:bg-[#24272A] hover:text-white"
-  >
-    Очистить фильтры ✕
-  </button>
-</div>
-
-<!-- КОРПУСА -->
-<div class="mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-  <template x-for="i in [1,2,3,4]">
-    <button
-      @click="corps = corps===i ? null : i"
-      :class="corps===i
-        ? (i===1?'bg-[#F2C6C6]':i===2?'bg-[#7A7CCB] text-white':i===3?'bg-[#E7D7B8]':'bg-[#CFE3D4]')
-        : (i===1?'bg-[#FBEAEA] hover:bg-[#F2C6C6]':
-           i===2?'bg-[#EEF0FF] hover:bg-[#7A7CCB] hover:text-white':
-           i===3?'bg-[#F7F2E9] hover:bg-[#E7D7B8]':
-           'bg-[#E7EFEA] hover:bg-[#CFE3D4]')"
-      class="flex items-center gap-4 px-5 py-4 transition-colors duration-300"
+        corpsPillClass(c){
+          return c===1?'bg-[#FBEAEA] text-[#C92E32]':
+                 c===2?'bg-[#EEF0FF] text-[#7474C2]':
+                 c===3?'bg-[#F7F2E9] text-[#A38641]':
+                 'bg-[#E7EFEA] text-[#3A6B4C]'
+        }
+      }"
     >
-      <img :src="`/assets/img/excursions/corps-${i}.png`" class="w-10 h-10" alt="">
-      <span class="font-semibold" x-text="corpsLabel(i)"></span>
-    </button>
-  </template>
-</div>
 
-<!-- ЧЕКБОКСЫ — КАК В FIGMA -->
-<div class="mb-10 flex flex-wrap gap-4 max-w-fit">
+      <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px] pt-10 sm:pt-14 lg:pt-[40px] pb-[80px]">
 
-  <label class="flex items-center gap-4 border border-[#DADDE1] px-5 py-4 cursor-pointer">
-    <input type="checkbox" x-model="filters.pushkin" class="w-5 h-5">
-    <img src="/assets/img/pushkin-card1.png" class="h-6" alt="">
-  </label>
+        <!-- HEADER -->
+        <div class="flex items-start justify-between gap-6 mb-10 sm:mb-12">
+          <h1 class="font-[Racama] text-[40px] sm:text-[56px] lg:text-[72px] leading-[0.95] tracking-[-0.02em]">
+            Экскурсии
+          </h1>
 
-  <label class="flex items-center gap-4 border border-[#DADDE1] px-5 py-4 cursor-pointer">
-    <input type="checkbox" x-model="filters.pensioner" class="w-5 h-5">
-    <span class="font-medium">Пенсионеры</span>
-  </label>
+          <button
+            x-show="hasFilters()"
+            x-cloak
+            @click="reset()"
+            class="hidden sm:flex items-center gap-3
+                   px-6 h-[48px]
+                   border border-[#24272A]
+                   text-sm font-medium
+                   transition hover:bg-[#24272A] hover:text-white"
+          >
+            Очистить фильтры
+            <span class="text-xl">×</span>
+          </button>
+        </div>
 
-  <label class="flex items-center gap-4 border border-[#DADDE1] px-5 py-4 cursor-pointer">
-    <input type="checkbox" x-model="filters.walk" class="w-5 h-5">
-    <span class="font-medium">Пешеходная</span>
-  </label>
+        <!-- КОРПУСА -->
+        <div class="mb-8 flex gap-4 overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible">
+          <template x-for="i in [1,2,3,4]" :key="i">
+            <button
+              @click="corps = corps===i ? null : i"
+              class="min-w-[260px] flex items-center gap-4 px-5 py-4 transition-colors duration-300"
+              :class="corps===i
+                ? (i===1?'bg-[#F2C6C6]':
+                   i===2?'bg-[#7A7CCB] text-white':
+                   i===3?'bg-[#E7D7B8]':'bg-[#CFE3D4]')
+                : (i===1?'bg-[#FBEAEA] hover:bg-[#F2C6C6]':
+                   i===2?'bg-[#EEF0FF] hover:bg-[#7A7CCB] hover:text-white':
+                   i===3?'bg-[#F7F2E9] hover:bg-[#E7D7B8]':
+                   'bg-[#E7EFEA] hover:bg-[#CFE3D4]')"
+            >
+              <img :src="`/assets/img/corps-${i}.png`" class="w-10 h-10" alt="">
+              <span class="font-semibold" x-text="corpsLabel(i)"></span>
+            </button>
+          </template>
+        </div>
 
-  <label class="flex items-center gap-4 border border-[#DADDE1] px-5 py-4 cursor-pointer">
-    <input type="checkbox" x-model="filters.bus" class="w-5 h-5">
-    <span class="font-medium">Автобусная</span>
-  </label>
+        <!-- ЧЕКБОКСЫ -->
+        <div class="mb-10 flex flex-wrap gap-4 max-w-fit">
 
-</div>
+          <label class="flex items-center gap-4 px-5 py-4 cursor-pointer border transition"
+                 :class="filters.pushkin?'border-[#C92E32]':'border-[#DADDE1]'">
+            <input type="checkbox" x-model="filters.pushkin" class="w-5 h-5 accent-[#C92E32]">
+            <img src="/assets/img/pushkin-card1.png" class="h-6" alt="">
+          </label>
 
-<!-- КАРТОЧКИ -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-  <template x-for="card in cards" :key="card.id">
-    <a x-show="cardVisible(card)" href="#" class="group flex flex-col gap-4">
+          <label class="flex items-center gap-4 px-5 py-4 cursor-pointer border transition"
+                 :class="filters.pensioner?'border-[#C92E32]':'border-[#DADDE1]'">
+            <input type="checkbox" x-model="filters.pensioner" class="w-5 h-5 accent-[#C92E32]">
+            <span class="font-medium">Пенсионеры</span>
+          </label>
 
-      <div class="h-[240px] overflow-hidden">
-        <img
-          :src="card.img"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          alt=""
-        >
+          <label class="flex items-center gap-4 px-5 py-4 cursor-pointer border transition"
+                 :class="filters.walk?'border-[#C92E32]':'border-[#DADDE1]'">
+            <input type="checkbox" x-model="filters.walk" class="w-5 h-5 accent-[#C92E32]">
+            <span class="font-medium">Пешеходная</span>
+          </label>
+
+          <label class="flex items-center gap-4 px-5 py-4 cursor-pointer border transition"
+                 :class="filters.bus?'border-[#C92E32]':'border-[#DADDE1]'">
+            <input type="checkbox" x-model="filters.bus" class="w-5 h-5 accent-[#C92E32]">
+            <span class="font-medium">Автобусная</span>
+          </label>
+
+        </div>
+
+        <!-- КАРТОЧКИ -->
+        <div class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory
+                    sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible sm:snap-none">
+          <template x-for="card in cards" :key="card.id">
+            <a x-show="cardVisible(card)"
+               :href="card.href"
+               class="group min-w-[280px] snap-start sm:min-w-0 flex flex-col pb-6">
+
+              <div class="h-[220px] overflow-hidden mb-4">
+                <img :src="card.img"
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                     alt="">
+              </div>
+
+              <div class="font-semibold mb-2" x-text="`От ${card.price} ₽ / чел`"></div>
+
+              <div class="flex items-center gap-3 mb-3">
+                <span class="inline-flex items-center px-4 py-1 text-sm font-medium rounded-full"
+                      :class="corpsPillClass(card.corps)"
+                      x-text="corpsLabel(card.corps)"></span>
+
+                <template x-if="card.pushkin">
+                  <img src="/assets/img/pushkin-card1.png" class="h-5" alt="">
+                </template>
+              </div>
+
+              <h3 class="font-semibold leading-snug transition-colors group-hover:text-[#C93635]"
+                  x-text="card.title"></h3>
+
+              <p class="text-sm text-[#6B7280]" x-text="card.desc"></p>
+
+            </a>
+          </template>
+        </div>
+
       </div>
+    </section>
+  </main>
 
-      <div class="font-semibold" x-text="`От ${card.price} ₽ / чел`"></div>
+  <div data-include="/tpl/footer.html"></div>
 
-      <span class="inline-block px-3 py-1 text-sm rounded-full" :class="corpsPillClass(card.corps)" x-text="corpsLabel(card.corps)"></span>
-
-      <h3 class="font-semibold leading-[1.4] transition-colors group-hover:text-[#C93635]" x-text="card.title"></h3>
-
-      <p class="text-sm text-[#8D9399]" x-text="card.desc"></p>
-
-    </a>
-  </template>
-</div>
-
-</main>
-
-<div data-include="/tpl/footer.html"></div>
-<script src="/include.js"></script>
-<script src="https://unpkg.com/alpinejs" defer></script>
+  <script src="/include.js"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
 </body>
 </html>

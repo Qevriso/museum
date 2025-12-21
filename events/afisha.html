@@ -8,6 +8,9 @@
   <!-- Fonts -->
   <link rel="stylesheet" href="/assets/css/fonts.css">
 
+  <!-- Project hover standard -->
+  <link rel="stylesheet" href="/assets/css/components.css">
+
   <!-- Tailwind 4 -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
@@ -19,7 +22,6 @@
   <div data-include="/tpl/menu.html"></div>
   <div data-include="/tpl/menu-mobile.html"></div>
 
-  <!-- MAIN -->
   <main
     x-data="afishaCalendar()"
     class="max-w-[1600px] mx-auto
@@ -31,23 +33,14 @@
     <!-- BREADCRUMBS + TITLE -->
     <div class="flex flex-col gap-8 mb-12">
 
-      <!-- BREADCRUMBS -->
       <nav class="text-[16px] text-[#8D9399]">
-        <a
-          href="/events/index.html"
-          class="hover:text-[#24272A] transition"
-        >
+        <a href="/events/index.html" class="hover:text-[#24272A] transition">
           Мероприятия
         </a>
-
         <span class="mx-2 text-[#DCDEE0]">/</span>
-
-        <span class="text-[#24272A]">
-          Афиша
-        </span>
+        <span class="text-[#24272A]">Афиша</span>
       </nav>
 
-      <!-- TITLE -->
       <h1
         class="font-['Racama']
                text-[40px] sm:text-[56px] lg:text-[72px]
@@ -63,30 +56,53 @@
     <section class="mb-14">
       <div class="font-semibold mb-6">Декабрь 2025</div>
 
-      <div class="relative flex items-center gap-4">
+      <div class="relative">
 
-        <!-- LEFT -->
+        <!-- FADE LEFT -->
+        <div class="pointer-events-none absolute left-0 top-0 h-full w-[60px]
+                    bg-gradient-to-r from-white to-transparent z-10"></div>
+
+        <!-- FADE RIGHT -->
+        <div class="pointer-events-none absolute right-0 top-0 h-full w-[60px]
+                    bg-gradient-to-l from-white to-transparent z-10"></div>
+
+        <!-- LEFT ARROW -->
         <button
           @click="scrollLeft"
-          class="shrink-0 w-10 h-10 flex items-center justify-center
-                 rounded-full border border-[#DCDEE0]
+          class="absolute left-[-12px] top-1/2 -translate-y-1/2 z-20
+                 w-10 h-10 flex items-center justify-center
+                 rounded-full bg-white
                  hover:bg-[#F0F1F2] transition"
         >
-          ←
+          <img src="/assets/svg/left.svg" alt="">
+        </button>
+
+        <!-- RIGHT ARROW -->
+        <button
+          @click="scrollRight"
+          class="absolute right-[-12px] top-1/2 -translate-y-1/2 z-20
+                 w-10 h-10 flex items-center justify-center
+                 rounded-full bg-white
+                 hover:bg-[#F0F1F2] transition"
+        >
+          <img src="/assets/svg/right.svg" alt="">
         </button>
 
         <!-- DAYS -->
-        <div x-ref="days" class="flex gap-3 overflow-x-hidden scroll-smooth w-full">
+        <div
+          x-ref="days"
+          class="flex gap-3 overflow-x-hidden scroll-smooth px-10"
+        >
           <template x-for="day in days" :key="day.d">
             <button
               @click="activeDay = day.d"
               class="w-[64px] h-[80px]
                      rounded-t-full
                      flex flex-col items-center justify-center
-                     border transition shrink-0"
+                     shrink-0 transition"
               :class="activeDay === day.d
-                ? 'bg-[#C92E32] text-white border-[#C92E32]'
-                : 'bg-[#F0F1F2] text-[#24272A] border-transparent hover:bg-[#E6E7E9]'"
+                ? 'bg-[#C92E32] text-white'
+                : 'bg-[#F0F1F2] text-[#24272A] hover:bg-[#E6E7E9]'"
             >
               <div class="text-xl font-semibold" x-text="day.d"></div>
               <div class="text-xs opacity-80" x-text="day.w"></div>
@@ -94,21 +110,11 @@
           </template>
         </div>
 
-        <!-- RIGHT -->
-        <button
-          @click="scrollRight"
-          class="shrink-0 w-10 h-10 flex items-center justify-center
-                 rounded-full border border-[#DCDEE0]
-                 hover:bg-[#F0F1F2] transition"
-        >
-          →
-        </button>
-
       </div>
     </section>
 
     <!-- CARDS -->
-    <section class="relative">
+    <section>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8
                max-sm:flex max-sm:overflow-x-auto max-sm:gap-4 max-sm:pb-4"
@@ -116,25 +122,23 @@
 
         <template x-for="item in items.filter(i => i.day === activeDay)" :key="item.id">
           <a
-            href="event-detail.html"
-            class="min-w-[260px] sm:min-w-0 group block"
+            href="/events/event-detail.html"
+            class="card-hover min-w-[260px] sm:min-w-0"
           >
-            <article class="cursor-pointer">
+            <article class="flex flex-col">
 
-              <div class="w-full h-[200px] overflow-hidden bg-[#F0F1F2]">
+              <div class="card-hover-img w-full h-[200px] bg-[#F0F1F2]">
                 <img
                   :src="item.img"
                   alt=""
-                  class="w-full h-full object-cover
-                         transition-transform duration-500
-                         group-hover:scale-105"
-                />
+                  class="w-full h-full object-cover"
+                >
               </div>
 
               <div class="text-sm text-[#8B8E91] mt-4 mb-2" x-text="item.date"></div>
+
               <h3
-                class="text-base font-semibold leading-snug
-                       group-hover:text-[#C92E32] transition-colors"
+                class="card-hover-title text-base font-semibold leading-snug"
                 x-text="item.title"
               ></h3>
 
@@ -147,13 +151,11 @@
 
   </main>
 
-  <!-- FOOTER -->
   <div data-include="/tpl/footer.html"></div>
 
   <script src="/include.js"></script>
   <script src="https://unpkg.com/alpinejs" defer></script>
 
-  <!-- Alpine logic -->
   <script>
     function afishaCalendar() {
       return {

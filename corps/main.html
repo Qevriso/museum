@@ -114,54 +114,56 @@
 
     </section>
 
-    <!-- ================= ADDRESS ================= -->
-    <section class="mt-[60px] lg:mt-[100px]">
+<!-- ================= ADDRESS ================= -->
+<section class="mt-[60px] lg:mt-[100px]">
 
-      <!-- HEADER ROW -->
-      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-10">
+  <!-- HEADER ROW -->
+  <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-10">
 
-        <div>
-          <h2 class="font-['Racama'] text-[28px] lg:text-[40px] leading-[0.95] mb-2">
-            Адрес
-          </h2>
-          <p class="font-['Wix Madefor Display'] text-[16px] lg:text-[20px] leading-[1.6] max-w-[980px]">
-            141310, Московская обл., г. Сергиев Посад, пр-т Красной Армии, д. 144
-          </p>
-        </div>
+    <div>
+      <h2 class="font-['Racama'] text-[28px] lg:text-[40px] leading-[0.95] mb-2">
+        Адрес
+      </h2>
+      <p class="font-['Wix Madefor Display'] text-[16px] lg:text-[20px] leading-[1.6] max-w-[980px]">
+        141310, Московская обл., г. Сергиев Посад, пр-т Красной Армии, д. 144
+      </p>
+    </div>
 
-        <a
-          href="#"
-          class="w-full lg:w-[360px]
-                 inline-flex items-center justify-center gap-4
-                 border border-[#24272A]
-                 px-8 h-[56px] text-[16px] lg:text-[20px]
-                 hover:bg-[#24272A] hover:text-white transition-colors shrink-0"
-        >
-          Интерактивная карта →
-        </a>
+    <a
+      href="/corps/map.html"
+      target="_blank"
+      class="w-full lg:w-[360px]
+             inline-flex items-center justify-center gap-4
+             border border-[#24272A]
+             px-8 h-[64px] text-[16px] lg:text-[20px]
+             hover:bg-[#24272A] hover:text-white transition-colors shrink-0"
+    >
+      Интерактивная карта →
+    </a>
 
-      </div>
+  </div>
 
-      <!-- MAPS -->
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6">
+  <!-- MAPS -->
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-5">
 
-        <!-- YANDEX MAP -->
-        <iframe
-          src="https://yandex.ru/map-widget/v1/?ll=38.1316%2C56.3104&z=16&pt=38.1316,56.3104,pm2rdm"
-          class="w-full h-[220px] lg:h-[360px] border"
-          loading="lazy">
-        </iframe>
+    <!-- YANDEX MAP -->
+    <iframe
+      src="https://yandex.ru/map-widget/v1/?ll=38.1316%2C56.3104&z=16&pt=38.1316,56.3104,pm2rdm"
+      class="w-full h-[480px]"
+      loading="lazy">
+    </iframe>
 
-        <!-- STATIC MAP -->
-        <img
-          src="/assets/img/corps/map-local.png"
-          class="w-full h-[220px] lg:h-[360px] object-cover border"
-          alt=""
-        >
+    <!-- STATIC MAP -->
+    <img
+      src="/assets/img/corps/map-local.png"
+      class="w-full h-[480px] object-cover"
+      alt="Схема прохода к Главному корпусу"
+    >
 
-      </div>
+  </div>
 
-    </section>
+</section>
+
 
   </main>
 

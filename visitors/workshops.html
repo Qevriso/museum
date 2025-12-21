@@ -7,6 +7,9 @@
   <title>Мастер-классы — Сергиево-Посадский музей-заповедник</title>
 
   <link rel="stylesheet" href="/assets/css/fonts.css">
+  <!-- Components (hover standard) -->
+  <link rel="stylesheet" href="/assets/css/components.css">
+
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
@@ -17,29 +20,31 @@
 <div data-include="/tpl/menu.html"></div>
 <div data-include="/tpl/menu-mobile.html"></div>
 
-<main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] pt-[40px] lg:pt-[60px] pb-[100px]">
+<main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] pt-8 sm:pt-12 lg:pt-20 pb-[100px]">
 
   <!-- BREADCRUMBS -->
-  <nav class="text-[18px] sm:text-[20px] text-[#8D9399] mb-[32px] flex gap-2 flex-wrap">
+  <nav class="text-[16px] sm:text-[16px] text-[#8D9399] mb-8 flex flex-wrap items-center gap-2">
     <a href="/visitors/index.html" class="hover:text-[#24272A] transition">Посетителям</a>
-    <span>/</span>
+    <span class="text-[#DCDEE0]">/</span>
     <span class="text-[#24272A]">Мастер-классы</span>
   </nav>
 
   <!-- TITLE -->
-  <h1 class="font-['Racama'] text-[48px] sm:text-[64px] lg:text-[72px] leading-[95%] tracking-[-0.02em] mb-[60px]">
+  <h1 class="font-['Racama'] font-normal text-[40px] sm:text-[56px] lg:text-[72px] leading-[0.95] tracking-[-0.02em] mb-12">
     Мастер-классы
   </h1>
 
   <!-- INTRO -->
-  <section class="flex flex-col lg:flex-row gap-[60px] mb-[80px]">
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-16 lg:mb-20">
 
-    <p class="text-[28px] leading-[130%] tracking-[-0.02em] font-['Racama'] max-w-[760px]">
+    <!-- LEFT BIG TEXT -->
+    <p class="text-[22px] sm:text-[24px] lg:text-[28px] leading-[1.25] tracking-[-0.02em] font-semibold max-w-[760px]">
       Сергиево-Посадский музей-заповедник приглашает вас посетить мастер-классы,
       которые являются частью экскурсионной программы.
     </p>
 
-    <div class="flex flex-col gap-[32px] text-[20px] leading-[160%] max-w-[730px]">
+    <!-- RIGHT TEXT -->
+    <div class="flex flex-col gap-6 text-[16px] sm:text-[16px] leading-[1.8] text-[#24272A] max-w-[730px]">
       <p>
         Все мастер-классы разработаны профессиональными художниками и педагогами
         и рассчитаны на возраст 7+
@@ -54,85 +59,106 @@
   </section>
 
   <!-- GRID -->
-  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px]">
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10">
 
     <!-- CARD 1 -->
-    <a href="/visitors/painting-matryoshka.html" class="group">
-      <article class="flex flex-col gap-[12px]">
-        <img src="/assets/img/workshops/1.jpg" alt="" class="w-full h-[240px] object-cover group-hover:opacity-90 transition">
-        <div class="flex flex-col gap-[8px] pr-[20px]">
-          <div class="text-right">
-            <b class="text-[20px]">От 690 ₽ / чел</b>
-            <div class="text-[16px] text-[#8D9399]">Группа от 5 человек</div>
-          </div>
-          <h3 class="text-[20px] font-semibold">Роспись матрёшки</h3>
-          <p class="text-[16px] leading-[160%]">
-            На занятии участники познакомятся с материалами и техникой росписи,
-            попробуют себя в роли художника и увезут с собой на память матрёшку,
-            созданную своими руками
-          </p>
+    <a href="/visitors/painting-matryoshka.html" class="card-hover">
+      <article class="flex flex-col">
+
+        <div class="card-hover-img w-full h-[180px] bg-[#F0F1F2]">
+          <img src="/assets/img/workshops/1.jpg" alt="" class="w-full h-full object-cover">
         </div>
+
+        <div class="mt-4">
+          <div class="text-[16px] font-semibold">От 690 ₽ / чел</div>
+          <div class="text-[12px] text-[#8D9399] mt-1">Группа от 5 человек</div>
+        </div>
+
+        <h3 class="card-hover-title mt-3 text-[16px] font-semibold leading-[1.4]">
+          Роспись матрёшки
+        </h3>
+
+        <p class="mt-2 text-[14px] leading-[1.6] text-[#4B4F54]">
+          На занятии участники познакомятся с материалами и техникой росписи,
+          попробуют себя в роли художника и увезут с собой на память матрёшку,
+          созданную своими руками
+        </p>
+
       </article>
     </a>
 
     <!-- CARD 2 -->
-    <a href="/visitors/painting-matryoshka.html" class="group">
-      <article class="flex flex-col gap-[12px]">
-        <img src="/assets/img/workshops/2.jpg" alt="" class="w-full h-[240px] object-cover group-hover:opacity-90 transition">
-        <div class="flex flex-col gap-[8px] pr-[20px]">
-          <div class="text-right">
-            <b class="text-[20px]">5.500 ₽</b>
-            <div class="text-[16px] text-[#8D9399]">При условии 20 человек в группе</div>
-          </div>
-          <h3 class="text-[20px] font-semibold">
-            Изготовление тряпичной куклы-оберега
-          </h3>
-          <p class="text-[16px] leading-[160%]">
-            На мастер-классе участники узнают, какие были куклы, в том числе и
-            куклы-обереги в крестьянских домах и смогут создать куклу-оберег
-            в народных традициях
-          </p>
+    <a href="/visitors/painting-matryoshka.html" class="card-hover">
+      <article class="flex flex-col">
+
+        <div class="card-hover-img w-full h-[180px] bg-[#F0F1F2]">
+          <img src="/assets/img/workshops/2.jpg" alt="" class="w-full h-full object-cover">
         </div>
+
+        <div class="mt-4">
+          <div class="text-[16px] font-semibold">5.500 ₽</div>
+          <div class="text-[12px] text-[#8D9399] mt-1">При условии 20 человек в группе</div>
+        </div>
+
+        <h3 class="card-hover-title mt-3 text-[16px] font-semibold leading-[1.4]">
+          Изготовление тряпичной куклы-оберега
+        </h3>
+
+        <p class="mt-2 text-[14px] leading-[1.6] text-[#4B4F54]">
+          На мастер-классе участники узнают, какие были куклы, в том числе и
+          куклы-обереги в крестьянских домах и смогут создать куклу-оберег
+          в народных традициях
+        </p>
+
       </article>
     </a>
 
     <!-- CARD 3 -->
-    <a href="/visitors/painting-matryoshka.html" class="group">
-      <article class="flex flex-col gap-[12px]">
-        <img src="/assets/img/workshops/3.jpg" alt="" class="w-full h-[240px] object-cover group-hover:opacity-90 transition">
-        <div class="flex flex-col gap-[8px] pr-[20px]">
-          <div class="text-right">
-            <b class="text-[20px]">5.500 ₽</b>
-            <div class="text-[16px] text-[#8D9399]">До 20 человек в группе</div>
-          </div>
-          <h3 class="text-[20px] font-semibold">
-            Плетение русского традиционного пояса
-          </h3>
-          <p class="text-[16px] leading-[160%]">
-            Мастер-класс знакомит с материалами и техникой плетения пояса
-            в народных традициях
-          </p>
+    <a href="/visitors/painting-matryoshka.html" class="card-hover">
+      <article class="flex flex-col">
+
+        <div class="card-hover-img w-full h-[180px] bg-[#F0F1F2]">
+          <img src="/assets/img/workshops/3.jpg" alt="" class="w-full h-full object-cover">
         </div>
+
+        <div class="mt-4">
+          <div class="text-[16px] font-semibold">5.500 ₽</div>
+          <div class="text-[12px] text-[#8D9399] mt-1">До 20 человек в группе</div>
+        </div>
+
+        <h3 class="card-hover-title mt-3 text-[16px] font-semibold leading-[1.4]">
+          Плетение русского традиционного пояса
+        </h3>
+
+        <p class="mt-2 text-[14px] leading-[1.6] text-[#4B4F54]">
+          Мастер-класс знакомит с материалами и техникой плетения пояса
+          в народных традициях
+        </p>
+
       </article>
     </a>
 
     <!-- CARD 4 -->
-    <a href="/visitors/painting-matryoshka.html" class="group">
-      <article class="flex flex-col gap-[12px]">
-        <img src="/assets/img/workshops/4.jpg" alt="" class="w-full h-[240px] object-cover group-hover:opacity-90 transition">
-        <div class="flex flex-col gap-[8px] pr-[20px]">
-          <div class="text-right">
-            <b class="text-[20px]">7.600 ₽ / чел</b>
-            <div class="text-[16px] text-[#8D9399]">При условии 20 человек в группе</div>
-          </div>
-          <h3 class="text-[20px] font-semibold">
-            «Что за чудо Городец. Роспись павлина»<br>
-            «Что за чудо Городец. Роспись фазана»
-          </h3>
-          <p class="text-[16px] leading-[160%]">
-            Городецкая роспись силуэтной формы
-          </p>
+    <a href="/visitors/painting-matryoshka.html" class="card-hover">
+      <article class="flex flex-col">
+
+        <div class="card-hover-img w-full h-[180px] bg-[#F0F1F2]">
+          <img src="/assets/img/workshops/4.jpg" alt="" class="w-full h-full object-cover">
         </div>
+
+        <div class="mt-4">
+          <div class="text-[16px] font-semibold">7.600 ₽ / чел</div>
+          <div class="text-[12px] text-[#8D9399] mt-1">При условии 20 человек в группе</div>
+        </div>
+
+        <h3 class="card-hover-title mt-3 text-[16px] font-semibold leading-[1.4]">
+          «Что за чудо Городец. Роспись павлина» и «Что за чудо Городец. Роспись фазана»
+        </h3>
+
+        <p class="mt-2 text-[14px] leading-[1.6] text-[#4B4F54]">
+          Городецкая роспись силуэтной формы
+        </p>
+
       </article>
     </a>
 

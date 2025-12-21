@@ -7,24 +7,24 @@
   <title>Корпуса — Сергиево-Посадский музей-заповедник</title>
   <meta name="description" content="Корпуса Сергиево-Посадского музея-заповедника">
 
-  <!-- ШРИФТЫ -->
+  <!-- Fonts -->
   <link rel="stylesheet" href="/assets/css/fonts.css">
 
-  <!-- Tailwind -->
+  <!-- Tailwind 4 -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="w-full bg-white text-[#24272A]">
+<body class="bg-white text-[#24272A]">
 
-  <!-- ОБЩИЕ МОДУЛИ -->
+  <!-- GLOBAL (НЕ ТРОГАЕМ) -->
   <div data-include="/tpl/header.html"></div>
   <div data-include="/tpl/menu.html"></div>
   <div data-include="/tpl/menu-mobile.html"></div>
 
-  <!-- ================= MAIN ================= -->
-  <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
+  <!-- ================= MAIN (КАК НА ДРУГИХ СТРАНИЦАХ) ================= -->
+  <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] py-[60px] lg:py-[100px]">
 
-    <section class="py-[60px] lg:py-[100px] flex flex-col lg:flex-row gap-[40px] lg:gap-[145px]">
+    <section class="flex flex-col lg:flex-row gap-[40px] lg:gap-[145px]">
 
       <!-- LEFT -->
       <div class="flex-1">
@@ -33,12 +33,20 @@
                    leading-[0.95]
                    tracking-[-0.02em]
                    mb-[40px] lg:mb-[60px]">
-          Корпуса
+          Объекты
         </h1>
 
         <ul id="corpsList" class="text-[20px] sm:text-[22px] lg:text-[28px]">
 
-          <li class="corp-item active" data-img="/assets/img/collection-4.png">
+          <!-- 0: ИНТЕРАКТИВНАЯ КАРТА (ПОЛНОЦЕННЫЙ ПУНКТ) -->
+          <li class="corp-item active" data-img="/assets/img/collection-map.png">
+            <a href="/corps/map.html">
+              <span class="flex-1">Интерактивная карта</span>
+              <span class="arrow">→</span>
+            </a>
+          </li>
+
+          <li class="corp-item" data-img="/assets/img/collection-4.png">
             <a href="/corps/main.html">
               <span class="flex-1">Главный корпус</span>
               <span class="arrow">→</span>
@@ -73,8 +81,8 @@
       <div class="shrink-0 hidden lg:block">
         <img
           id="corpImage"
-          src="/assets/img/collection-4.png"
-          alt="Экспонат музея"
+          src="/assets/img/collection-map.png"
+          alt="Объект музея"
           class="corp-preview-img
                  w-[420px] lg:w-[480px]
                  h-auto object-cover"
@@ -82,6 +90,7 @@
       </div>
 
     </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -92,17 +101,25 @@
 
   <!-- ================= MORPH LOGIC ================= -->
   <script>
-    const items = document.querySelectorAll('.corp-item');
+    const items = document.querySelectorAll('#corpsList .corp-item');
     const image = document.getElementById('corpImage');
 
     let isAnimating = false;
 
+    // чтобы не стартовать с пустой картинки — синхронизируем с active
+    const active = document.querySelector('#corpsList .corp-item.active');
+    if (image && active?.dataset?.img) image.src = active.dataset.img;
+
     items.forEach(item => {
-      item.addEventListener('mouseenter', () => {
+      item.addEventListener('pointerenter', () => {
         if (!image || isAnimating) return;
 
         const newSrc = item.dataset.img;
-        if (image.src.includes(newSrc)) return;
+        if (!newSrc) return;
+
+        // сравнение без includes (из-за absolute URL в image.src)
+        const currentFile = image.getAttribute('src');
+        if (currentFile === newSrc) return;
 
         isAnimating = true;
 
@@ -112,7 +129,7 @@
         image.classList.add('morph-out');
 
         setTimeout(() => {
-          image.src = newSrc;
+          image.setAttribute('src', newSrc);
           image.classList.remove('morph-out');
           image.classList.add('morph-in');
 
@@ -121,20 +138,21 @@
             isAnimating = false;
           }, 300);
 
-        }, 250);
+        }, 220);
       });
     });
   </script>
 
-  <!-- ================= LOCAL STYLES ================= -->
+  <!-- ================= LOCAL STYLES (SCOPED, НЕ ЛОМАЕТ ХЕДЕР) ================= -->
   <style>
-    .corp-item {
+    /* ВАЖНО: всё только внутри #corpsList */
+    #corpsList .corp-item {
       padding: 24px 0;
       border-bottom: 1px solid #DCDEE0;
       transition: color .2s, border-color .2s;
     }
 
-    .corp-item a {
+    #corpsList .corp-item a {
       display: flex;
       align-items: center;
       gap: 20px;
@@ -142,16 +160,26 @@
       color: inherit;
     }
 
-    .corp-item.active {
+    #corpsList .corp-item:hover {
+      color: #C92E32;
+    }
+
+    #corpsList .corp-item.active {
       color: #C92E32;
       border-bottom: 2px solid #C92E32;
     }
 
-    .corp-item .arrow {
+    #corpsList .corp-item .arrow {
       font-size: 20px;
+      transition: transform .2s ease, color .2s ease;
     }
 
-    .corp-item.active .arrow {
+    #corpsList .corp-item:hover .arrow {
+      transform: translateX(4px);
+      color: #C92E32;
+    }
+
+    #corpsList .corp-item.active .arrow {
       color: #C92E32;
     }
 
@@ -173,7 +201,7 @@
     }
   </style>
 
-  <!-- ALPINE -->
+  <!-- ALPINE (как на остальных страницах, чтобы хедер/меню работали одинаково) -->
   <script src="https://unpkg.com/alpinejs" defer></script>
 
 </body>

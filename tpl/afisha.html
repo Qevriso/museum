@@ -1,6 +1,7 @@
 <section class="w-full">
   <div class="max-w-[1600px] mx-auto">
-    <div class="px-4 sm:px-6 lg:px-[60px] py-14"
+    <div
+      class="px-4 sm:px-6 lg:px-[60px] py-14"
       x-data="{
         activeDay: 5,
         items: [
@@ -18,90 +19,101 @@
 
       <!-- HEADER -->
       <div class="flex items-center justify-between mb-8">
-        <h2 class="text-[32px] lg:text-[40px] font-semibold">
+        <h2
+          class="font-['Racama']
+                 text-[72px]
+                 leading-[0.95]
+                 tracking-[-0.02em]
+                 font-normal"
+        >
           Афиша
         </h2>
 
-        <!-- DESKTOP BUTTON (64px) -->
-        <a href="#"
-           class="hidden sm:inline-flex items-center gap-3
-                  h-[64px] px-6
-                  border border-[#24272A]
-                  text-base font-semibold
-                  transition
-                  hover:bg-[#24272A] hover:text-white">
+        <!-- DESKTOP BUTTON -->
+        <a
+          href="/events/index.html"
+          class="hidden sm:inline-flex items-center gap-3
+                 h-[64px] px-6
+                 border border-[#24272A]
+                 text-[16px] font-semibold
+                 transition
+                 hover:bg-[#24272A] hover:text-white"
+        >
           Все мероприятия
           <span>→</span>
         </a>
       </div>
 
       <!-- DATES -->
-      <div class="w-full overflow-x-auto mb-10">
-        <div class="flex gap-3 min-w-max">
-          <template x-for="day in [
-            {d:5,w:'пт'},{d:6,w:'сб'},{d:7,w:'вс'},{d:8,w:'пн'},
-            {d:9,w:'вт'},{d:10,w:'ср'},{d:11,w:'чт'},
-            {d:12,w:'пт'},{d:13,w:'сб'},{d:14,w:'вс'},
-            {d:15,w:'пн'},{d:16,w:'вт'}
-          ]">
+      <div class="w-full mb-10">
+        <div class="flex justify-between">
+          <template
+            x-for="day in [
+              {d:5,w:'пт'},{d:6,w:'сб'},{d:7,w:'вс'},{d:8,w:'пн'},
+              {d:9,w:'вт'},{d:10,w:'ср'},{d:11,w:'чт'},
+              {d:12,w:'пт'},{d:13,w:'сб'},{d:14,w:'вс'},
+              {d:15,w:'пн'},{d:16,w:'вт'}
+            ]"
+          >
             <button
               @click="activeDay = day.d"
-              class="w-[64px] h-[80px]
+              class="flex-1 mx-[2px]
+                     h-[80px]
                      rounded-t-full
                      flex flex-col items-center justify-center
-                     border transition"
+                     transition"
               :class="activeDay===day.d
-                ? 'bg-[#C93635] text-white border-[#C93635]'
-                : 'bg-[#F0F1F2] text-[#24272A] border-transparent hover:bg-[#E6E7E9]'"
+                ? 'bg-[#C93635] text-white'
+                : 'bg-[#F0F1F2] text-[#24272A] hover:bg-[#E6E7E9]'"
             >
-              <div class="text-xl font-semibold" x-text="day.d"></div>
-              <div class="text-xs opacity-80" x-text="day.w"></div>
+              <div class="text-[40px] font-semibold leading-none" x-text="day.d"></div>
+              <div class="text-[12px] opacity-80 mt-1" x-text="day.w"></div>
             </button>
           </template>
         </div>
       </div>
 
       <!-- CARDS -->
-      <div class="relative">
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8
-                 max-sm:flex max-sm:overflow-x-auto max-sm:gap-4 max-sm:pb-4"
-        >
-          <template x-for="item in items.filter(i => i.day === activeDay)" :key="item.id">
-            <article class="group min-w-[260px] sm:min-w-0 cursor-pointer">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8
+               max-sm:flex max-sm:overflow-x-auto max-sm:gap-4 max-sm:pb-4"
+      >
+        <template x-for="item in items.filter(i => i.day === activeDay)" :key="item.id">
+          <article class="group min-w-[260px] sm:min-w-0 cursor-pointer">
 
-              <div class="w-full h-[200px] overflow-hidden bg-[#F0F1F2]">
-                <img
-                  :src="item.img"
-                  alt=""
-                  class="w-full h-full object-cover
-                         transition-transform duration-500
-                         group-hover:scale-105"
-                />
-              </div>
+            <div class="w-full h-[200px] overflow-hidden bg-[#F0F1F2]">
+              <img
+                :src="item.img"
+                alt=""
+                class="w-full h-full object-cover
+                       transition-transform duration-500
+                       group-hover:scale-105"
+              />
+            </div>
 
-              <div class="text-sm text-[#8B8E91] mt-4 mb-2" x-text="item.date"></div>
+            <div class="text-sm text-[#8B8E91] mt-4 mb-2" x-text="item.date"></div>
 
-              <h3
-                class="text-base font-semibold leading-snug
-                       text-[#24272A]
-                       transition-colors
-                       group-hover:text-[#C93635]"
-                x-text="item.title"
-              ></h3>
+            <h3
+              class="text-base font-semibold leading-snug
+                     text-[#24272A]
+                     transition-colors
+                     group-hover:text-[#C93635]"
+              x-text="item.title"
+            ></h3>
 
-            </article>
-          </template>
-        </div>
+          </article>
+        </template>
       </div>
 
-      <!-- MOBILE BUTTON (64px) -->
+      <!-- MOBILE BUTTON -->
       <div class="mt-10 sm:hidden">
-        <a href="#"
-           class="flex w-full h-[64px]
-                  justify-center items-center gap-3
-                  border border-[#24272A]
-                  text-base font-semibold">
+        <a
+          href="/events/index.html"
+          class="flex w-full h-[64px]
+                 justify-center items-center gap-3
+                 border border-[#24272A]
+                 text-[16px] font-semibold"
+        >
           Все мероприятия
           <span>→</span>
         </a>

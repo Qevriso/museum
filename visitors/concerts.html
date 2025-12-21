@@ -6,7 +6,13 @@
 
   <title>Концерты — Сергиево-Посадский музей-заповедник</title>
 
+  <!-- Fonts -->
   <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Project components (CARD HOVER STD) -->
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <!-- Tailwind -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
@@ -20,7 +26,7 @@
 
   <!-- BREADCRUMBS -->
   <nav class="text-[18px] sm:text-[20px] text-[#8D9399] mb-[32px] flex gap-2 flex-wrap">
-    <a href="/visitors/index.html">Посетителям</a>
+    <a href="/visitors/index.html" class="hover:text-[#24272A] transition">Посетителям</a>
     <span>/</span>
     <span class="text-[#24272A]">Концерты</span>
   </nav>
@@ -34,24 +40,35 @@
   <section class="grid grid-cols-1 md:grid-cols-2 gap-[40px]">
 
     <!-- CARD -->
-    <a href="/visitors/concerts-detail.html" class="group">
-      <img
-        src="/assets/img/concerts/1.jpg"
-        alt=""
-        class="w-full h-[260px] sm:h-[320px] object-cover mb-[16px]"
-      >
-      <h3 class="text-[20px] sm:text-[22px] font-semibold leading-[140%] group-hover:underline">
+    <a href="/visitors/concerts-detail.html"
+       class="card-hover flex flex-col">
+
+      <div class="card-hover-img h-[260px] sm:h-[320px] mb-[16px]">
+        <img
+          src="/assets/img/concerts/1.jpg"
+          alt=""
+          class="w-full h-full object-cover"
+        >
+      </div>
+
+      <h3 class="card-hover-title text-[20px] sm:text-[22px] font-semibold leading-[140%]">
         Проект «Музыкальные вечера в Парадном зале Ризницы»
       </h3>
     </a>
 
-    <a href="/visitors/concerts-detail.html" class="group">
-      <img
-        src="/assets/img/concerts/2.jpg"
-        alt=""
-        class="w-full h-[260px] sm:h-[320px] object-cover mb-[16px]"
-      >
-      <h3 class="text-[20px] sm:text-[22px] font-semibold leading-[140%] group-hover:underline">
+    <!-- CARD -->
+    <a href="/visitors/concerts-detail.html"
+       class="card-hover flex flex-col">
+
+      <div class="card-hover-img h-[260px] sm:h-[320px] mb-[16px]">
+        <img
+          src="/assets/img/concerts/2.jpg"
+          alt=""
+          class="w-full h-full object-cover"
+        >
+      </div>
+
+      <h3 class="card-hover-title text-[20px] sm:text-[22px] font-semibold leading-[140%]">
         Проект «Музыка и музей»
       </h3>
     </a>

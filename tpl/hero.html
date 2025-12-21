@@ -1,42 +1,40 @@
 <section
   x-data="heroSlider()"
   class="relative overflow-hidden bg-[#C93635]
-         lg:h-[680px]"
+         h-[520px] sm:h-[600px] lg:h-[680px]"
 >
+
+  <!-- CONTENT WRAPPER -->
   <div
     class="relative z-10
            max-w-[1600px] mx-auto
            px-4 lg:px-[60px]
-           pt-6 lg:pt-[60px]
-           pb-12 lg:pb-[68px]
-           h-full"
+           h-full flex items-center"
   >
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[32px] h-full items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[32px] w-full">
 
-      <!-- LEFT -->
-      <div class="text-white w-full flex flex-col justify-between min-w-0">
+      <!-- ================= LEFT ================= -->
+      <div class="text-white flex flex-col gap-6">
 
         <!-- DATE -->
         <div
           class="flex items-center gap-4
                  font-['Wix Madefor Display']
-                 font-semibold
-                 text-[16px] leading-[160%]
+                 font-semibold text-[16px] leading-[160%]
                  opacity-90"
         >
           <span x-text="slides[current].date.split('—')[0]"></span>
-          <span class="w-10 h-px bg-white/70"></span>
+          <span class="w-10 h-[2px] bg-white"></span>
           <span x-text="slides[current].date.split('—')[1]"></span>
         </div>
 
         <!-- TITLE -->
         <h1
           class="font-['Racama']
-                 font-normal
-                 tracking-[-0.02em]
-                 text-[52px] leading-[1.1]
-                 sm:text-[60px]
-                 lg:text-[140px] lg:leading-[0.9]"
+                 font-normal tracking-[-0.02em]
+                 text-[48px] leading-[1.05]
+                 sm:text-[64px]
+                 lg:text-[120px] lg:leading-[0.9]"
         >
           <span x-text="slides[current].titleLine1"></span><br>
           <span x-text="slides[current].titleLine2"></span>
@@ -45,14 +43,16 @@
         <!-- SUBTITLE -->
         <p
           class="font-['Wix Madefor Display']
-                 text-[20px]
+                 text-[18px] sm:text-[20px]
                  leading-[160%]
                  max-w-[520px]"
           x-text="slides[current].subtitle"
         ></p>
 
         <!-- BUTTONS -->
-        <div class="flex flex-col lg:flex-row gap-4">
+        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+
+          <!-- BUY -->
           <a
             href="#"
             class="group inline-flex items-center justify-center gap-3
@@ -71,28 +71,41 @@
             >
           </a>
 
+          <!-- EXPO -->
           <a
             href="#"
-            class="inline-flex items-center justify-center gap-3
+            class="group inline-flex items-center justify-center gap-3
                    h-[64px] px-6
-                   border border-white
+                   bg-transparent text-white
                    font-semibold
-                   hover:bg-white/10
+                   border border-white
+                   hover:bg-white hover:text-[#C92E32]
                    transition-colors"
           >
-            Постоянная выставка →
+            Постоянная выставка
+            <img
+              src="/assets/svg/permex.svg"
+              class="w-4 h-4 permex-icon transition"
+              alt=""
+            >
           </a>
         </div>
 
         <!-- CONTROLS -->
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 pt-2">
+
+          <!-- PREV -->
           <button
             @click="prev"
-            class="w-10 h-10 border border-white/70
+            class="group w-10 h-10
+                   border border-white/70
                    flex items-center justify-center
-                   hover:bg-white/10 transition"
-          >←</button>
+                   hover:bg-white transition-colors"
+          >
+            <img src="/assets/svg/back.svg" class="w-4 h-4 transition" alt="">
+          </button>
 
+          <!-- DOTS -->
           <div class="flex gap-2">
             <template x-for="(item, index) in slides" :key="index">
               <span
@@ -102,32 +115,40 @@
             </template>
           </div>
 
+          <!-- NEXT -->
           <button
             @click="next"
-            class="w-10 h-10 border border-white/70
+            class="group w-10 h-10
+                   border border-white/70
                    flex items-center justify-center
-                   hover:bg-white/10 transition"
-          >→</button>
+                   hover:bg-white transition-colors"
+          >
+            <img src="/assets/svg/next.svg" class="w-4 h-4 transition" alt="">
+          </button>
+
         </div>
-
       </div>
 
-      <!-- RIGHT IMAGE -->
-      <div class="relative hidden lg:block h-full">
-        <img
-          :src="slides[current].img"
-          alt=""
-          class="absolute right-0 bottom-[-74px]
-                 w-[520px] xl:w-[600px]
-                 max-h-[720px]
-                 object-contain
-                 pointer-events-none select-none"
-        >
-      </div>
+  
+  <!-- ================= RIGHT ================= -->
+<div class="relative hidden lg:block h-full">
+
+  <img
+    :src="slides[current].img"
+    alt=""
+    class="absolute right-0 bottom-[-99px]
+           w-[520px] xl:w-[600px]
+           object-contain
+           pointer-events-none select-none"
+  >
+
+</div>
+
 
     </div>
   </div>
 
+  <!-- ICON HOVERS -->
   <style>
     .hero-ticket-icon {
       filter: brightness(0) saturate(100%)
@@ -137,6 +158,18 @@
     }
     .group:hover .hero-ticket-icon {
       filter: brightness(0) invert(1);
+    }
+
+    .group:hover .permex-icon {
+      filter: brightness(0) saturate(100%)
+              invert(27%) sepia(89%) saturate(2480%)
+              hue-rotate(343deg) brightness(92%) contrast(101%);
+    }
+
+    button.group:hover img {
+      filter: brightness(0) saturate(100%)
+              invert(27%) sepia(89%) saturate(2480%)
+              hue-rotate(343deg) brightness(92%) contrast(101%);
     }
   </style>
 </section>

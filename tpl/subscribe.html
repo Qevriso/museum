@@ -56,7 +56,7 @@
       <!-- LEFT -->
       <h2
         class="font-[Racama] text-white
-               text-[40px] sm:text-[56px] lg:text-[72px]
+               text-[40px] sm:text-[64px] lg:text-[72px]
                leading-[0.95] tracking-[-0.02em]
                max-w-[420px]"
       >
@@ -75,10 +75,12 @@
           class="w-full px-6 py-4
                  text-white placeholder-white/70
                  bg-white/20 border
-                 focus:outline-none focus:bg-white/30 transition"
+                 focus:outline-none
+                 focus:bg-white/30
+                 transition-colors"
           :class="error
             ? 'border-red-400 focus:border-red-400'
-            : 'border-white/20 focus:border-white/40'"
+            : 'border-white/40 focus:border-white'"
         >
 
         <!-- ERROR -->
@@ -89,13 +91,16 @@
           x-text="error"
         ></p>
 
-        <!-- BUTTON -->
+        <!-- BUTTON (ИСПРАВЛЕННЫЙ ХОВЕР) -->
         <button
           @click="submit"
-          class="w-full mt-3 px-6 py-4
+          class="w-full mt-4 h-[64px]
+                 border border-white
                  bg-white text-[#7474C2]
                  font-semibold
-                 hover:bg-white/90 transition"
+                 transition-colors duration-200
+                 hover:bg-transparent hover:text-white
+                 focus:outline-none focus:ring-2 focus:ring-white/60"
         >
           Подписаться на рассылку
         </button>
@@ -143,8 +148,12 @@
 
       <button
         @click="success = false"
-        class="w-full bg-white text-[#6FAE86]
-               py-4 font-semibold hover:bg-white/90"
+        class="w-full h-[64px]
+               border border-white
+               bg-white text-[#6FAE86]
+               font-semibold
+               transition-colors
+               hover:bg-transparent hover:text-white"
       >
         Закрыть
       </button>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Иконы XIV–XVII вв. — Сергиево-Посадский музей-заповедник</title>
+  <meta name="description" content="Коллекция икон XIV–XVII веков Сергиево-Посадского музея-заповедника">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind 4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-[#24272A] font-['Wix Madefor Display']">
+
+  <!-- GLOBAL -->
+  <div data-include="/tpl/header.html"></div>
+  <div data-include="/tpl/menu.html"></div>
+  <div data-include="/tpl/menu-mobile.html"></div>
+
+  <!-- ================= MAIN ================= -->
+  <main class="max-w-[1600px] mx-auto px-4 lg:px-[60px] py-[60px] lg:py-[80px]">
+
+    <!-- BREADCRUMBS -->
+    <nav class="text-[20px] leading-[160%] text-[#8D9399] mb-10">
+      <a href="/about/index.html" class="hover:text-[#24272A]">О музее</a>
+      <span class="mx-2 text-[#DCDEE0]">/</span>
+      <a href="/about/collections.html" class="hover:text-[#24272A]">Коллекции</a>
+      <span class="mx-2 text-[#DCDEE0]">/</span>
+      <span class="text-[#24272A]">Иконы XIV–XVII вв.</span>
+    </nav>
+
+    <!-- TITLE -->
+    <h1 class="font-['Racama']
+               text-[48px] sm:text-[56px] lg:text-[72px]
+               leading-[0.95] tracking-[-0.02em]
+               mb-8">
+      Иконы XIV–XVII вв.
+    </h1>
+
+    <!-- INTRO -->
+    <p class="text-[20px] leading-[160%] max-w-[980px] mb-[60px]">
+      Коллекция древнерусской иконописи Домонгольской Руси и Московского государства
+      представляет собой уникальное собрание памятников духовной культуры,
+      отражающих развитие иконописной традиции с XIV по XVII век.
+    </p>
+
+    <!-- ================= CONTENT ================= -->
+    <section class="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-[60px] lg:gap-[145px]">
+
+      <!-- TEXT COLUMN -->
+      <div class="flex flex-col gap-[40px] text-[20px] leading-[160%]">
+
+        <p>
+          Собрание включает произведения различных иконописных школ, отличающихся
+          стилистическими особенностями, техникой письма и иконографическими решениями.
+          Значительное место занимают памятники, связанные с Троице-Сергиевым монастырём.
+        </p>
+
+        <p>
+          В коллекции представлены образы Богоматери, Спасителя, святых и праздничные
+          иконы, отражающие основные этапы развития русской иконописи.
+          Многие произведения отличаются высоким художественным уровнем
+          и исторической значимостью.
+        </p>
+
+        <p>
+          Иконы XIV–XV веков демонстрируют влияние византийской традиции,
+          тогда как более поздние памятники отражают формирование
+          самобытного русского стиля и развитие местных школ.
+        </p>
+
+      </div>
+
+      <!-- IMAGE COLUMN -->
+      <aside class="self-start">
+        <img
+          src="/assets/img/collections/icons/main.png"
+          alt="Иконы XIV–XVII веков"
+          class="w-full h-[480px] object-cover"
+        >
+      </aside>
+
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section class="mt-[100px]">
+
+      <h2 class="font-['Racama']
+                 text-[32px] leading-[0.95] tracking-[-0.02em]
+                 mb-10">
+        Избранные экспонаты
+      </h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        <figure class="flex flex-col gap-2">
+          <img src="/assets/img/collections/icons/1.png" class="w-full object-cover" alt="">
+          <figcaption class="text-sm text-[#8D9399]">
+            Икона Богоматери, XV в.
+          </figcaption>
+        </figure>
+
+        <figure class="flex flex-col gap-2">
+          <img src="/assets/img/collections/icons/2.png" class="w-full object-cover" alt="">
+          <figcaption class="text-sm text-[#8D9399]">
+            Спас Вседержитель, XVI в.
+          </figcaption>
+        </figure>
+
+        <figure class="flex flex-col gap-2">
+          <img src="/assets/img/collections/icons/3.png" class="w-full object-cover" alt="">
+          <figcaption class="text-sm text-[#8D9399]">
+            Святитель Николай, XVII в.
+          </figcaption>
+        </figure>
+
+        <figure class="flex flex-col gap-2">
+          <img src="/assets/img/collections/icons/4.png" class="w-full object-cover" alt="">
+          <figcaption class="text-sm text-[#8D9399]">
+            Праздничный чин, XVI в.
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div data-include="/tpl/footer.html"></div>
+
+  <!-- INCLUDE -->
+  <script src="/include.js"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+</body>
+</html>

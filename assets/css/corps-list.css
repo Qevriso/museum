@@ -1,0 +1,56 @@
+/* ===== CORPS LIST (BASE PATTERN) ===== */
+
+.corp-item {
+  padding: 24px 0;
+  border-bottom: 1px solid #DCDEE0;
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.corp-item a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.corp-item .arrow {
+  font-size: 20px;
+  transition: transform .2s ease, color .2s ease;
+}
+
+.corp-item:hover {
+  color: #C92E32;
+}
+
+.corp-item:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ACTIVE */
+.corp-item.active {
+  color: #C92E32;
+  border-bottom: 2px solid #C92E32;
+}
+
+/* ITEM WITHOUT PREVIEW */
+.corp-item.no-preview:hover {
+  color: #C92E32;
+}
+
+/* IMAGE */
+.corp-preview-img {
+  border-radius: 9999px 9999px 0 0;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* MORPH STATES */
+.morph-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(12px);
+}
+
+.morph-in {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}

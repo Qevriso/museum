@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Вакансии — Сергиево-Посадский музей-заповедник</title>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+
+<body class="bg-white text-[#24272A] font-['Wix Madefor Display']">
+
+<!-- INCLUDE -->
+<div data-include="/tpl/header.html"></div>
+<div data-include="/tpl/menu.html"></div>
+<div data-include="/tpl/menu-mobile.html"></div>
+
+<main
+  x-data="vacancies()"
+  class="max-w-[1600px] mx-auto
+         px-4 lg:px-[60px]
+         pt-[40px] lg:pt-[60px]
+         pb-[120px]"
+>
+
+  <!-- BREADCRUMBS -->
+  <nav
+    class="flex gap-2 flex-wrap
+           text-[18px] sm:text-[20px]
+           text-[#8D9399]
+           mb-[32px]"
+  >
+    <a href="/about/index.html" class="hover:text-[#24272A] transition">
+      О музее
+    </a>
+    <span>/</span>
+    <span class="text-[#24272A]">
+      Вакансии
+    </span>
+  </nav>
+
+  <!-- TITLE -->
+  <h1
+    class="font-['Racama']
+           text-[40px] sm:text-[56px] lg:text-[72px]
+           leading-[95%]
+           tracking-[-0.02em]
+           mb-[60px]"
+  >
+    Вакансии
+  </h1>
+
+  <!-- LAYOUT -->
+  <section class="flex flex-col lg:flex-row gap-[40px] lg:gap-[80px]">
+
+    <!-- LEFT MENU -->
+    <aside class="w-full lg:w-[360px] shrink-0">
+
+      <nav class="flex flex-col gap-[12px]">
+        <template x-for="(item, index) in items" :key="index">
+          <button
+            @click="active = index"
+            class="text-left text-[18px] leading-[140%] px-0 py-[6px]
+                   transition-colors"
+            :class="active === index
+              ? 'text-[#C93635] font-semibold'
+              : 'text-[#24272A] hover:text-[#C93635]'"
+            x-text="item.title"
+          ></button>
+        </template>
+      </nav>
+
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <article class="flex-1 min-w-0">
+
+      <template x-for="(item, index) in items" :key="index">
+        <div x-show="active === index" x-cloak>
+
+          <h2 class="text-[24px] sm:text-[28px] font-semibold mb-[8px]"
+              x-text="item.title"></h2>
+
+          <div class="text-[16px] text-[#8D9399] mb-[24px]"
+               x-text="item.salary"></div>
+
+          <!-- FUNCTIONS -->
+          <div class="mb-[24px]">
+            <div class="font-semibold mb-[8px]">Основные функции:</div>
+            <ul class="list-disc pl-[20px] space-y-[6px] text-[16px] leading-[160%]">
+              <template x-for="f in item.functions" :key="f">
+                <li x-text="f"></li>
+              </template>
+            </ul>
+          </div>
+
+          <!-- REQUIREMENTS -->
+          <div class="mb-[24px]">
+            <div class="font-semibold mb-[8px]">Необходимые знания и умения:</div>
+            <ul class="list-disc pl-[20px] space-y-[6px] text-[16px] leading-[160%]">
+              <template x-for="r in item.requirements" :key="r">
+                <li x-text="r"></li>
+              </template>
+            </ul>
+          </div>
+
+          <!-- CONDITIONS -->
+          <div class="mb-[24px]">
+            <div class="font-semibold mb-[8px]">Мы предлагаем:</div>
+            <ul class="list-disc pl-[20px] space-y-[6px] text-[16px] leading-[160%]">
+              <template x-for="c in item.conditions" :key="c">
+                <li x-text="c"></li>
+              </template>
+            </ul>
+          </div>
+
+          <!-- CONTACT -->
+          <div class="mt-[32px]">
+            <div class="font-semibold mb-[6px]">Откликнуться:</div>
+            <div class="text-[18px]" x-text="item.phone"></div>
+          </div>
+
+        </div>
+      </template>
+
+    </article>
+
+  </section>
+
+</main>
+
+<div data-include="/tpl/footer.html"></div>
+
+<script src="/include.js"></script>
+<script src="https://unpkg.com/alpinejs" defer></script>
+
+<script>
+function vacancies() {
+  return {
+    active: 0,
+    items: [
+      {
+        title: 'Смотритель — консультант музея',
+        salary: 'от 50 000 ₽',
+        functions: [
+          'Обеспечение сохранности музейных экспонатов и выставочных пространств',
+          'Встреча посетителей, проверка билетов, навигация по экспозиции',
+          'Консультирование посетителей по тематике экспозиций'
+        ],
+        requirements: [
+          'Знание истории и культуры России XX–XXI веков',
+          'Навыки работы с посетителями',
+          'Грамотная устная речь'
+        ],
+        conditions: [
+          'Официальное трудоустройство',
+          'Сменный график работы',
+          'Работа в дружном коллективе'
+        ],
+        phone: '8 496 540-53-56'
+      },
+      {
+        title: 'Экскурсовод',
+        salary: 'от 50 000 ₽',
+        functions: [
+          'Проведение экскурсий по экспозициям музея',
+          'Работа с группами разного возраста',
+          'Подготовка тематических программ'
+        ],
+        requirements: [
+          'Высшее гуманитарное образование',
+          'Опыт публичных выступлений',
+          'Знание истории искусства'
+        ],
+        conditions: [
+          'Официальное оформление',
+          'Гибкий график',
+          'Возможность профессионального роста'
+        ],
+        phone: '8 496 540-53-56'
+      }
+    ]
+  }
+}
+</script>
+
+</body>
+</html>
